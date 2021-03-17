@@ -1,0 +1,7 @@
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^mail\.kisankraft\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.mail\.kisankraft\.com$
+RewriteRule ^/?$ "http\:\/\/kisankraft\.com\:2095\/" [R=301,L]
+
