@@ -29,11 +29,21 @@
                         			<div class="row">									
                         			<div class="col-lg-6">									
 		                                
-										   
+									<div class="form-group">
+										<label>Age Filter</label>
+										<select name="age" id="age" class="form-control required">
+										<option value="children">Children</option>
+										<option value="Adults">Adult</option>
+										<option value="Old">Old people</option>
+										
+										</select>
+									</div>   
 									<div class="form-group">
 										<label>Genre/Subject Name</label>
 										<input class="form-control required" id="sub_name" name= "sub_name">
 									</div>
+
+									
 									
 									
 					
