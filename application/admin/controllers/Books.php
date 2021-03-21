@@ -104,27 +104,27 @@ class Books extends CI_Controller{
 	}
 	
 	 function getBooksAll(){
-		$column = array('id','bk_name','created_on','bk_status','bk_img');
-		$order = array('id' => 'desc');
+		$column = array('bkid','bk_name','created_on','bk_status','bk_img');
+		$order = array('bkid' => 'desc');
 		$join = array();
-		$where="id!=''";
+		$where="bkid!=''";
 		$tb_name = 'aud_booktbl';
 		$list = $this->datatbl->get_datatables($column,$order,$tb_name,$join,$where);
 		$data = array();
 		$no = $_POST['start'];
 		foreach ($list as $req) {
 			$edit='';
-            $ch='<a href="'.base_url('chapter/list/'.$req->id).'"<button type="button" class="btn btn-primary">View Chapters</button>';
+            $ch='<a href="'.base_url('chapter/list/'.$req->bkid).'"<button type="button" class="btn btn-primary">View Chapters</button>';
 			$img='<img src="'.base_url('assets/bookimages/'.$req->bk_img).'" alt="image" class="img-responsive thumb-md">';
-			$status = ($req->bk_status==1)?'<a href="'.base_url('books/deactive/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('books/active/'.$req->id).'"<span class="label label-pink">In-Active</span>';
+			$status = ($req->bk_status==1)?'<a href="'.base_url('books/deactive/'.$req->bkid).'"<span class="label label-success">Active</span>':'<a href="'.base_url('books/active/'.$req->bkid).'"<span class="label label-pink">In-Active</span>';
 			$no++;
 			$row = array();
-			$row[] = $req->id;
+			$row[] = $req->bkid;
 			$row[] = $req->bk_name;
             $row[] = $ch;
 			$row[] = $img;
 			$row[] = $req->created_on;
-			$row[] = $edit.'&nbsp;'.'<a href="'.base_url('books/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
+			$row[] = $edit.'&nbsp;'.'<a href="'.base_url('books/del/'.$req->bkid).'" class="label label-danger" md-ink-ripple="">Delete</a>';
 			$row[] = $status;
 			$data[] = $row;
 		}
