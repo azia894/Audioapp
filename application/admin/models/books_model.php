@@ -28,7 +28,7 @@ class books_model extends CI_Model{
 	function getbName($id)
 	{
 		
-		$this->db->where('id',$id);	
+		$this->db->where('bkid',$id);	
 		$q = $this->db->get($this->tbl_name);
 		$num = $num = $q->num_rows();
 		$data="";
@@ -53,7 +53,7 @@ class books_model extends CI_Model{
 	}
 	
 	function getDetails($id){
-		$this->db->where('id',$id);	
+		$this->db->where('bkid',$id);	
 		$q = $this->db->get($this->tbl_name);
 		$num = $num = $q->num_rows();
 		$data="";
@@ -68,15 +68,22 @@ class books_model extends CI_Model{
 		return $q;
 	}
 
+	function modify($data,$id){
+		$this->db->where('bkid',$id);
+		$q = $this->db->update($this->tbl_name,$data);
+		return $q;
+		
+	}
+
 	function actived($update_data,$id){
-        $this->db->where('id',$id);
+        $this->db->where('bkid',$id);
         $q = $this->db->update($this->tbl_name,$update_data);
         return $q;
         
     }
 
       function inactived($update_data,$id){
-        $this->db->where('id',$id);
+        $this->db->where('bkid',$id);
         $q = $this->db->update($this->tbl_name,$update_data);
         return $q;
         
@@ -84,7 +91,7 @@ class books_model extends CI_Model{
 
 	
 	function del($id){
-		$this->db->where('id',$id);
+		$this->db->where('bkid',$id);
 		$q = $this->db->delete($this->tbl_name);
 		return $q;
 		

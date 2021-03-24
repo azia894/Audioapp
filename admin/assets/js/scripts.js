@@ -206,6 +206,65 @@ $(document).ready(function(){
 		}
 	});	
 
+	$("#add_abook_form").validate({
+		rules:{
+			'bk_age':{
+				required:true
+			},
+			'author_id':{
+				required:true
+			},
+			'bk_name':{
+				required:true
+			},
+			'bk_desc':{
+				required:true
+			},
+			'bk_img':{
+				required:true
+			},
+			
+		},
+		messages:{
+			bk_age:'Please select Age',
+			author_id:'Please select Author',
+			bk_name:'Please enter Name',
+			bk_desc:'Please enter Description',
+			bk_img:'Please select Image',
+		},
+		submitHandler:function(form){
+			debugger;	
+			
+		$(form).ajaxSubmit({
+				beforeSend: function() {	
+					debugger;
+				},
+				uploadProgress: function(event, position, total, percentComplete) {
+					debugger;
+					
+				},
+				success: function() {
+						debugger;
+					
+				},
+				complete: function(xhr) {
+                 debugger;					
+					var j = JSON.parse(xhr.responseText);
+					$("#add_abook_msg").html(j.msg);					
+					if(j.status){	
+					debugger;							
+						$("#add_abook_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
+						$("#add_abook_msg").html(j.msg);
+							window.location=site_url+'/abooks';							
+						}else {
+						}
+				}
+			}); 
+			
+			return false;
+		}
+	});	
+
 	$("#add_chapter_form").validate({
 		rules:{
 			'bid':{
@@ -263,6 +322,305 @@ $(document).ready(function(){
 			return false;
 		}
 	});	
+
+	$("#edit_sub_form").validate({
+		rules:{
+			'sub_name':{
+				required:true
+			},
+			
+		},
+		messages:{
+			sub_name:'Please enter Subject Name',
+			
+		},
+		submitHandler:function(form){
+			
+		$(form).ajaxSubmit({
+				beforeSend: function() {	
+					debugger;
+				},
+				uploadProgress: function(event, position, total, percentComplete) {
+					debugger;
+					
+				},
+				success: function() {
+						debugger;
+					
+				},
+				complete: function(xhr) {
+                 debugger;					
+					var j = JSON.parse(xhr.responseText);
+					$("#edit_sub_msg").html(j.msg);					
+					if(j.status){	
+					debugger;							
+						$("#edit_sub_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
+						$("#edit_sub_msg").html(j.msg);
+							window.location=site_url+'/subject';							
+						}else {
+						}
+				}
+			}); 
+			
+			return false;
+		}
+	});	
+
+	$("#edit_authors_form").validate({
+		rules:{
+			'aut_name':{
+				required:true
+			},
+			'aut_desc':{
+				required:true
+			},
+			'aut_img':{
+				required:true
+			},
+		},
+		messages:{
+			aut_name:'Please enter Authors Name',
+			aut_desc:'Please enter description',
+			aut_img:'Please select image',
+		},
+		submitHandler:function(form){
+			debugger;	
+			var action = $(form).attr("action");
+			
+		$(form).ajaxSubmit({
+				beforeSend: function() {	
+					debugger;
+				},
+				uploadProgress: function(event, position, total, percentComplete) {
+					debugger;
+					
+				},
+				success: function() {
+						debugger;
+					
+				},
+				complete: function(xhr) {
+                 debugger;					
+					var j = JSON.parse(xhr.responseText);
+					$("#edit_authors_msg").html(j.msg);					
+					if(j.status){	
+					debugger;							
+						$("#edit_authors_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
+						$("#edit_authors_msg").html(j.msg);
+							window.location=site_url+'/author';							
+						}else {
+						}
+				}
+			}); 
+			
+			return false;
+		}
+	});	
+
+	$("#edit_narrator_form").validate({
+		rules:{
+			'nar_name':{
+				required:true
+			},
+			'nar_desc':{
+				required:true
+			},
+			'nar_img':{
+				required:true
+			},
+		},
+		messages:{
+			nar_name:'Please enter narrator Name',
+			nar_desc:'Please enter description',
+			nar_img:'Please select image',
+		},
+		submitHandler:function(form){
+			debugger;	
+			var action = $(form).attr("action");
+			
+		$(form).ajaxSubmit({
+				beforeSend: function() {	
+					debugger;
+				},
+				uploadProgress: function(event, position, total, percentComplete) {
+					debugger;
+					
+				},
+				success: function() {
+						debugger;
+					
+				},
+				complete: function(xhr) {
+                 debugger;					
+					var j = JSON.parse(xhr.responseText);
+					$("#edit_narrator_msg").html(j.msg);					
+					if(j.status){	
+					debugger;							
+						$("#edit_narrator_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
+						$("#edit_narrator_msg").html(j.msg);
+							window.location=site_url+'/narrator';							
+						}else {
+						}
+				}
+			}); 
+			
+			return false;
+		}
+	});	
+
+	$("#edit_books_form").validate({
+		rules:{
+			'bk_name':{
+				required:true
+			},
+			'bk_desc':{
+				required:true
+			},
+			'bk_img':{
+				required:true
+			},
+		},
+		messages:{
+			bk_name:'Please enter book Name',
+			bk_desc:'Please enter description',
+			bk_img:'Please select image',
+		},
+		submitHandler:function(form){
+			debugger;	
+			var action = $(form).attr("action");
+			
+		$(form).ajaxSubmit({
+				beforeSend: function() {	
+					debugger;
+				},
+				uploadProgress: function(event, position, total, percentComplete) {
+					debugger;
+					
+				},
+				success: function() {
+						debugger;
+					
+				},
+				complete: function(xhr) {
+                 debugger;					
+					var j = JSON.parse(xhr.responseText);
+					$("#edit_books_msg").html(j.msg);					
+					if(j.status){	
+					debugger;							
+						$("#edit_books_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
+						$("#edit_books_msg").html(j.msg);
+							window.location=site_url+'/books';							
+						}else {
+						}
+				}
+			}); 
+			
+			return false;
+		}
+	});	
+
+	$("#edit_abooks_form").validate({
+		rules:{
+			'bk_name':{
+				required:true
+			},
+			'bk_desc':{
+				required:true
+			},
+			'bk_img':{
+				required:true
+			},
+		},
+		messages:{
+			bk_name:'Please enter Book Name',
+			bk_desc:'Please enter description',
+			bk_img:'Please select image',
+		},
+		submitHandler:function(form){
+			debugger;	
+			var action = $(form).attr("action");
+			
+		$(form).ajaxSubmit({
+				beforeSend: function() {	
+					debugger;
+				},
+				uploadProgress: function(event, position, total, percentComplete) {
+					debugger;
+					
+				},
+				success: function() {
+						debugger;
+					
+				},
+				complete: function(xhr) {
+                 debugger;					
+					var j = JSON.parse(xhr.responseText);
+					$("#edit_abooks_msg").html(j.msg);					
+					if(j.status){	
+					debugger;							
+						$("#edit_abooks_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
+						$("#edit_abooks_msg").html(j.msg);
+							window.location=site_url+'/abooks';							
+						}else {
+						}
+				}
+			}); 
+			
+			return false;
+		}
+	});	
+
+	$("#edit_chapters_form").validate({
+		rules:{
+			'nar_id':{
+				required:true
+			},
+			'ch_name':{
+				required:true
+			},
+			'ch_audio':{
+				required:true
+			},
+		},
+		messages:{
+			nar_id:'Please enter Narrator Name',
+			ch_name:'Please enter Title',
+			ch_audio:'Please select image',
+		},
+		submitHandler:function(form){
+			debugger;	
+			var action = $(form).attr("action");
+			
+		$(form).ajaxSubmit({
+				beforeSend: function() {	
+					debugger;
+				},
+				uploadProgress: function(event, position, total, percentComplete) {
+					debugger;
+					
+				},
+				success: function() {
+						debugger;
+					
+				},
+				complete: function(xhr) {
+                 debugger;
+				 var bid = document.getElementById("bid").value;					
+					var j = JSON.parse(xhr.responseText);
+					$("#edit_chapters_msg").html(j.msg);					
+					if(j.status){	
+					debugger;							
+						$("#edit_chapters_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
+						$("#edit_chapters_msg").html(j.msg);
+							window.location=site_url+'/chapter/list/'+bid;							
+						}else {
+						}
+				}
+			}); 
+			
+			return false;
+		}
+	});
 
 	
 	$('.datetimepicker').datetimepicker({
@@ -354,66 +712,8 @@ $(function(){
 			}
 		});
 	});
-	var extraObj1 =  $("#fileuploader1").uploadFile({
-		url:site_url+'/gallery/uploadimgs',
-		fileName:"file",
-		extraHTML:function()
-       {
-    	var html = "<div><b>File Tags:</b><input type='text' name='tags' value='' /> <br/>";
-		html += "</div>";
-		return html;    		
-        },
-		showDone:true,
-		uploadStr:'Select Files',
-		dynamicFormData: function()
-		{
-			var data =$("#add_img_form").serialize();
-			//alert(data);
-			return data;        
-		},
-		autoSubmit:false,
-		allowedTypes:"*",
-		onSuccess:function(files,data,xhr,pd)
-		{
-			$('#add_img_form').append(data.msg);	
-			/*window.locoffeeion=site_url+'/tests/pend';*/
-		}
-	});
-	
-	$("#uploadbtn1").click(function(){
-		extraObj1.startUpload();
-	}); 	
+ 	
 });
 
 
-$(document).ready(function(){
-	 var tb = $(".url"); 
-	 var item = $(".videourl").length;
-     $("#addUrl").click(function(){
-	 var newrow = item;
-     $('<div class="form-group videourl"><label>URL:</label><input type="text" class="form-control" id="video_url'+newrow+'" name= "video_url[]"><button class="btn btn-icon waves-effect waves-light btn-danger delRowBtn"> <i class="fa fa-remove"></i> </button></div>').appendTo(tb);     
-	item++;
-});	
-});
-/*$(document.body).delegate(".delRowBtnr", "click", function(){
-        $(this).closest(".videourl").remove();        
-}); */
-$(document.body).delegate(".delRowBtn", "click", function(){ 
-		var delRowBtn = $(this);
-		var e = delRowBtn.attr('data');
-		if(e==undefined){
-			delRowBtn.closest('.videourl').remove();
-		}else if(e>0){
-			var data = {e:e};
-			var req = ajxReq(site_url+'/videos/urlDel',data,'POST','json');
-			req.done(function(data){
-					debugger;
-				if(data.success){			
-					debugger;
-					delRowBtn.closest('.videourl').remove();  
-					$("#msg").html(data.msg);
-				}
-			});
-		}
-		return false;
-}); 
+

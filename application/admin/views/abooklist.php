@@ -5,13 +5,13 @@
 			<!-- Page-Title -->
 			<div class="row">
 				<div class="col-sm-12">
-					<h4 class="page-title">Genre/Subject Books  List</h4>
+					<h4 class="page-title">Age Filter Books  List</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?=base_url('dashboard')?>">Dashboard</a>
 						</li>
 						<li class="active">	
-						Genre/Subject Books List	
+						Age Filter Books List	
 						</li>
 						
 						
@@ -20,7 +20,7 @@
 			</div>   
 			<div class="row">
 		<div class="col-sm-12">
-		<a style=" text-decoration: none; color:white" href="<?= base_url('books/add') ?>"><button  type="button" class="btn btn-primary"> Add Books </a></button>
+		<a style=" text-decoration: none; color:white" href="<?= base_url('abooks/add') ?>"><button  type="button" class="btn btn-primary"> Add Books </a></button>
 				<br></br>
 		
 			<?php
@@ -49,7 +49,7 @@
 				   
 				</p>
 
-					<table class="table table-striped table-bordered dt-responsive nowrap" id="all-Books-tbl">
+					<table class="table table-striped table-bordered dt-responsive nowrap" id="all-AbooksAll-tbl">
 						<thead>
 							<tr>
 								<th data-class="expand">#</th>

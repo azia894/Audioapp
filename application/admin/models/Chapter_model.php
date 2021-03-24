@@ -66,6 +66,14 @@ class Chapter_model extends CI_Model{
 		return $q;
 	}
 
+	function modify($data,$id){
+		$this->db->where('id',$id);
+		$q = $this->db->update($this->tbl_name,$data);
+		return $q;
+		
+	}
+
+
 	function actived($update_data,$id){
         $this->db->where('id',$id);
         $q = $this->db->update($this->tbl_name,$update_data);

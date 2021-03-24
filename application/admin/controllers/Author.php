@@ -107,7 +107,7 @@ class Author extends CI_Controller{
 		$data = array();
 		$no = $_POST['start'];
 		foreach ($list as $req) {
-			$edit='';
+			$edit='&nbsp;&nbsp;<a href="'.base_url('author/edit/'.$req->id).'" class="label label-info" md-ink-ripple="">Edit</a>';
 			$img='<img src="'.base_url('assets/authorimages/'.$req->aut_img).'" alt="image" class="img-responsive thumb-md">';
 			$status = ($req->aut_status==1)?'<a href="'.base_url('author/deactive/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('author/active/'.$req->id).'"<span class="label label-pink">In-Active</span>';
 			$no++;
@@ -116,7 +116,8 @@ class Author extends CI_Controller{
 			$row[] = $req->aut_name;
 			$row[] = $img;
 			$row[] = $req->created_on;
-			$row[] = $edit.'&nbsp;'.'<a href="'.base_url('author/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
+			//$row[] = $edit.'&nbsp;'.'<a href="'.base_url('author/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
+	        $row[] = $edit;
 			$row[] = $status;
 			$data[] = $row;
 		}
@@ -129,6 +130,97 @@ class Author extends CI_Controller{
 		
 		echo json_encode($output);
 	}
+
+	function edit(){
+		$id = $this->uri->segment('3');
+		$bd = $this->author_model->getDetails($id);
+		if($bd['num']==1){			 			
+			$data['record'] = $bd['data'][0];
+			$data['main_content2'] = 'edit_authors';		 
+			$this->load->view('template2/body',$data);
+		}else{
+			$this->session->set_flashdata('invalid','Invalid Request');
+			redirect('authors');
+		}
+	}
+
+	function modify(){
+		extract($_POST);
+		 $status=0;
+		 $msg='';
+		 $id = $this->uri->segment('3');
+		 $bd = $this->author_model->getDetails($id);
+		 if($bd['num']==1){			
+		 $res = $this->author_model->getDetailsByName($this->input->post('aut_name'));
+		 if($res['num']>0){
+			$msg='<div class="alert alert-warning">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>"'.$this->input->post('aut_name').'" Author already exists</strong>
+		  </div>' ;
+
+		 }else if($this->input->post('aut_name')=='' ){
+			   $msg='<div class="alert alert-warning">
+			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			   <strong>Please enter Author Name</strong>
+			 </div>' ;
+			 }else if($this->input->post('aut_desc')=='' ){
+			   $msg='<div class="alert alert-warning">
+			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			   <strong>Please enter description</strong>
+			 </div>' ;
+			 }else{
+				  $update_data = array();
+				  $update_data = array(
+					 'aut_desc'=>addslashes($this->input->post('aut_desc')),
+									
+					 );
+				   if($res['num']==0){
+					 $update_data['aut_name'] = addslashes($this->input->post('aut_name')); 
+				  }
+				 if(!empty($_FILES) && $_FILES['up']['name']!=""){		
+						 $fileTypes = array('jpeg','jpg','png','gif');
+						 $trgt='assets/authorimages/';
+						 $size = $_FILES['up']['size'];
+						 $file_name = $_FILES['up']['name'];
+						 $path_parts=pathinfo($_FILES['up']['name']);
+						 if(!in_array($path_parts['extension'],$fileTypes)){
+							 $msg='<div class="alert alert-warning">
+									   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									   <strong>Only jpg,png Images Are Allowed!!</strong>
+									 </div>' ;
+						  }else{
+							 $file = time().'.'.$path_parts['extension'];
+							 $update_data['aut_img']=$file;
+							 move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 
+							 
+						  }
+					  }
+				  $q = $this->author_model->modify($update_data,$id);
+				  if($q){
+				 $status=1;
+				// $this->session->set_flashdata('success','Page Updated successfully!!!!');
+				$msg='<div class="alert alert-warning">
+				   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				   <strong>Author Updated Successfully</strong></div>';	 
+				 
+					 }else{
+							 $msg='<div class="alert alert-warning">
+				   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				   <strong>Please Try Again Later</strong></div>';	 		 	
+					 }	
+			  }
+		 }else{
+			 $msg='<div class="alert alert-warning">
+			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			   <strong>Warning!</strong>Invalid action</div>';
+		 }
+		 
+		  $res = array('status'=>$status,'msg'=>$msg);
+		 echo json_encode($res); exit;	
+	 }
+	 
+
+	
 	 
 
 	

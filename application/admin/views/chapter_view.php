@@ -98,7 +98,8 @@
                         <?php 	}
                             ?>
                         </td> 
-                        <td><a href="<?=base_url('chapter/chdel/'.$row->bid.'/'.$row->id)?>" class="label label-danger" md-ink-ripple="">Delete</a></td>         
+						<td><a href="<?=base_url('chapter/edit/'.$row->bid.'/'.$row->id)?>" class="label label-info" md-ink-ripple="">Edit</a></td>
+                       <!-- <td><a href="<?=base_url('chapter/chdel/'.$row->bid.'/'.$row->id)?>" class="label label-danger" md-ink-ripple="">Delete</a></td> -->        
                         
                     </tr>
                 <?php

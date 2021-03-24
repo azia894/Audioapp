@@ -104,13 +104,13 @@ class Chapter extends CI_Controller{
 		$column = array('id','ch_name','created_on','ch_status','ch_audio');
 		$order = array('id' => 'desc');
 		$join = array();
-		$where="id!=''";
+		$where = "id!=''";
 		$tb_name = 'aud_chapter';
 		$list = $this->datatbl->get_datatables($column,$order,$tb_name,$join,$where);
 		$data = array();
 		$no = $_POST['start'];
 		foreach ($list as $req) {
-			$edit='';
+			$edit='&nbsp;&nbsp;<a href="'.base_url('chapter/edit/'.$req->id).'" class="label label-info" md-ink-ripple="">Edit</a>';
 			$img='<audio controls>
             <source src="'.base_url('assets/chapterimages/'.$req->ch_audio).'" type="audio/ogg">
             <source src="'.base_url('assets/chapterimages/'.$req->ch_audio).'" type="audio/mpeg">
@@ -123,7 +123,8 @@ class Chapter extends CI_Controller{
 			$row[] = $req->ch_name;
 			$row[] = $img;
 			$row[] = $req->created_on;
-			$row[] = $edit.'&nbsp;'.'<a href="'.base_url('Chapter/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
+			$row[] = $edit;
+			//$row[] = $edit.'&nbsp;'.'<a href="'.base_url('Chapter/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
 			$row[] = $status;
 			$data[] = $row;
 		}
@@ -136,6 +137,7 @@ class Chapter extends CI_Controller{
 		
 		echo json_encode($output);
 	}
+	
 
     function list(){
         $id=$this->uri->segment('3');
@@ -144,6 +146,94 @@ class Chapter extends CI_Controller{
         $this->load->view('template2/body',$data);
              
     }
+
+	function edit(){
+		$bid = $this->uri->segment('3');
+		$id = $this->uri->segment('4');
+		$bd = $this->chapter_model->getDetails($id);
+		if($bd['num']==1){
+			$data['get_data'] = $this->narrator_model->selectAll();
+			$data['get_sub'] = $this->books_model->selectAll();			 			
+			$data['record'] = $bd['data'][0];
+			$data['main_content2'] = 'edit_chapter';		 
+			$this->load->view('template2/body',$data);
+		}else{
+			$this->session->set_flashdata('invalid','Invalid Request');
+			redirect('Chapter/list/'.$bid);
+		}
+	}
+
+	function modify(){
+		extract($_POST);
+		 $status=0;
+		 $msg='';
+		 $bid = $this->uri->segment('3');
+		 $id = $this->uri->segment('4');
+		 $bd = $this->chapter_model->getDetails($id);
+		 if($bd['num']==1){			
+		 $res = $this->chapter_model->getDetailsByName($this->input->post('ch_name'));
+		 if($res['num']>0){
+			$msg='<div class="alert alert-warning">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>"'.$this->input->post('ch_name').'" Author already exists</strong>
+		  </div>' ;
+
+		 }else if($this->input->post('ch_name')=='' ){
+			   $msg='<div class="alert alert-warning">
+			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			   <strong>Please enter Author Name</strong>
+			 </div>' ;
+			 }else{
+				  $update_data = array();
+				  $update_data = array(
+					 'nar_id'=>addslashes($this->input->post('nar_id')),
+									
+					 );
+				   if($res['num']==0){
+					 $update_data['ch_name'] = addslashes($this->input->post('ch_name')); 
+				  }
+				 if(!empty($_FILES) && $_FILES['up']['name']!=""){		
+						 $fileTypes = array('mp3','mpeg','mp4');
+						 $trgt='assets/chapterimages/';
+						 $size = $_FILES['up']['size'];
+						 $file_name = $_FILES['up']['name'];
+						 $path_parts=pathinfo($_FILES['up']['name']);
+						 if(!in_array($path_parts['extension'],$fileTypes)){
+							 $msg='<div class="alert alert-warning">
+									   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									   <strong>Only jpg,png Images Are Allowed!!</strong>
+									 </div>' ;
+						  }else{
+							 $file = time().'.'.$path_parts['extension'];
+							 $update_data['ch_audio']=$file;
+							 move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 
+							 
+						  }
+					  }
+				  $q = $this->chapter_model->modify($update_data,$id);
+				  if($q){
+				 $status=1;
+				// $this->session->set_flashdata('success','Page Updated successfully!!!!');
+				$msg='<div class="alert alert-warning">
+				   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				   <strong>Author Updated Successfully</strong></div>';	 
+				 
+					 }else{
+							 $msg='<div class="alert alert-warning">
+				   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				   <strong>Please Try Again Later</strong></div>';	 		 	
+					 }	
+			  }
+		 }else{
+			 $msg='<div class="alert alert-warning">
+			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			   <strong>Warning!</strong>Invalid action</div>';
+		 }
+		 
+		  $res = array('status'=>$status,'msg'=>$msg);
+		 echo json_encode($res); exit;	
+	 }
+	 
     
 	 
 

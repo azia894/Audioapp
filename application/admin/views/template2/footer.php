@@ -112,12 +112,12 @@
 				},
 				],
 			  });
-			  table = $('#all-imgs-tbl').DataTable({ 
+			  table = $('#all-AbooksAll-tbl').DataTable({ 
 				"processing": true, //Feature control the processing indicator.
 				"serverSide": true, //Feature control DataTables' server-side processing mode.
 				// Load data for the table's content from an Ajax source
 				"ajax": {
-					"url": "<?php echo site_url('gallery/getImgsAll')?>",
+					"url": "<?php echo site_url('Abooks/getBooksAllA')?>",
 					"type": "POST"
 				},
 				//Set column definition initialisation properties.

@@ -104,6 +104,7 @@
                 </div>
             </div>
             <!-- Top Bar End -->
+            
 
 
             <!-- ========== Left Sidebar Start ========== -->
@@ -121,6 +122,7 @@
 							
 							<li class="has_sub">
 								<a href="<?=base_url('subject')?>" class="waves-effect"><i class="md md-add-to-photos"></i> <span> Genre/Subject</span></span> </a>
+                                
 							</li>
 							
 											
@@ -134,7 +136,23 @@
 							</li>
 
                             <li class="has_sub">
-								<a href="<?=base_url('books')?>" class="waves-effect"><i class="md md-pages"></i> <span>Books</span></span> </a>
+                            <a href="#Books" data-toggle="collapse">
+                                    <i class="md md-pages"></i>
+                                    <span> Books </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+								<!--<a href="#" class="waves-effect"><i class="md md-pages"></i> <span>Books</span></span> </a>-->
+                               
+                                    <ul class="has_sub">
+                                <li>
+                                    <a href="<?=base_url('books')?>">Genre Books</a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('abooks') ?>">Age Filter Books</a>
+                                </li>
+                        
+                            </ul>
+        
 							</li>
 							
 							
@@ -148,5 +166,17 @@
                 </div>
             </div>
             <!-- Left Sidebar End -->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $('ul li a').click(function(){
+    $('li a').removeClass("active");
+    $(this).addClass("active");
+  });
+});
+</script>
 
 

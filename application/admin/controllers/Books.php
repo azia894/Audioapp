@@ -64,6 +64,7 @@ class Books extends CI_Controller{
                 'sub_id'=>$this->input->post('sub_id'),	
 				'bk_name'=>$this->input->post('bk_name'),
 				'bk_desc'=>$this->input->post('bk_desc'),
+				'bk_type'=>1,
 				'bk_status'=>1,	
                 'created_on'=>date('Y-m-d H:i:s'),							
 			);
@@ -107,26 +108,29 @@ class Books extends CI_Controller{
 		$column = array('bkid','bk_name','created_on','bk_status','bk_img');
 		$order = array('bkid' => 'desc');
 		$join = array();
-		$where="bkid!=''";
+		$where="bkid!='' and bk_type='1'";
 		$tb_name = 'aud_booktbl';
 		$list = $this->datatbl->get_datatables($column,$order,$tb_name,$join,$where);
 		$data = array();
 		$no = $_POST['start'];
+		$i=1;
 		foreach ($list as $req) {
-			$edit='';
+			$edit='&nbsp;&nbsp;<a href="'.base_url('books/edit/'.$req->bkid).'" class="label label-info" md-ink-ripple="">Edit</a>';
             $ch='<a href="'.base_url('chapter/list/'.$req->bkid).'"<button type="button" class="btn btn-primary">View Chapters</button>';
 			$img='<img src="'.base_url('assets/bookimages/'.$req->bk_img).'" alt="image" class="img-responsive thumb-md">';
 			$status = ($req->bk_status==1)?'<a href="'.base_url('books/deactive/'.$req->bkid).'"<span class="label label-success">Active</span>':'<a href="'.base_url('books/active/'.$req->bkid).'"<span class="label label-pink">In-Active</span>';
 			$no++;
 			$row = array();
-			$row[] = $req->bkid;
+			$row[] = $i;
 			$row[] = $req->bk_name;
             $row[] = $ch;
 			$row[] = $img;
 			$row[] = $req->created_on;
-			$row[] = $edit.'&nbsp;'.'<a href="'.base_url('books/del/'.$req->bkid).'" class="label label-danger" md-ink-ripple="">Delete</a>';
+			$row[] = $edit;
+			//$row[] = $edit.'&nbsp;'.'<a href="'.base_url('books/del/'.$req->bkid).'" class="label label-danger" md-ink-ripple="">Delete</a>';
 			$row[] = $status;
 			$data[] = $row;
+			$i++;
 		}
 		$output = array(
 						"draw" => $_POST['draw'],
@@ -137,6 +141,95 @@ class Books extends CI_Controller{
 		
 		echo json_encode($output);
 	}
+
+	function edit(){
+		$id = $this->uri->segment('3');
+		$bd = $this->books_model->getDetails($id);
+		if($bd['num']==1){	
+			$data['get_data'] = $this->author_model->selectAll();
+        $data['get_sub'] = $this->subject_model->selectAll();		 			
+			$data['record'] = $bd['data'][0];
+			$data['main_content2'] = 'edit_books';		 
+			$this->load->view('template2/body',$data);
+		}else{
+			$this->session->set_flashdata('invalid','Invalid Request');
+			redirect('books');
+		}
+	}
+
+	function modify(){
+		extract($_POST);
+		 $status=0;
+		 $msg='';
+		 $id = $this->uri->segment('3');
+		 $bd = $this->books_model->getDetails($id);
+		 if($bd['num']==1){			
+		 $res = $this->books_model->getDetailsByName($this->input->post('bk_name'));
+		 if($this->input->post('bk_name')=='' ){
+			   $msg='<div class="alert alert-warning">
+			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			   <strong>Please enter Book Name</strong>
+			 </div>' ;
+			 }else if($this->input->post('bk_desc')=='' ){
+			   $msg='<div class="alert alert-warning">
+			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			   <strong>Please enter description</strong>
+			 </div>' ;
+			 }else{
+				  $update_data = array();
+				  $update_data = array(
+					 'author_id'=>addslashes($this->input->post('author_id')),
+					 'sub_id'=>addslashes($this->input->post('sub_id')),
+					 'bk_desc'=>addslashes($this->input->post('bk_desc')),
+									
+					 );
+				   if($res['num']==0){
+					 $update_data['bk_name'] = addslashes($this->input->post('bk_name')); 
+				  }
+				 if(!empty($_FILES) && $_FILES['up']['name']!=""){		
+						 $fileTypes = array('jpeg','jpg','png','gif');
+						 $trgt='assets/bookimages/';
+						 $size = $_FILES['up']['size'];
+						 $file_name = $_FILES['up']['name'];
+						 $path_parts=pathinfo($_FILES['up']['name']);
+						 if(!in_array($path_parts['extension'],$fileTypes)){
+							 $msg='<div class="alert alert-warning">
+									   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									   <strong>Only jpg,png Images Are Allowed!!</strong>
+									 </div>' ;
+						  }else{
+							 $file = time().'.'.$path_parts['extension'];
+							 $update_data['bk_img']=$file;
+							 move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 
+							 
+						  }
+					  }
+				  $q = $this->books_model->modify($update_data,$id);
+				  if($q){
+				 $status=1;
+				// $this->session->set_flashdata('success','Page Updated successfully!!!!');
+				$msg='<div class="alert alert-warning">
+				   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				   <strong>Book Updated Successfully</strong></div>';	 
+				 
+					 }else{
+							 $msg='<div class="alert alert-warning">
+				   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				   <strong>Please Try Again Later</strong></div>';	 		 	
+					 }	
+			  }
+		 }else{
+			 $msg='<div class="alert alert-warning">
+			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			   <strong>Warning!</strong>Invalid action</div>';
+		 }
+		 
+		  $res = array('status'=>$status,'msg'=>$msg);
+		 echo json_encode($res); exit;	
+	 }
+	 
+
+
 	 
 
 	
@@ -174,5 +267,7 @@ class Books extends CI_Controller{
 			  $this->session->set_flashdata('success', 'Deactivated Successfully');
 			 redirect('books');
 	 }
+
+	 
 	
 	}

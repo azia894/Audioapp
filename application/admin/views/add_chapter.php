@@ -80,7 +80,7 @@
 									
 									
 									<div class="form-group">
-										<label>Audio Url</label>
+										<label>Upload Audio</label>
 											<input  type="file" name="up" id="ch_audio" accept="Image/png,image/jpeg,image/gif">   
 									</div>
 									
