@@ -101,18 +101,28 @@ $(document).ready(function(){
 			'nar_name':{
 				required:true
 			},
+			'gender':{
+				required:true
+			},
+			'country':{
+				required:true
+			},
+			'city':{
+				required:true
+			},
 			'nar_desc':{
 				required:true
 			},
-			'nar_img':{
-				required:true
-			},
+			
 			
 		},
 		messages:{
-			aut_name:'Please enter Name',
-			aut_desc:'Please enter description',
-			aut_img:'Please select image',
+			nar_name:'Please enter Name',
+			gender:'Please enter Gender',
+			country:'Please enter Country',
+			city:'Please enter City',
+			gender:'Please enter description',
+			
 		},
 		submitHandler:function(form){
 			debugger;	
@@ -161,7 +171,16 @@ $(document).ready(function(){
 			'bk_desc':{
 				required:true
 			},
-			'bk_img':{
+			'up':{
+				required:true
+			},
+			'bk_year':{
+				required:true
+			},
+			'bk_blurb':{
+				required:true
+			},
+			'bk_tags':{
 				required:true
 			},
 			
@@ -169,9 +188,12 @@ $(document).ready(function(){
 		messages:{
 			sub_id:'Please select Subject/Genre',
 			author_id:'Please select Author',
-			bk_name:'Please enter Name',
-			bk_desc:'Please enter Description',
-			bk_img:'Please select Image',
+			bk_name:'Please Enter Name',
+			bk_desc:'Please Enter Description',
+			up:'Please Select Image',
+			bk_year:'Please Enter Year of Publication',
+			bk_blurb:'Please Enter Blurb',
+			bk_tags:'Please Enter Tags',
 		},
 		submitHandler:function(form){
 			debugger;	
@@ -422,17 +444,27 @@ $(document).ready(function(){
 			'nar_name':{
 				required:true
 			},
+			'gender':{
+				required:true
+			},
+			'country':{
+				required:true
+			},
+			'city':{
+				required:true
+			},
 			'nar_desc':{
 				required:true
 			},
-			'nar_img':{
-				required:true
-			},
+			
 		},
 		messages:{
 			nar_name:'Please enter narrator Name',
+			gender:'Please enter Gender',
+			country:'Please enter Country',
+			city:'Please enter City',
 			nar_desc:'Please enter description',
-			nar_img:'Please select image',
+			
 		},
 		submitHandler:function(form){
 			debugger;	

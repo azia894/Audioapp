@@ -34,17 +34,34 @@
 										<label>Narrator Name</label>
 										<input class="form-control" id="nar_name" name= "nar_name">
 									</div>
+
+									<div class="form-group">
+										<label>Gender</label><br>
+										<input type="radio" name="gender" value="male"> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other
+									</div>
+
+									<div class="form-group">
+										<label>Country</label>
+										<input class="form-control" id="country" name= "country">
+									</div>
+									<div class="form-group">
+										<label>city</label>
+										<input class="form-control" id="city" name= "city">
+									</div>
+									
 									
 									<div class="form-group">
-										<label>Description </label>
+										<label>Notes </label>
 										<textarea class="form-control mathedit" placeholder="Enter Description" name="nar_desc" id="nar_desc"></textarea>
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
 									
-									<div class="form-group">
+								<!--	<div class="form-group">
 										<label>Image</label>
 											<input  type="file" name="up" id="nar_img" accept="Image/png,image/jpeg,image/gif">   
-									</div>
+									</div>-->
 									
 									
 												

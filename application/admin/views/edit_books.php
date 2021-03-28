@@ -32,7 +32,40 @@
                         			<h4 class="m-t-0 header-title"><b>Edit Genre/Subject Books</b></h4></br></br>
                         			
                         			<div class="row">									
-                        			<div class="col-lg-6">	
+                        			<div class="col-lg-6">
+									<div class="form-group">
+										<label>Title</label>
+										<input class="form-control" id="bk_name" name= "bk_name" value="<?=$record['bk_name']?>">
+									</div>
+
+									<div class="form-group">
+										<label>Authors</label>
+										<select name="author_id" id="author_id" class="form-control">
+                                        <option value="0" >Select Author</option>
+                                        <?php
+                                        if($get_data['num']>0){
+                                        foreach($get_data['data'] as $c){
+                                         ?>
+                                        <option <?=($record['author_id']==$c->id?'selected':'')?> value="<?=$c->id?>"><?=$c->aut_name?></option>
+                                         <?php
+                                           }
+
+                                            }
+                                               ?>
+                                        
+                                        </select>
+									</div>
+
+									   
+
+									<div class="form-group">
+										<label>Year Of Publication</label>
+										<input class="form-control" id="bk_year" name="bk_year" value="<?=$record['bk_year']?>">
+									</div>		
+										   
+
+
+
                                     <div class="form-group">
 										<label>Genre/Subject</label>
 										<select name="sub_id" id="sub_id" class="form-control">
@@ -50,27 +83,27 @@
                                         </select>
 									</div>
 
-                                    <div class="form-group">
-										<label>Authors</label>
-										<select name="author_id" id="author_id" class="form-control">
-                                        <option value="0" >Select Author</option>
-                                        <?php
-                                        if($get_data['num']>0){
-                                        foreach($get_data['data'] as $c){
-                                         ?>
-                                        <option <?=($record['author_id']==$c->id?'selected':'')?> value="<?=$c->id?>"><?=$c->aut_name?></option>
-                                         <?php
-                                           }
-
-                                            }
-                                               ?>
-                                        
-                                        </select>
-									</div>		
-										   
 									<div class="form-group">
-										<label>Book Name</label>
-										<input class="form-control" id="bk_name" name= "bk_name" value="<?=$record['bk_name']?>">
+										<label>Age</label>
+										<select name="bk_age" id="bk_age" class="form-control required">
+                                        <option value="" >Select Age</option>
+                                        <option value="Old">Old people</option>
+                                        <option value="Adults">Adult</option>
+										<option value="children">Children</option>
+										
+										</select>
+									</div>
+
+                                
+									
+									<div class="form-group">
+										<label>Blurb</label>
+										<input class="form-control" id="bk_blurb" name="bk_blurb" value="<?=$record['bk_blurb']?>">
+									</div>
+
+									<div class="form-group">
+										<label>Tags</label>
+										<input class="form-control" id="bk_tags" name="bk_tags" value="<?=$record['bk_tags']?>">
 									</div>
 									
 									

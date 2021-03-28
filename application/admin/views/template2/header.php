@@ -8,7 +8,7 @@
 
         <link rel="shortcut icon" href="assets/images/favicon_1.ico">
 
-        <title>Audio App Admin Panel</title>
+        <title>Dil-ki-Awaz Admin Panel</title>
 
         <!--Morris Chart CSS -->
 		<link rel="stylesheet" href="<?=base_url('assets')?>/plugins/morris/morris.css">
@@ -65,7 +65,7 @@
           
 		          <div class="topbar-left">
                     <div class="text-center">
-                        <a href="<?=base_url('dashboard')?>" class="logo">Audio App</a>
+                        <a href="<?=base_url('dashboard')?>" class="logo"> Dil ki Awaz</a>
                     </div>
                 </div>
 		
@@ -136,23 +136,14 @@
 							</li>
 
                             <li class="has_sub">
-                            <a href="#Books" data-toggle="collapse">
-                                    <i class="md md-pages"></i>
-                                    <span> Books </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-								<!--<a href="#" class="waves-effect"><i class="md md-pages"></i> <span>Books</span></span> </a>-->
-                               
-                                    <ul class="has_sub">
-                                <li>
-                                    <a href="<?=base_url('books')?>">Genre Books</a>
-                                </li>
-                                <li>
-                                    <a href="<?= base_url('abooks') ?>">Age Filter Books</a>
-                                </li>
-                        
-                            </ul>
-        
+                            
+								<a href="<?=base_url('books')?>" class="waves-effect"><i class="md md-pages"></i> <span>Books</span></span> </a>
+                            
+							</li>
+                            <li class="has_sub">
+                            
+								<a href="<?=base_url('review')?>" class="waves-effect"><i class="md md-pages"></i> <span>Reviews</span></span> </a>
+                            
 							</li>
 							
 							

@@ -6,10 +6,10 @@
 						<!-- Page-Title -->
 						<div class="row">
 							<div class="col-sm-12">
-								<h4 class="page-title">Books</h4>
+								<h4 class="page-title">Genre/Subject Books</h4>
 								<ol class="breadcrumb">	
 								<li>	
-								<a href="<?=base_url('author')?>">Books List</a>	
+								<a href="<?=base_url('author')?>">Genre/Subject Books List</a>	
 								</li>
 								<li class="active">	
 								Add		
@@ -28,24 +28,13 @@
                         			
                         			<div class="row">									
                         			<div class="col-lg-6">
-                                    <div class="form-group">
-										<label>Genre/Subject</label>
-										<select name="sub_id" id="sub_id" class="form-control">
-                                        <option value="">Select Subject/Genre</option>
-                                        <?php
-                                        if($get_sub['num']>0){
-                                        foreach($get_sub['data'] as $s){
-                                         ?>
-                                        <option value="<?=$s->id?>"><?=$s->sub_name?></option>
-                                         <?php
-                                           }
-
-                                            }
-                                               ?>
-                                        </select>
+										   
+									<div class="form-group">
+										<label>Title</label>
+										<input class="form-control" id="bk_name" name="bk_name">
 									</div>
 
-                                    <div class="form-group">
+									<div class="form-group">
 										<label>Authors</label>
 										<select name="author_id" id="author_id" class="form-control">
                                         <option value="" >Select Author</option>
@@ -61,12 +50,49 @@
                                                ?>
                                         
                                         </select>
+									</div>
+
+									<div class="form-group">
+										<label>Year Of Publication</label>
+										<input class="form-control" id="bk_year" name="bk_year">
 									</div>									
 		                                
-										   
+                                    <div class="form-group">
+										<label>Genre</label>
+										<select name="sub_id" id="sub_id" class="form-control" multiple>
+                                        <option value="">Select Genre</option>
+                                        <?php
+                                        if($get_sub['num']>0){
+                                        foreach($get_sub['data'] as $s){
+                                         ?>
+                                        <option value="<?=$s->id?>"><?=$s->sub_name?></option>
+                                         <?php
+                                           }
+
+                                            }
+                                               ?>
+                                        </select>
+									</div>
+
 									<div class="form-group">
-										<label>Book Name</label>
-										<input class="form-control" id="bk_name" name="bk_name">
+                                    <label>Age</label>
+										<select name="bk_age" id="bk_age" class="form-control required">
+                                        <option value="" >Select Age</option>
+                                        <option value="Old">Old people</option>
+                                        <option value="Adults">Adult</option>
+										<option value="children">Children</option>
+										
+										</select>
+										
+									</div>
+									<div class="form-group">
+										<label>Blurb</label>
+										<input class="form-control" id="bk_blurb" name="bk_blurb">
+									</div>
+
+									<div class="form-group">
+										<label>Tags</label>
+										<input class="form-control" id="bk_tags" name="bk_tags">
 									</div>
 									
 									<div class="form-group">

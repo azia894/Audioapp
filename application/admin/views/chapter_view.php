@@ -61,6 +61,7 @@
            
                 <th>Chapter Name</th>
                 <th>Audio</th>
+				<th>No.of times Listened</th>
                 <th>Created On</th>
                 <th>Status</th>
                 <th>Actions</th>
@@ -88,6 +89,7 @@
             <source src="<?=base_url('assets/chapterimages/'.$row->ch_audio)?>" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio></td>
+		  <td><?php echo $row->count; ?></td>
           <td><?php echo $row->created_on; ?></td>
                         
                         <td>

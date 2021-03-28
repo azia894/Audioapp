@@ -5,13 +5,13 @@
 			<!-- Page-Title -->
 			<div class="row">
 				<div class="col-sm-12">
-					<h4 class="page-title">Narrator  List</h4>
+					<h4 class="page-title">Review  List</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?=base_url('dashboard')?>">Dashboard</a>
 						</li>
 						<li class="active">	
-						Narrator List	
+						Review List	
 						</li>
 						
 						
@@ -20,8 +20,7 @@
 			</div>   
 			<div class="row">
 		<div class="col-sm-12">
-		<a style=" text-decoration: none; color:white" href="<?= base_url('narrator/add') ?>"><button  type="button" class="btn btn-primary"> Add Narrator </a></button>
-				<br></br>
+		
 		
 			<?php
 				if($this->session->flashdata('success')){
@@ -43,20 +42,20 @@
 			?>
 			<div class="card-box table-responsive">
 
-				<h4 class="m-t-0 header-title"><b>Narrator</b></h4>
+				<h4 class="m-t-0 header-title"><b>Review</b></h4>
 				
 				<p class="text-muted font-13 m-b-30">
 				   
 				</p>
 
-					<table class="table table-striped table-bordered dt-responsive nowrap" id="all-Narrator-tbl">
+					<table class="table table-striped table-bordered dt-responsive nowrap" id="all-Review-tbl">
 						<thead>
 							<tr>
 								<th data-class="expand">#</th>
-								<th>Narrator Name</th>															
-								<!--<th>Image</th>-->															
+								<th>Username</th>															
+								<th>Review</th>															
 								<th data-hide="phone">Created On</th>												
-								<th data-hide="phone,tablet">Actions</th>														
+								<!--<th data-hide="phone,tablet">Actions</th>-->														
 								<th data-hide="phone,tablet">Status</th>									
 							</tr>
 						</thead>

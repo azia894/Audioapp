@@ -10,9 +10,9 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="page-title">Audio App Admin Dashboard</h4>
+                                <h4 class="page-title">Dil Ki Awaz Admin Dashboard</h4>
                                
-                                <p class="text-muted page-title-alt">Welcome to Audio App Admin Panel !!!</p>
+                                <p class="text-muted page-title-alt">Welcome to Dil Ki Awaz Admin Panel !!!</p>
                             </div>
                         </div>
 

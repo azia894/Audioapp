@@ -39,24 +39,41 @@
 										<label>Narrator Name</label>
 										<input class="form-control" id="nar_name" name= "nar_name" value="<?=$record['nar_name']?>">
 									</div>
+
+									
+									<div class="form-group">
+										<label>Gender</label><br>
+										<input type="radio" name="gender" value="male" <?=($record['gender']=='male'?'checked':'')?> > Male<br>
+  <input type="radio" name="gender" value="female" <?=($record['gender']=='male'?'checked':'')?>> Female<br>
+  <input type="radio" name="gender" value="other"> Other
+									</div>
+
+									<div class="form-group">
+										<label>Country</label>
+										<input class="form-control" id="country" name= "country" value="<?=$record['country']?>">
+									</div>
+									<div class="form-group">
+										<label>city</label>
+										<input class="form-control" id="city" name= "city" value="<?=$record['city']?>">
+									</div>
 									
 									
 									<div class="form-group">
-										<label>Description </label>
+										<label>Notes </label>
 										<textarea class="form-control mathedit" placeholder="Enter Description" name="nar_desc" id="nar_desc"><?=$record['nar_desc']?></textarea>
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
 									
-									<div class="form-group">
+								<!--	<div class="form-group">
 										<label>Image</label>
 											<input  type="file" name="up" id="nar_img" accept="Image/png,image/jpeg,image/gif">   
-									</div>
+									</div>-->
 						
 								  
                                     <button type="submit" class="btn btn-primary">Submit</button>									
                         	</div>	
 							<br/>
-							<div class="col-lg-6">
+							<!--<div class="col-lg-6">
 										<?php
 												if($record['nar_img']!=""){
 											?>	
@@ -64,7 +81,7 @@
 											<?php			
 												}
 											?>
-									</div>
+									</div>-->
 							
                     	</div>
                       </div>

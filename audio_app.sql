@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2021 at 10:19 PM
+-- Generation Time: Mar 28, 2021 at 06:41 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.2.34
 
@@ -61,7 +61,7 @@ CREATE TABLE `aud_author` (
 --
 
 INSERT INTO `aud_author` (`id`, `aut_name`, `aut_desc`, `aut_img`, `dob`, `created_on`, `aut_status`) VALUES
-(1, 'Felix Weingartner', '<p>Paul Felix Weingartner, Edler von M&uuml;nzberg (2 June 1863 &ndash; 7 May 1942) was an Austrian conductor, composer and pianist.</p>', '1615836933.jpeg', '1834-1995', '2021-03-15 20:35:33', 1),
+(1, 'Felix Weingartner ', '<p>asdfasdfasfdafdadsfasdfasdfasdfasdfasasdasd</p>', '1616437798.jpg', '1834-1995', '2021-03-15 20:35:33', 1),
 (2, 'Apj Abdul Kalam', '<p>He played an important role in the second Pokhran nuclear test in 1998. He was also associated with India\'s space program and missile development program. Therefore, he is also called \"Missile Man\".</p>', '1615919478.jpg', '1983-2015', '2021-03-16 19:31:18', 1);
 
 -- --------------------------------------------------------
@@ -77,17 +77,26 @@ CREATE TABLE `aud_booktbl` (
   `bk_name` varchar(225) NOT NULL,
   `bk_desc` text NOT NULL,
   `bk_img` varchar(225) NOT NULL,
+  `bk_age` varchar(250) NOT NULL,
+  `bk_year` varchar(100) NOT NULL,
+  `bk_tags` varchar(250) NOT NULL,
+  `bk_blurb` varchar(150) NOT NULL,
   `created_on` datetime NOT NULL,
-  `bk_status` tinyint(1) NOT NULL
+  `bk_status` tinyint(1) NOT NULL,
+  `bk_type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `aud_booktbl`
 --
 
-INSERT INTO `aud_booktbl` (`bkid`, `author_id`, `sub_id`, `bk_name`, `bk_desc`, `bk_img`, `created_on`, `bk_status`) VALUES
-(1, 1, 1, 'stephen king', '<p>On writing well, which grew out of a course that William zinsser taught at Yale, has been praised for its sound advice, its clarity, and for the warmth of its style. It is a book for anybody who wants to learn how to write or who needs to do some writing to get</p>', '1615919295.jpg', '2021-03-16 19:28:15', 1),
-(3, 2, 2, 'Wings Of Fire', '<p>Every common man who by his sheer grit and hard work achieves success should share his story with the rest for they may find inspiration and strength to go on, in his story. The \'Wings of Fire\' is one such autobiography by visionary scientist Dr. APJ Abdul Kalam, who from very humble beginnings rose to be the President</p>', '1615919541.jpg', '2021-03-16 19:32:21', 1);
+INSERT INTO `aud_booktbl` (`bkid`, `author_id`, `sub_id`, `bk_name`, `bk_desc`, `bk_img`, `bk_age`, `bk_year`, `bk_tags`, `bk_blurb`, `created_on`, `bk_status`, `bk_type`) VALUES
+(1, 2, 2, 'stephen king', '<p>On writing well, which grew out of a course that William zinsser taught at Yale, has been praised for its sound advice, its clarity, and for the warmth of its style. It is a book for anybody who wants to learn how to write or who needs to do some writing to getasasdasdasdasdasdaasdasdasdasd</p>', '1615919295.jpg', 'Adults', '1564-1616', 'asdasda,asdasdasd', 'asdasd asdasd', '2021-03-16 19:28:15', 1, 1),
+(3, 2, 2, 'Wings Of Fire', '<p>Every common man who by his sheer grit and hard work achieves success should share his story with the rest for they may find inspiration and strength to go on, in his story. The \'Wings of Fire\' is one such autobiography by visionary scientist Dr. APJ Abdul Kalam, who from very humble beginnings rose to be the President</p>', '1615919541.jpg', '', '', '', '', '2021-03-16 19:32:21', 1, 2),
+(6, 2, 0, 'books details', '<p>asdasfdasfdasdfasdfasdfasdfasdfasdfaSDASDASDASD</p>', '1616528946.jpeg', 'Old', '', '', '', '2021-03-23 20:49:06', 1, 2),
+(7, 1, 2, 'sdcsadfas', '<p>adfasdfasfdasdf</p>', '1616827265.jpeg', 'Old', 'sdfasfd', 'asdfasdf dfasdfsa', 'segfsdfg', '2021-03-27 07:41:05', 1, 0),
+(8, 1, 2, 'Winter\'s Tale', '<p>ASdfASDadsADSadASDdfasdfsdfgs</p>', '1616827955.jpg', 'Adults', '1564-1616', 'test,1234,test,456', 'test this qweq', '2021-03-27 07:52:35', 1, 0),
+(9, 1, 2, 'asdasdasd', '<p>asdasdasdadsadadasd</p>', '1616828038.jpg', 'Adults', '1564-1616', 'asda,asdasd,asdasd', 'asdasd', '2021-03-27 07:53:58', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -102,6 +111,7 @@ CREATE TABLE `aud_chapter` (
   `ch_name` varchar(225) NOT NULL,
   `ch_audio` varchar(225) NOT NULL,
   `created_on` datetime NOT NULL,
+  `count` int(11) NOT NULL,
   `ch_status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -109,11 +119,11 @@ CREATE TABLE `aud_chapter` (
 -- Dumping data for table `aud_chapter`
 --
 
-INSERT INTO `aud_chapter` (`id`, `bid`, `nar_id`, `ch_name`, `ch_audio`, `created_on`, `ch_status`) VALUES
-(1, 1, 1, 'test this', '1615924006.mp3', '2021-03-16 20:46:46', 1),
-(2, 1, 1, 'chapter 2', '1615965803.mp3', '2021-03-17 08:23:23', 1),
-(3, 3, 1, 'chapter3', '1615966036.mp3', '2021-03-17 08:27:16', 1),
-(4, 3, 1, 'chapter 4', '1615966120.mp3', '2021-03-17 08:28:40', 1);
+INSERT INTO `aud_chapter` (`id`, `bid`, `nar_id`, `ch_name`, `ch_audio`, `created_on`, `count`, `ch_status`) VALUES
+(1, 1, 1, 'test this ', '1615924006.mp3', '2021-03-16 20:46:46', 0, 1),
+(2, 1, 1, 'chapter 2', '1615965803.mp3', '2021-03-17 08:23:23', 0, 1),
+(3, 3, 1, 'chapter3', '1615966036.mp3', '2021-03-17 08:27:16', 0, 1),
+(4, 3, 1, 'chapter 4', '1615966120.mp3', '2021-03-17 08:28:40', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -124,6 +134,9 @@ INSERT INTO `aud_chapter` (`id`, `bid`, `nar_id`, `ch_name`, `ch_audio`, `create
 CREATE TABLE `aud_narrator` (
   `id` int(10) NOT NULL,
   `nar_name` varchar(225) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
   `nar_desc` text NOT NULL,
   `nar_img` varchar(225) NOT NULL,
   `created_on` datetime NOT NULL,
@@ -134,8 +147,30 @@ CREATE TABLE `aud_narrator` (
 -- Dumping data for table `aud_narrator`
 --
 
-INSERT INTO `aud_narrator` (`id`, `nar_name`, `nar_desc`, `nar_img`, `created_on`, `nar_status`) VALUES
-(1, 'test for the narrator', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.&nbsp;</p>', '1615914191.png', '2021-03-16 18:03:11', 1);
+INSERT INTO `aud_narrator` (`id`, `nar_name`, `gender`, `country`, `city`, `nar_desc`, `nar_img`, `created_on`, `nar_status`) VALUES
+(1, 'test for the narrator', 'female', 'india', 'hyderabad', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\\\\\\\\\\\\\\\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. asdasdadsasdasd</p>', '1616438722.png', '2021-03-16 18:03:11', 1),
+(2, 'narrator name', 'female', 'india', 'hyderabad', '<p>asdasdasdasdasdadsasdasdasdasd</p>', '', '2021-03-28 14:12:01', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aud_review`
+--
+
+CREATE TABLE `aud_review` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(250) NOT NULL,
+  `review` text NOT NULL,
+  `created_on` date NOT NULL,
+  `status` enum('0','1') NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `aud_review`
+--
+
+INSERT INTO `aud_review` (`id`, `uid`, `review`, `created_on`, `status`) VALUES
+(2, 'test', 'orem Ipsum is simply dummy ', '2021-03-23', '1');
 
 -- --------------------------------------------------------
 
@@ -146,7 +181,6 @@ INSERT INTO `aud_narrator` (`id`, `nar_name`, `nar_desc`, `nar_img`, `created_on
 CREATE TABLE `aud_subject` (
   `id` int(11) NOT NULL,
   `sub_name` varchar(225) NOT NULL,
-  `age` varchar(250) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `created_on` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -155,13 +189,19 @@ CREATE TABLE `aud_subject` (
 -- Dumping data for table `aud_subject`
 --
 
-INSERT INTO `aud_subject` (`id`, `sub_name`, `age`, `status`, `created_on`) VALUES
-(1, 'asdasdasd', '', 1, '2021-03-15 18:51:32'),
-(2, 'Childrens Fiction', '', 1, '2021-03-15 18:52:16'),
-(3, 'Children\\\'s Fiction', '', 1, '2021-03-15 18:52:46'),
-(5, 'test this', '', 1, '2021-03-15 19:04:14'),
-(6, 'test the error', '', 1, '2021-03-15 19:31:44'),
-(8, 'qwerwerwer', '', 1, '2021-03-15 19:32:25');
+INSERT INTO `aud_subject` (`id`, `sub_name`, `status`, `created_on`) VALUES
+(1, 'Short stories', 1, '2021-03-28 14:34:04'),
+(2, 'Novel', 1, '2021-03-28 14:34:38'),
+(3, 'History', 1, '2021-03-28 14:34:51'),
+(4, 'Religious', 1, '2021-03-28 14:35:01'),
+(5, 'Non-fiction', 1, '2021-03-28 14:35:12'),
+(6, 'Fiction', 1, '2021-03-28 14:35:23'),
+(7, 'Adventure', 1, '2021-03-28 14:35:38'),
+(8, 'Biography', 1, '2021-03-28 14:35:53'),
+(9, 'Humour', 1, '2021-03-28 14:36:03'),
+(10, 'Society', 1, '2021-03-28 14:36:15'),
+(11, 'Politics', 1, '2021-03-28 14:36:27'),
+(12, 'Philosophy', 1, '2021-03-28 14:36:37');
 
 --
 -- Indexes for dumped tables
@@ -198,6 +238,12 @@ ALTER TABLE `aud_narrator`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `aud_review`
+--
+ALTER TABLE `aud_review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `aud_subject`
 --
 ALTER TABLE `aud_subject`
@@ -223,7 +269,7 @@ ALTER TABLE `aud_author`
 -- AUTO_INCREMENT for table `aud_booktbl`
 --
 ALTER TABLE `aud_booktbl`
-  MODIFY `bkid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `bkid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `aud_chapter`
@@ -235,13 +281,19 @@ ALTER TABLE `aud_chapter`
 -- AUTO_INCREMENT for table `aud_narrator`
 --
 ALTER TABLE `aud_narrator`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `aud_review`
+--
+ALTER TABLE `aud_review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `aud_subject`
 --
 ALTER TABLE `aud_subject`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -80,7 +80,7 @@ class Subject extends CI_Controller{
 			}else{	
 			$insert_data = array(	
 				'sub_name'=>$this->input->post('sub_name'),
-				'age'=>$this->input->post('age'),
+				
 				'created_on'=>date('Y-m-d H:i:s'),
 				'status'=>1,						
 			);

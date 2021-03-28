@@ -58,13 +58,18 @@ class Books extends CI_Controller{
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			  <strong>Please enter  description</strong>
 			</div>' ;
-			}else{	
+			}else{
+				$bk_tags = $this->input->post('bk_tags');
+				$value = str_replace(" ", ',', $bk_tags);
 			$insert_data = array(
+				'bk_age'=>$this->input->post('bk_age'),	
                 'author_id'=>$this->input->post('author_id'),
                 'sub_id'=>$this->input->post('sub_id'),	
 				'bk_name'=>$this->input->post('bk_name'),
 				'bk_desc'=>$this->input->post('bk_desc'),
-				'bk_type'=>1,
+				'bk_year'=>$this->input->post('bk_year'),
+				'bk_blurb'=>$this->input->post('bk_blurb'),
+				'bk_tags'=>$value,
 				'bk_status'=>1,	
                 'created_on'=>date('Y-m-d H:i:s'),							
 			);
@@ -108,7 +113,7 @@ class Books extends CI_Controller{
 		$column = array('bkid','bk_name','created_on','bk_status','bk_img');
 		$order = array('bkid' => 'desc');
 		$join = array();
-		$where="bkid!='' and bk_type='1'";
+		$where="bkid!=''";
 		$tb_name = 'aud_booktbl';
 		$list = $this->datatbl->get_datatables($column,$order,$tb_name,$join,$where);
 		$data = array();
@@ -176,15 +181,21 @@ class Books extends CI_Controller{
 			   <strong>Please enter description</strong>
 			 </div>' ;
 			 }else{
+				$bk_tags = $this->input->post('bk_tags');
+				$value = str_replace(" ", ',', $bk_tags);
 				  $update_data = array();
 				  $update_data = array(
-					 'author_id'=>addslashes($this->input->post('author_id')),
-					 'sub_id'=>addslashes($this->input->post('sub_id')),
-					 'bk_desc'=>addslashes($this->input->post('bk_desc')),
+					 'author_id'=>$this->input->post('author_id'),
+					 'sub_id'=>$this->input->post('sub_id'),
+					 'bk_desc'=>$this->input->post('bk_desc'),
+					 'bk_age'=>$this->input->post('bk_age'),
+					 'bk_year'=>$this->input->post('bk_year'),
+				'bk_blurb'=>$this->input->post('bk_blurb'),
+				'bk_tags'=>$value,	
 									
 					 );
 				   if($res['num']==0){
-					 $update_data['bk_name'] = addslashes($this->input->post('bk_name')); 
+					 $update_data['bk_name'] = $this->input->post('bk_name'); 
 				  }
 				 if(!empty($_FILES) && $_FILES['up']['name']!=""){		
 						 $fileTypes = array('jpeg','jpg','png','gif');

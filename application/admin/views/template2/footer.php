@@ -95,12 +95,12 @@
 				},
 				],
 			  });
-			   table = $('#all-orders-tbl').DataTable({ 
+			   table = $('#all-Review-tbl').DataTable({ 
 				"processing": true, //Feature control the processing indicator.
 				"serverSide": true, //Feature control DataTables' server-side processing mode.
 				// Load data for the table's content from an Ajax source
 				"ajax": {
-					"url": "<?php echo site_url('orders/getOrdersAll')?>",
+					"url": "<?php echo site_url('review/getReviewAll')?>",
 					"type": "POST"
 				},
 				//Set column definition initialisation properties.

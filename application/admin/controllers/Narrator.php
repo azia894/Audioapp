@@ -57,6 +57,9 @@ class Narrator extends CI_Controller{
 			}else{	
 			$insert_data = array(	
 				'nar_name'=>$this->input->post('nar_name'),
+				'gender'=>$this->input->post('gender'),
+				'country'=>$this->input->post('country'),
+				'city'=>$this->input->post('city'),
 				'nar_desc'=>$this->input->post('nar_desc'),
 				'nar_status'=>1,	
                 'created_on'=>date('Y-m-d H:i:s'),							
@@ -114,7 +117,7 @@ class Narrator extends CI_Controller{
 			$row = array();
 			$row[] = $req->id;
 			$row[] = $req->nar_name;
-			$row[] = $img;
+			//$row[] = $img;
 			$row[] = $req->created_on;
 			$row[] = $edit;
 			//$row[] = $edit.'&nbsp;'.'<a href="'.base_url('narrator/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
@@ -153,13 +156,7 @@ class Narrator extends CI_Controller{
 		 $bd = $this->narrator_model->getDetails($id);
 		 if($bd['num']==1){			
 		 $res = $this->narrator_model->getDetailsByName($this->input->post('nar_name'));
-		 if($res['num']>0){
-			$msg='<div class="alert alert-warning">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>"'.$this->input->post('nar_name').'" Narrator already exists</strong>
-		  </div>' ;
-
-		 }else if($this->input->post('nar_name')=='' ){
+		 if($this->input->post('nar_name')=='' ){
 			   $msg='<div class="alert alert-warning">
 			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			   <strong>Please enter Author Name</strong>
@@ -172,6 +169,9 @@ class Narrator extends CI_Controller{
 			 }else{
 				  $update_data = array();
 				  $update_data = array(
+					'gender'=>addslashes($this->input->post('gender')),
+					'country'=>addslashes($this->input->post('country')),
+					'city'=>addslashes($this->input->post('city')),
 					 'nar_desc'=>addslashes($this->input->post('nar_desc')),
 									
 					 );
