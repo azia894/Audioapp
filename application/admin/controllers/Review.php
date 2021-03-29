@@ -16,7 +16,7 @@ class Review extends CI_Controller{
 	 }
 	 
 	 function getReviewAll(){
-		$column = array('id','uid','review','created_on','status');
+		$column = array('id','uid','bid','review','created_on','status');
 		$order = array('id' => 'desc');
 		$join = array();
 		$where="id!=''";
@@ -24,12 +24,14 @@ class Review extends CI_Controller{
 		$list = $this->datatbl->get_datatables($column,$order,$tb_name,$join,$where);
 		$data = array();
 		$no = $_POST['start'];
+		$i=1;
 		foreach ($list as $req) {
 			
 			$status = ($req->status==1)?'<a href="'.base_url('review/deactive/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('review/active/'.$req->id).'"<span class="label label-pink">In-Active</span>';
 			$no++;
 			$row = array();
-			$row[] = $req->id;
+			$row[] = $i;
+			$row[] = $req->bid;
             $row[] = $req->uid;
 			$row[] = $req->review;
 			
@@ -38,6 +40,7 @@ class Review extends CI_Controller{
 			
 			$row[] = $status;
 			$data[] = $row;
+			$i++;
 		}
 		$output = array(
 						"draw" => $_POST['draw'],

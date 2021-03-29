@@ -13,7 +13,7 @@
 										<a href="<?=base_url('dashboard')?>">Dashboard</a>
 									</li>	
 									<li>	
-										<a href="<?=base_url('books')?>">Genre/Subject Books List</a>	
+										<a href="<?=base_url('books')?>">Books List</a>	
 									</li>
 								<li class="active">
 								Edit		
@@ -29,7 +29,7 @@
 								 <form id="edit_books_form" role="form" action="<?=base_url("books/modify/".$record['bkid'])?>"method="post" enctype="multipart/form-data">
                         		
                         		<div class="card-box">
-                        			<h4 class="m-t-0 header-title"><b>Edit Genre/Subject Books</b></h4></br></br>
+                        			<h4 class="m-t-0 header-title"><b>Edit Books</b></h4></br></br>
                         			
                         			<div class="row">									
                         			<div class="col-lg-6">
@@ -87,9 +87,9 @@
 										<label>Age</label>
 										<select name="bk_age" id="bk_age" class="form-control required">
                                         <option value="" >Select Age</option>
-                                        <option value="Old">Old people</option>
-                                        <option value="Adults">Adult</option>
-										<option value="children">Children</option>
+                                        <option <?=($record['bk_age']=="Old"?'selected':'')?> value="Old">Old people</option>
+                                        <option <?=($record['bk_age']=="Adults"?'selected':'')?> value="Adults">Adult</option>
+										<option <?=($record['bk_age']=="children"?'selected':'')?> value="children">Children</option>
 										
 										</select>
 									</div>

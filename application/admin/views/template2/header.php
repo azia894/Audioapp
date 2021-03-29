@@ -37,6 +37,7 @@
 		<link href="<?=base_url('assets')?>/css/prism.css" rel="stylesheet">
 		<link href="<?=base_url('assets')?>/css/chosen.css" rel="stylesheet">
 		<link href="<?=base_url('assets')?>/css/uploadfile.css" rel="stylesheet">
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
 	
 
@@ -117,32 +118,32 @@
 
                  <li class="text-muted menu-title">Navigation</li>
 							<li class="has_sub">
-								<a href="<?=base_url("dashboard")?>" class="waves-effect"><i class="ti-home"></i> <span>Dashboard </span> <!--span class="menu-arrow"></span--></a>
+								<a href="<?=base_url("dashboard")?>" class="waves-effect <?php if($this->uri->segment(1) == 'dashboard') {echo 'active';} else {echo 'noactive';} ?>"><i class="ti-home"></i> <span>Dashboard </span> <!--span class="menu-arrow"></span--></a>
 							</li>
 							
 							<li class="has_sub">
-								<a href="<?=base_url('subject')?>" class="waves-effect"><i class="md md-add-to-photos"></i> <span> Genre/Subject</span></span> </a>
+								<a href="<?=base_url('subject')?>" class="waves-effect <?php if($this->uri->segment(1) == 'subject') {echo 'active';} else {echo 'noactive';} ?>"><i class="md md-add-to-photos"></i> <span> Genre/Subject</span></span> </a>
                                 
 							</li>
 							
 											
 							
 							<li class="has_sub">
-								<a href="<?=base_url('author')?>" class="waves-effect"><i class="md md-pages"></i> <span>Author</span></span> </a>
+								<a href="<?=base_url('author')?>" class="waves-effect <?php if($this->uri->segment(1) == 'author') {echo 'active';} else {echo 'noactive';} ?>"><i class="md md-people"></i> <span>Author</span></span> </a>
 							</li>
 
                             <li class="has_sub">
-								<a href="<?=base_url('narrator')?>" class="waves-effect"><i class="md md-pages"></i> <span>Narrator</span></span> </a>
+								<a href="<?=base_url('narrator')?>" class="waves-effect <?php if($this->uri->segment(1) == 'narrator') {echo 'active';} else {echo 'noactive';} ?>"><i class="md md-person"></i> <span>Narrator</span></span> </a>
 							</li>
 
                             <li class="has_sub">
                             
-								<a href="<?=base_url('books')?>" class="waves-effect"><i class="md md-pages"></i> <span>Books</span></span> </a>
+								<a href="<?=base_url('books')?>" class="waves-effect <?php if($this->uri->segment(1) == 'books') {echo 'active';} else {echo 'noactive';} ?>"><i class="icon-book-open"></i> <span>Books</span></span> </a>
                             
 							</li>
                             <li class="has_sub">
                             
-								<a href="<?=base_url('review')?>" class="waves-effect"><i class="md md-pages"></i> <span>Reviews</span></span> </a>
+								<a href="<?=base_url('review')?>" class="waves-effect <?php if($this->uri->segment(1) == 'review') {echo 'active';} else {echo 'noactive';} ?>"><i class="ti ti-clipboard"></i><span>Reviews</span></span> </a>
                             
 							</li>
 							

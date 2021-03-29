@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2021 at 06:41 PM
+-- Generation Time: Mar 29, 2021 at 06:40 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.2.34
 
@@ -81,6 +81,7 @@ CREATE TABLE `aud_booktbl` (
   `bk_year` varchar(100) NOT NULL,
   `bk_tags` varchar(250) NOT NULL,
   `bk_blurb` varchar(150) NOT NULL,
+  `bk_rating` int(11) NOT NULL,
   `created_on` datetime NOT NULL,
   `bk_status` tinyint(1) NOT NULL,
   `bk_type` int(11) NOT NULL
@@ -90,13 +91,13 @@ CREATE TABLE `aud_booktbl` (
 -- Dumping data for table `aud_booktbl`
 --
 
-INSERT INTO `aud_booktbl` (`bkid`, `author_id`, `sub_id`, `bk_name`, `bk_desc`, `bk_img`, `bk_age`, `bk_year`, `bk_tags`, `bk_blurb`, `created_on`, `bk_status`, `bk_type`) VALUES
-(1, 2, 2, 'stephen king', '<p>On writing well, which grew out of a course that William zinsser taught at Yale, has been praised for its sound advice, its clarity, and for the warmth of its style. It is a book for anybody who wants to learn how to write or who needs to do some writing to getasasdasdasdasdasdaasdasdasdasd</p>', '1615919295.jpg', 'Adults', '1564-1616', 'asdasda,asdasdasd', 'asdasd asdasd', '2021-03-16 19:28:15', 1, 1),
-(3, 2, 2, 'Wings Of Fire', '<p>Every common man who by his sheer grit and hard work achieves success should share his story with the rest for they may find inspiration and strength to go on, in his story. The \'Wings of Fire\' is one such autobiography by visionary scientist Dr. APJ Abdul Kalam, who from very humble beginnings rose to be the President</p>', '1615919541.jpg', '', '', '', '', '2021-03-16 19:32:21', 1, 2),
-(6, 2, 0, 'books details', '<p>asdasfdasfdasdfasdfasdfasdfasdfasdfaSDASDASDASD</p>', '1616528946.jpeg', 'Old', '', '', '', '2021-03-23 20:49:06', 1, 2),
-(7, 1, 2, 'sdcsadfas', '<p>adfasdfasfdasdf</p>', '1616827265.jpeg', 'Old', 'sdfasfd', 'asdfasdf dfasdfsa', 'segfsdfg', '2021-03-27 07:41:05', 1, 0),
-(8, 1, 2, 'Winter\'s Tale', '<p>ASdfASDadsADSadASDdfasdfsdfgs</p>', '1616827955.jpg', 'Adults', '1564-1616', 'test,1234,test,456', 'test this qweq', '2021-03-27 07:52:35', 1, 0),
-(9, 1, 2, 'asdasdasd', '<p>asdasdasdadsadadasd</p>', '1616828038.jpg', 'Adults', '1564-1616', 'asda,asdasd,asdasd', 'asdasd', '2021-03-27 07:53:58', 1, 0);
+INSERT INTO `aud_booktbl` (`bkid`, `author_id`, `sub_id`, `bk_name`, `bk_desc`, `bk_img`, `bk_age`, `bk_year`, `bk_tags`, `bk_blurb`, `bk_rating`, `created_on`, `bk_status`, `bk_type`) VALUES
+(1, 2, 2, 'stephen king', '<p>On writing well, which grew out of a course that William zinsser taught at Yale, has been praised for its sound advice, its clarity, and for the warmth of its style. It is a book for anybody who wants to learn how to write or who needs to do some writing to getasasdasdasdasdasdaasdasdasdasd</p>', '1615919295.jpg', 'Adults', '1564-1616', 'asdasda,asdasdasd', 'asdasd asdasd', 0, '2021-03-16 19:28:15', 1, 1),
+(3, 2, 2, 'Wings Of Fire', '<p>Every common man who by his sheer grit and hard work achieves success should share his story with the rest for they may find inspiration and strength to go on, in his story. The \'Wings of Fire\' is one such autobiography by visionary scientist Dr. APJ Abdul Kalam, who from very humble beginnings rose to be the President</p>', '1615919541.jpg', '', '', '', '', 0, '2021-03-16 19:32:21', 1, 2),
+(6, 2, 0, 'books details', '<p>asdasfdasfdasdfasdfasdfasdfasdfasdfaSDASDASDASD</p>', '1616528946.jpeg', 'Old', '', '', '', 0, '2021-03-23 20:49:06', 1, 2),
+(7, 1, 2, 'sdcsadfas', '<p>adfasdfasfdasdf</p>', '1616827265.jpeg', 'Old', 'sdfasfd', 'asdfasdf,dfasdfsa', 'segfsdfg', 0, '2021-03-27 07:41:05', 1, 0),
+(8, 1, 2, 'Winter\'s Tale', '<p>ASdfASDadsADSadASDdfasdfsdfgs</p>', '1616827955.jpg', 'Adults', '1564-1616', 'test,1234,test,456', 'test this qweq', 0, '2021-03-27 07:52:35', 1, 0),
+(9, 1, 2, 'asdasdasd', '<p>asdasdasdadsadadasd</p>', '1616828038.jpg', 'Adults', '1564-1616', 'asda,asdasd,asdasd', 'asdasd', 0, '2021-03-27 07:53:58', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -159,6 +160,7 @@ INSERT INTO `aud_narrator` (`id`, `nar_name`, `gender`, `country`, `city`, `nar_
 
 CREATE TABLE `aud_review` (
   `id` int(11) NOT NULL,
+  `bid` varchar(150) NOT NULL,
   `uid` varchar(250) NOT NULL,
   `review` text NOT NULL,
   `created_on` date NOT NULL,
@@ -169,8 +171,8 @@ CREATE TABLE `aud_review` (
 -- Dumping data for table `aud_review`
 --
 
-INSERT INTO `aud_review` (`id`, `uid`, `review`, `created_on`, `status`) VALUES
-(2, 'test', 'orem Ipsum is simply dummy ', '2021-03-23', '1');
+INSERT INTO `aud_review` (`id`, `bid`, `uid`, `review`, `created_on`, `status`) VALUES
+(2, 'Wings Of Fire', 'test', 'orem Ipsum is simply dummy ', '2021-03-23', '1');
 
 -- --------------------------------------------------------
 

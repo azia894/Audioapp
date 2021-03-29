@@ -110,7 +110,7 @@ class Books extends CI_Controller{
 	}
 	
 	 function getBooksAll(){
-		$column = array('bkid','bk_name','created_on','bk_status','bk_img');
+		$column = array('bkid','bk_name','bk_rating','created_on','bk_status','bk_img');
 		$order = array('bkid' => 'desc');
 		$join = array();
 		$where="bkid!=''";
@@ -120,6 +120,7 @@ class Books extends CI_Controller{
 		$no = $_POST['start'];
 		$i=1;
 		foreach ($list as $req) {
+			$rating = $req->bk_rating.'&nbsp;&nbsp;out of 5';
 			$edit='&nbsp;&nbsp;<a href="'.base_url('books/edit/'.$req->bkid).'" class="label label-info" md-ink-ripple="">Edit</a>';
             $ch='<a href="'.base_url('chapter/list/'.$req->bkid).'"<button type="button" class="btn btn-primary">View Chapters</button>';
 			$img='<img src="'.base_url('assets/bookimages/'.$req->bk_img).'" alt="image" class="img-responsive thumb-md">';
@@ -130,6 +131,7 @@ class Books extends CI_Controller{
 			$row[] = $req->bk_name;
             $row[] = $ch;
 			$row[] = $img;
+			$row[] = $rating;
 			$row[] = $req->created_on;
 			$row[] = $edit;
 			//$row[] = $edit.'&nbsp;'.'<a href="'.base_url('books/del/'.$req->bkid).'" class="label label-danger" md-ink-ripple="">Delete</a>';

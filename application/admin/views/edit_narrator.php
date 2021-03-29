@@ -43,9 +43,9 @@
 									
 									<div class="form-group">
 										<label>Gender</label><br>
-										<input type="radio" name="gender" value="male" <?=($record['gender']=='male'?'checked':'')?> > Male<br>
-  <input type="radio" name="gender" value="female" <?=($record['gender']=='male'?'checked':'')?>> Female<br>
-  <input type="radio" name="gender" value="other"> Other
+										<input type="radio" name="gender" value="male" <?=($record['gender']=="male"?'checked':'')?> > Male<br>
+                                        <input type="radio" name="gender" value="female" <?=($record['gender']=="female"?'checked':'')?>> Female<br>
+                                        <input type="radio" name="gender" <?=($record['gender']=="other"?'checked':'')?> value="other"> Other
 									</div>
 
 									<div class="form-group">

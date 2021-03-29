@@ -5,13 +5,13 @@
 			<!-- Page-Title -->
 			<div class="row">
 				<div class="col-sm-12">
-					<h4 class="page-title">Genre/Subject Books  List</h4>
+					<h4 class="page-title">Books  List</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?=base_url('dashboard')?>">Dashboard</a>
 						</li>
 						<li class="active">	
-						Genre/Subject Books List	
+					 Books List	
 						</li>
 						
 						
@@ -27,7 +27,7 @@
 				if($this->session->flashdata('success')){
 			?>
 				<div class="alert alert-success alert-dismissible fade in" role="alert">
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">�</span></button>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">X</span></button>
 				  <strong><?=$this->session->flashdata('success')?></strong>
 				</div>
 			<?php
@@ -35,7 +35,7 @@
 				if($this->session->flashdata('invalid')){
 			?>
 				<div class="alert alert-danger alert-dismissible fade in" role="alert">
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">�</span></button>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">X</span></button>
 				  <strong><?=$this->session->flashdata('invalid')?></strong>
 				</div>
 			<?php
@@ -56,6 +56,7 @@
 								<th>Books Name</th>
                                 <th>Chapters</th>																
 								<th>Image</th>															
+								<th data-hide="phone">Rating</th>
 								<th data-hide="phone">Created On</th>												
 								<th data-hide="phone,tablet">Actions</th>														
 								<th data-hide="phone,tablet">Status</th>									

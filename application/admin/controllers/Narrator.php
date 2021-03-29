@@ -169,14 +169,14 @@ class Narrator extends CI_Controller{
 			 }else{
 				  $update_data = array();
 				  $update_data = array(
-					'gender'=>addslashes($this->input->post('gender')),
-					'country'=>addslashes($this->input->post('country')),
-					'city'=>addslashes($this->input->post('city')),
-					 'nar_desc'=>addslashes($this->input->post('nar_desc')),
+					'gender'=>$this->input->post('gender'),
+					'country'=>$this->input->post('country'),
+					'city'=>$this->input->post('city'),
+					 'nar_desc'=>$this->input->post('nar_desc'),
 									
 					 );
 				   if($res['num']==0){
-					 $update_data['nar_name'] = addslashes($this->input->post('nar_name')); 
+					 $update_data['nar_name'] = $this->input->post('nar_name'); 
 				  }
 				 if(!empty($_FILES) && $_FILES['up']['name']!=""){		
 						 $fileTypes = array('jpeg','jpg','png','gif');

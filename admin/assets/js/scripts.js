@@ -502,20 +502,40 @@ $(document).ready(function(){
 
 	$("#edit_books_form").validate({
 		rules:{
+			'sub_id':{
+				required:true
+			},
+			'author_id':{
+				required:true
+			},
 			'bk_name':{
 				required:true
 			},
 			'bk_desc':{
 				required:true
 			},
-			'bk_img':{
+			'up':{
+				required:true
+			},
+			'bk_year':{
+				required:true
+			},
+			'bk_blurb':{
+				required:true
+			},
+			'bk_tags':{
 				required:true
 			},
 		},
 		messages:{
-			bk_name:'Please enter book Name',
-			bk_desc:'Please enter description',
-			bk_img:'Please select image',
+			sub_id:'Please select Subject/Genre',
+			author_id:'Please select Author',
+			bk_name:'Please Enter Name',
+			bk_desc:'Please Enter Description',
+			up:'Please Select Image',
+			bk_year:'Please Enter Year of Publication',
+			bk_blurb:'Please Enter Blurb',
+			bk_tags:'Please Enter Tags',
 		},
 		submitHandler:function(form){
 			debugger;	

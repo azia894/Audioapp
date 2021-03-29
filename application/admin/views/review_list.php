@@ -52,6 +52,7 @@
 						<thead>
 							<tr>
 								<th data-class="expand">#</th>
+								<th>Book Name</th>
 								<th>Username</th>															
 								<th>Review</th>															
 								<th data-hide="phone">Created On</th>												
