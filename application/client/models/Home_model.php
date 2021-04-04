@@ -5,8 +5,37 @@ class home_model extends CI_Model{
 	private $tbl_name='aud_booktbl';
     private $tbl_name2='aud_author';
 	private $tbl_name3='aud_chapter';
+
+	private function _get_users_data(){ 
+
+        $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob');
+        $this->db->join('aud_author as au','bt.author_id=au.id');
+        $this->db->from("$this->tbl_name as bt"); 
+
+    }
 	
-	
+	public function get_users($limit, $start){ 
+
+        $this->_get_users_data(); 
+
+        $this->db->limit($limit, $start); 
+
+        $query = $this->db->get(); 
+
+        return $query->result_array(); 
+
+    }
+
+	public function count_all_users(){ 
+
+        $this->_get_users_data(); 
+
+        $query = $this->db->count_all_results(); 
+
+        return $query; 
+
+    }
+
 	function selectAll(){
         $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob');
 		

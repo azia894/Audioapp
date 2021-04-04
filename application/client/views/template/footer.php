@@ -1,8 +1,5 @@
 
-<div class="container scroll t-center mBottom50">
-		
-		</div>
-	   <footer id="footer" class="footer bg-black-222" style="width=100%!important">
+	   <footer id="footer" class="footer bg-black-222" style="width=300px">
 		
 			<div class="row">
 			  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
@@ -11,9 +8,10 @@
 			  
 		</div>
 	  </footer>
+<script src="<?php echo base_url(); ?>assets/js/jquery-2.2.4.min.js"></script>
 	
 	
-	<script src="<?=base_url('assets')?>/js/custom.js"></script>
+	
 	<script src="<?=base_url('assets')?>/js/npm.js"></script>
 	
 	</body>

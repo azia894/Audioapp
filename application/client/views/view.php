@@ -1,39 +1,4 @@
-<section class="divider">
-<div class="container">
-  <div class="row">
-  <div class="col-md-12 col-lg-12">
- 
-	
-	  <h3>Browse the Catalog</h3>
-		
-            <div role="tabpanel" class="tab-pane fade active in" id="howwecan_1">
-				
-				
-				<div>
-					<div class="row" style="margin-top:30px;">
-					<div  class="col-xs-12 "  style="margin-top: -50px;">
-						<div class="widget">
-						<div class="services-list">
-							<ul class="list list-border angle-double-right" style="width:100%;">
-								<li>
-									<a href="#howwecan_10" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Authors</span></a>
-								</li>
-								<li>
-									<a href="#howwecan_11" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Title</span></a>
-								</li>
-								<li>
-									<a href="#howwecan_12" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Genre/Subject</span></a>
-								</li>
-								
-							</ul>
-						</div>
-						</div>
-					</div>
-					</div>
-                    <br>
-                    
-				   <div class="row">
-				   <div class="tab-content">
+<div class="row"><div class="tab-content">
 					
 					<div class="page book-page">
 
