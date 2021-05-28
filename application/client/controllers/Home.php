@@ -13,9 +13,9 @@ class Home extends CI_Controller {
 
         $config['total_rows'] = $this->home_model->count_all_users();        
 
-        $config['per_page'] = 2;        
+        $config['per_page'] = 10;        
 
-        $config['uri_segment'] = 3;        
+        $config['uri_segment'] = 3;
 
         $config['full_tag_open'] = '<ul class="pagination">';        
 

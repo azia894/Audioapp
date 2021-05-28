@@ -33,21 +33,20 @@
 <body class="">
 <div id="wrapper" class="clearfix">
   <header id="header" class="header">
-    <div class="header-top bg-theme-color-2 sm-text-center">
+    <!-- <div class="header-top bg-theme-color-2 sm-text-center">
       <div class="container">
         <div class="row">
           <div class="col-md-9 col-lg-9 pt-10">
             <div class="widget no-border m-0">
               <ul class="list-inline">
-                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white hovernone"></i> <a class="text-white hovernone">+91  9030607500 , 040-66881777</a> </li>
-              
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white hovernone"></i> <a class="text-white hovernone">+91  9030607500 , 040-66881777</a> </li>              
               </ul>
             </div>
           </div>
           
         </div>
       </div>
-    </div>
+    </div> -->
    
 		<div class="container">
 			<nav class="navbar ownavigation">
@@ -58,7 +57,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="menuzord-brand pull-left flip" href="index.html" style="margin-top: 26px;">
+					<a class="menuzord-brand pull-left flip" href="index.php" style="margin-top: 26px;">
 					 DIL KI AWAZ
 					
                       
@@ -72,8 +71,8 @@
 						</li>
                     
 						
-						<li><a href="#" title="New Batches">Help</a></li>
-						<li><a href="#" title="Contact Us">Contact Us</a></li>
+						<!-- <li><a href="#" title="New Batches">Help</a></li>
+						<li><a href="#" title="Contact Us">Contact Us</a></li> -->
                     
 					</ul>
 				</div>
@@ -93,7 +92,7 @@
             <div class="col-md-12">
               <h2 class="title text-white text-center">All Books</h2>
               <ol class="breadcrumb text-left text-black mt-10">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li class="active text-gray-silver">All Books</li>
               </ol>
            
