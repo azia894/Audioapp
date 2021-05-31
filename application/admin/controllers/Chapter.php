@@ -59,28 +59,28 @@ class Chapter extends CI_Controller{
                 'bid'=>$this->input->post('bid'),
                 'nar_id'=>$this->input->post('nar_id'),		
 				'ch_name'=>$this->input->post('ch_name'),
-				
+				'ch_duration'=> $this->input->post('ch_audio_duration'),
+				'ch_audio'=> $this->input->post('ch_audio'),
 				'ch_status'=>1,	
                 'created_on'=>date('Y-m-d H:i:s'),							
 			);
-			if(isset($_FILES['up']) && !empty($_FILES) && $_FILES['up']['name']!=""){		
-						$fileTypes = array('mp3','mpeg','mp4');
-						$trgt='assets/chapterimages/';
-						$size = $_FILES['up']['size'];
-						$file_name = $_FILES['up']['name'];
-						$path_parts=pathinfo($_FILES['up']['name']);
-						if(!in_array($path_parts['extension'],$fileTypes)){
-							$msg='<div class="alert alert-warning">
-									  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-									  <strong>Only jpg,png are allowed</strong>
-									</div>' ;
-						 }else{
-							$file = time().'.'.$path_parts['extension'];
-							$insert_data['ch_audio']=$file;
-							move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 
-							
-						 }
-					 }
+			// if(isset($_FILES['up']) && !empty($_FILES) && $_FILES['up']['name']!=""){		
+			// 			$fileTypes = array('mp3','mpeg','mp4');
+			// 			$trgt='assets/chapterimages/';
+			// 			$size = $_FILES['up']['size'];
+			// 			$file_name = $_FILES['up']['name'];
+			// 			$path_parts=pathinfo($_FILES['up']['name']);
+			// 			if(!in_array($path_parts['extension'],$fileTypes)){
+			// 				$msg='<div class="alert alert-warning">
+			// 						  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			// 						  <strong>Only jpg,png are allowed</strong>
+			// 						</div>' ;
+			// 			 }else{
+			// 				$file = time().'.'.$path_parts['extension'];
+			// 				$insert_data['ch_audio']=$file;
+			// 				move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 							
+			// 			 }
+			// 		 }
 			$q = $this->chapter_model->create($insert_data);
 			if($q){		
 	            $status=1;			
@@ -92,7 +92,7 @@ class Chapter extends CI_Controller{
 				 $msg='<div class="alert alert-warning">
 						  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 						  <strong>Unable To Create, Try Again !!</strong>
-						</div>' ;		
+						</div>' ;
 			}
 		 }
 		 $res = array('status'=>$status,'msg'=>$msg);
