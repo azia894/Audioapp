@@ -117,9 +117,8 @@
 <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
 
+
 <script>
-	// firebase config
-	// start
 	var firebaseConfig = {
 		apiKey: "AIzaSyBIJvdVBLPx7eSBLs3Y_tAu7wvsTTO39Ds",
 		authDomain: "dilkiawaz-6854d.firebaseapp.com",
