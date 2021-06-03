@@ -58,27 +58,28 @@ class Author extends CI_Controller{
 			$insert_data = array(	
 				'aut_name'=>$this->input->post('aut_name'),
 				'aut_desc'=>$this->input->post('aut_desc'),
+				'aut_img'=>$this->input->post('aut_img'),
 				'aut_status'=>1,	
                 'created_on'=>date('Y-m-d H:i:s'),							
 			);
-			if(isset($_FILES['up']) && !empty($_FILES) && $_FILES['up']['name']!=""){		
-						$fileTypes = array('jpeg','jpg','png','gif');
-						$trgt='assets/authorimages/';
-						$size = $_FILES['up']['size'];
-						$file_name = $_FILES['up']['name'];
-						$path_parts=pathinfo($_FILES['up']['name']);
-						if(!in_array($path_parts['extension'],$fileTypes)){
-							$msg='<div class="alert alert-warning">
-									  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-									  <strong>Only jpg,png are allowed</strong>
-									</div>' ;
-						 }else{
-							$file = time().'.'.$path_parts['extension'];
-							$insert_data['aut_img']=$file;
-							move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 
+			// if(isset($_FILES['up']) && !empty($_FILES) && $_FILES['up']['name']!=""){		
+			// 			$fileTypes = array('jpeg','jpg','png','gif');
+			// 			$trgt='assets/authorimages/';
+			// 			$size = $_FILES['up']['size'];
+			// 			$file_name = $_FILES['up']['name'];
+			// 			$path_parts=pathinfo($_FILES['up']['name']);
+			// 			if(!in_array($path_parts['extension'],$fileTypes)){
+			// 				$msg='<div class="alert alert-warning">
+			// 						  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			// 						  <strong>Only jpg,png are allowed</strong>
+			// 						</div>' ;
+			// 			 }else{
+			// 				$file = time().'.'.$path_parts['extension'];
+			// 				$insert_data['aut_img']=$file;
+			// 				move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 
 							
-						 }
-					 }
+			// 			 }
+			// 		 }
 			$q = $this->author_model->create($insert_data);
 			if($q){		
 	            $status=1;			
