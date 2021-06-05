@@ -100,7 +100,7 @@
 									<input type="hidden" name="ch_audio" id="ch_audio">
 									
 								</div>
-								<button type="button" class="btn btn-primary" onclick="new_chaper()"
+								<button type="submit" class="btn btn-primary" onclick="new_chaper()"
 									id='submit_btn'>Submit</button>
 							</div>
 						</div>
@@ -117,9 +117,8 @@
 <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
 
+
 <script>
-	// firebase config
-	// start
 	var firebaseConfig = {
 		apiKey: "AIzaSyBIJvdVBLPx7eSBLs3Y_tAu7wvsTTO39Ds",
 		authDomain: "dilkiawaz-6854d.firebaseapp.com",
@@ -210,6 +209,10 @@
 	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 	function new_chaper() {
+
+		document.getElementById(
+	'add_chapter_form').addEventListener('submit', add_chapter_form);
+
 		var file = document.getElementById('upload_audio').files[0];
 		var filename = document.getElementById('upload_audio').value;
 
