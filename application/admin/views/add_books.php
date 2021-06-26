@@ -65,7 +65,7 @@
 									</div>
 									<div class="form-group">
 										<label>Genre</label>
-										<select name="sub_id" id="sub_id" class="form-control" multiple>
+										<select name="sub_id[]" id="sub_id" class="form-control" multiple>
 											<option value="">Select Genre</option>
 											<?php
                                         if ($get_sub['num']>0) {
@@ -106,11 +106,12 @@
 									</div>
 									<div class="form-group">
 										<label>Image</label>
+										<input type="hidden" name="upload" id="upload">
 										<input type="hidden" name="bk_img" id="bk_img" accept="Image/png,image/jpeg,image/gif">
 										<input type="file" name="upload_book_img" id="upload_book_img"
 											accept="Image/png,image/jpeg,image/gif">
 									</div>
-									<button type="button" class="btn btn-primary" onClick="new_book()">Submit</button>
+									<button type="submit" class="btn btn-primary" onClick="new_book()">Submit</button>
 									<!-- <button type="submit" class="btn btn-primary" >Submit</button> -->
 								</div>
 							</div>
@@ -150,6 +151,8 @@
 	var storageRef = storage.ref();
 
 	function new_book() {
+		document.getElementById(
+	'add_book_form').addEventListener('submit', add_book_form);
 		var name = document.getElementById('bk_name').value;
 		var file = document.getElementById('upload_book_img').files[0];
 		var filename = document.getElementById('upload_book_img').value;
@@ -221,6 +224,7 @@
 					uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
 						console.log('File available at', downloadURL);
 						document.getElementById("bk_img").value = downloadURL;
+						document.getElementById("upload").value = true;
 
 						document.getElementById("add_book_form").submit();
 					});

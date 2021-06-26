@@ -9,6 +9,7 @@ class Books extends CI_Controller
         $this->load->model('books_model');
         $this->load->model('subject_model');
         $this->load->library('datatbl');
+        $this->load->model('bookSubject_model');
     }
      
     public function index()
@@ -39,6 +40,9 @@ class Books extends CI_Controller
     public function create()
     {
         extract($_POST);
+
+        // echo     print_r($subj); exit;
+        // echo  $this->input->post('upload'); exit;
         /*echo "<pre>";
         print_r($_FILES);
         print_r($_POST);*/
@@ -66,7 +70,7 @@ class Books extends CI_Controller
             $insert_data = array(
                 'bk_age'=>$this->input->post('bk_age'),
                 'author_id'=>$this->input->post('author_id'),
-                'sub_id'=>$this->input->post('sub_id'),
+                // 'sub_id'=>$this->input->post('sub_id'),
                 'bk_name'=>$this->input->post('bk_name'),
                 'bk_desc'=>$this->input->post('bk_desc'),
                 'bk_year'=>$this->input->post('bk_year'),
@@ -93,7 +97,22 @@ class Books extends CI_Controller
             // 				move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file);                            
             // 			 }
             // 		 }
-            $q = $this->books_model->create($insert_data);
+            if($this->input->post('upload')){
+                $q = $this->books_model->create($insert_data);
+                // echo $q; exit;
+            }
+            $id = $q;
+            $subj = $this->input->post('sub_id[]');
+            if (!empty($subj) && !empty($id) ) {
+                for ($i = 0; $i < count($subj); $i++) {
+                    $insert_data = array(
+                        'bkid'=>$id,
+                        'sub_id'=>$subj[$i],
+                        'status'=>'1',
+                    );
+                    $q = $this->bookSubject_model->create($insert_data);
+                }
+            }
             if ($q) {
                 $status=1;
                 $msg='<div class="alert alert-success">
