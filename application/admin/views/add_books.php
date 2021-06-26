@@ -110,7 +110,7 @@
 										<input type="file" name="upload_book_img" id="upload_book_img"
 											accept="Image/png,image/jpeg,image/gif">
 									</div>
-									<button type="button" class="btn btn-primary" onClick="new_book()">Submit</button>
+									<button type="submit" class="btn btn-primary" onClick="new_book()">Submit</button>
 									<!-- <button type="submit" class="btn btn-primary" >Submit</button> -->
 								</div>
 							</div>
@@ -150,6 +150,8 @@
 	var storageRef = storage.ref();
 
 	function new_book() {
+		document.getElementById(
+	'add_book_form').addEventListener('submit', add_book_form);
 		var name = document.getElementById('bk_name').value;
 		var file = document.getElementById('upload_book_img').files[0];
 		var filename = document.getElementById('upload_book_img').value;

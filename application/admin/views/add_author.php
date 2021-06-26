@@ -49,8 +49,8 @@
 									
 									
 												
-                                    <!-- <button type="submit" class="btn btn-primary">Submit</button>									 -->
-                                    <button type="button" class="btn btn-primary" onClick="new_author()">Submit</button>									
+                                    <button type="submit" class="btn btn-primary" onClick="new_author()">Submit</button>
+                                   <!-- <button type="button" class="btn btn-primary" >Submit</button>-->									
                         	</div>	
                     	</div>
                       </div>
@@ -92,6 +92,8 @@
 	var storageRef = storage.ref();
 
 	function new_author() {
+		document.getElementById(
+	'add_Author_form').addEventListener('submit', add_Author_form);
 		var name = document.getElementById('aut_name').value;
 		var file = document.getElementById('upload_aut_img').files[0];
 		var filename = document.getElementById('upload_aut_img').value;
@@ -164,11 +166,12 @@
 						console.log('File available at', downloadURL);
 						document.getElementById("aut_img").value = downloadURL;
 
-						document.getElementById("add_Author_form").submit();
+						//document.getElementById("add_Author_form").submit();
 					});
 				}
 			);
 			console.log('less');
 		}
+		document.getElementById("add_Author_form").submit();
 	}
 </script>
