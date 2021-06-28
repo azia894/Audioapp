@@ -109,7 +109,7 @@ class Author extends CI_Controller{
 		$no = $_POST['start'];
 		foreach ($list as $req) {
 			$edit='&nbsp;&nbsp;<a href="'.base_url('author/edit/'.$req->id).'" class="label label-info" md-ink-ripple="">Edit</a>';
-			$img='<img src="'.base_url('assets/authorimages/'.$req->aut_img).'" alt="image" class="img-responsive thumb-md">';
+			$img='<img src="'.$req->aut_img.'" alt="image" class="img-responsive thumb-md">';
 			$status = ($req->aut_status==1)?'<a href="'.base_url('author/deactive/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('author/active/'.$req->id).'"<span class="label label-pink">In-Active</span>';
 			$no++;
 			$row = array();

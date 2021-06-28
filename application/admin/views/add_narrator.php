@@ -54,7 +54,7 @@
 									
 									<div class="form-group">
 										<label>Notes </label>
-										<textarea class="form-control mathedit" placeholder="Enter Description" name="nar_desc" id="nar_desc"></textarea>
+										<textarea class="form-control" placeholder="Enter Description" name="nar_desc" id="nar_desc"></textarea>
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
 									

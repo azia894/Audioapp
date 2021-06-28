@@ -104,14 +104,20 @@
 											id="bk_desc"></textarea>
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
-									<div class="form-group">
+									<div class="form-group row">
+										<div class="col-md-6">
 										<label>Image</label>
 										<input type="hidden" name="bk_img" id="bk_img" accept="Image/png,image/jpeg,image/gif">
 										<input type="file" name="upload_book_img" id="upload_book_img"
 											accept="Image/png,image/jpeg,image/gif">
+										</div>
+										<div class="col-md-6" style="padding-top: 18px; padding-left: 30px">
+										<button type="button" class="btn btn-primary" onClick="new_book()">Upload image</button> 
+										</div>
 									</div>
-									<button type="submit" class="btn btn-primary" onClick="new_book()">Submit</button>
-									<!-- <button type="submit" class="btn btn-primary" >Submit</button> -->
+									<!-- <button type="submit" class="btn btn-primary" onClick="new_book()">Submit</button> -->
+									<!-- <button type="button" class="btn btn-primary" onClick="new_book()">Upload image</button>  -->
+									<button type="submit" class="btn btn-primary submit-btn" id="submit" disabled >Submit</button>
 								</div>
 							</div>
 						</div>
@@ -150,28 +156,16 @@
 	var storageRef = storage.ref();
 
 	function new_book() {
-		document.getElementById(
-	'add_book_form').addEventListener('submit', add_book_form);
+	// 	document.getElementById(
+	// 'add_book_form').addEventListener('submit', add_book_form);
 		var name = document.getElementById('bk_name').value;
 		var file = document.getElementById('upload_book_img').files[0];
 		var filename = document.getElementById('upload_book_img').value;
 
 		const extension = filename.split('.').pop();
-		var bookName = document.getElementById('bk_name').value + '.' + extension;
-		if(name == ""){
-			console.log('more');
-			// document.getElementById('alert').innerHTML = '<div class="alert alert-warning">' +
-			// 	'<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
-			// 	'<strong>book title must not be empty</strong>' +
-			// 	'</div>'
-		}
-		else if (!file) {
-			console.log('more');
-			// document.getElementById('alert').innerHTML = '<div class="alert alert-warning">' +
-			// 	'<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
-			// 	'<strong>Audio should be less than 60 mins</strong>' +
-			// 	'</div>'
-		} else {
+		var bookName = Math.floor(Math.random() * 100000) + '.' + extension;
+
+		if(file) {
 			// Create the file metadata
 			var metadata = {
 				contentType: 'image/jpeg'
@@ -223,8 +217,10 @@
 					uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
 						console.log('File available at', downloadURL);
 						document.getElementById("bk_img").value = downloadURL;
+						
+						$('#submit').prop('disabled', false);
 
-						document.getElementById("add_book_form").submit();
+						// document.getElementById("add_book_form").submit();
 					});
 				}
 			);

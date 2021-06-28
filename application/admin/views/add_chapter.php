@@ -94,14 +94,19 @@
 									<input class="form-control" id="ch_name" name="ch_name">
 								</div>
 
-								<div class="form-group">
-									<label>Upload Audio</label>
-									<input type="file" name="upload_audio" id="upload_audio" accept="audio/*">
-									<input type="hidden" name="ch_audio" id="ch_audio">
-									
+								<div class="form-group row">
+									<div class="col-md-6">
+										<label>Upload Audio</label>
+										<input type="file" name="upload_audio" id="upload_audio" accept="audio/*">
+										<input type="hidden" name="ch_audio" id="ch_audio">
+									</div>
+									<div class="col-md-6" style="padding-top: 18px; padding-left: 20px">
+										<button type="button" class="btn btn-primary" onClick="new_chaper()">Upload file</button>
+									</div>
 								</div>
-								<button type="submit" class="btn btn-primary" onclick="new_chaper()"
-									id='submit_btn'>Submit</button>
+								<!-- <button type="submit" class="btn btn-primary" onclick="new_chaper()"
+									id='submit_btn'>Submit</button> -->
+								<button type="submit" class="btn btn-primary" disabled id='submit_btn'>Submit</button>
 							</div>
 						</div>
 				</div>
@@ -210,15 +215,15 @@
 
 	function new_chaper() {
 
-		document.getElementById(
-	'add_chapter_form').addEventListener('submit', add_chapter_form);
+	// 	document.getElementById(
+	// 'add_chapter_form').addEventListener('submit', add_chapter_form);
 
 		var file = document.getElementById('upload_audio').files[0];
 		var filename = document.getElementById('upload_audio').value;
 
 		const extension = filename.split('.').pop();
 		var bid = document.getElementById('bid').value;
-		var chapterName = document.getElementById('ch_name').value + '.' + extension;
+		var chapterName = Math.floor(Math.random() * 100000) + '.' + extension;
 
 		if (this.ch_duration > '59.59') {
 			console.log('more');
@@ -226,7 +231,7 @@
 				'<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
 				'<strong>Audio should be less than 60 mins</strong>' +
 				'</div>'
-		} else {
+		} else if(file){
 			// Create the file metadata
 			var metadata = {
 				contentType: 'audio/mpeg'
@@ -279,7 +284,8 @@
 						console.log('File available at', downloadURL);
 						document.getElementById("ch_audio").value = downloadURL;
 
-						document.getElementById("add_chapter_form").submit();
+						$('#submit_btn').prop('disabled', false);
+						// document.getElementById("add_chapter_form").submit();
 					});
 				}
 			);

@@ -41,16 +41,21 @@
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
 									
-									<div class="form-group">
-										<label>Image</label>
+									<div class="form-group row">
+										<div class="col-md-6">
+											<label>Image</label>
 											<input  type="hidden" name="aut_img" id="aut_img">   
 											<input  type="file" name="upload_aut_img" id="upload_aut_img" accept="Image/png,image/jpeg">   
+										</div>
+										<div class="col-md-6" style="padding-top: 18px; padding-left: 30px">
+                                   			<button type="button" class="btn btn-primary"  onClick="new_author()" >Upload image</button>									
+										</div>
 									</div>
 									
 									
 												
-                                    <button type="submit" class="btn btn-primary" onClick="new_author()">Submit</button>
-                                   <!-- <button type="button" class="btn btn-primary" >Submit</button>-->									
+                                    <!-- <button type="submit" class="btn btn-primary" onClick="new_author()">Submit</button> -->
+                                    <button type="submit" class="btn btn-primary" disabled id="submit">Submit</button>
                         	</div>	
                     	</div>
                       </div>
@@ -99,15 +104,8 @@
 		var filename = document.getElementById('upload_aut_img').value;
 
 		const extension = filename.split('.').pop();
-		var authorName = document.getElementById('aut_name').value + '.' + extension;
-		if(name == ""){
-			console.log('more');
-			// document.getElementById('alert').innerHTML = '<div class="alert alert-warning">' +
-			// 	'<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
-			// 	'<strong>book title must not be empty</strong>' +
-			// 	'</div>'
-		}
-		else if (!file) {
+		var authorName = Math.floor(Math.random() * 100000) + '.' + extension;
+		if (!file) {
 			console.log('more');
 			// document.getElementById('alert').innerHTML = '<div class="alert alert-warning">' +
 			// 	'<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
@@ -165,13 +163,13 @@
 					uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
 						console.log('File available at', downloadURL);
 						document.getElementById("aut_img").value = downloadURL;
-
+						$('#submit').prop('disabled', false);
 						//document.getElementById("add_Author_form").submit();
 					});
 				}
 			);
 			console.log('less');
 		}
-		document.getElementById("add_Author_form").submit();
+		// document.getElementById("add_Author_form").submit();
 	}
 </script>
