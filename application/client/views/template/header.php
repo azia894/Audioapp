@@ -121,10 +121,10 @@
 									<a href="authors" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Authors</span></a>
 								</li>
 								<li>
-									<a href="#howwecan_11" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Title</span></a>
+									<a href="title" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Title</span></a>
 								</li>
 								<li>
-									<a href="#howwecan_12" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Genre/Subject</span></a>
+									<a href="subject" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Genre/Subject</span></a>
 								</li>
 								
 							</ul>

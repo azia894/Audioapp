@@ -42,16 +42,16 @@
 							} else {
                                 $i=1;
 								foreach ($getdata as $row) {
-                                    $img = ADMIN_URL.'/assets/bookimages/'.$row->bk_img; 
+                                    $img = $row->bk_img; 
 								?>
         <li class="catalog-result">
 
 	
 	
-<a href="#" class="book-cover"><img src="<?=$img?>" alt="book-cover-65x65" width="65" height="65"></a>
+<a href="<?= base_url('chapter/view/'.$row->bkid) ?>" class="book-cover"><img src="<?=$img?>" alt="book-cover-65x65" width="65" height="65"></a>
 
 <div class="result-data">
-                <h3><a href="#"><?=ucwords($row->bk_name)?></a></h3>
+                <h3><a href="<?= base_url('chapter/view/'.$row->bkid) ?>"><?=ucwords($row->bk_name)?></a></h3>
     
     
     <p class="book-meta"> Complete | Solo | English</p>

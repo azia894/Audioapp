@@ -14,9 +14,9 @@
             
                         <li class="catalog-result">
 
-                            <a href="<?= base_url('home/view/'.$post['id']) ?>" class="book-cover">
+                            <a href="<?= base_url('chapter/view/'.$post['id']) ?>" class="book-cover">
                             <img src="<?=$img?>" alt="book-cover-65x65" width="65" height="65" /></a>
-                            <div class="result-data"><h3><a href="<?= base_url('home/view/'.$post['id']) ?> "><?php echo ucwords($post['aut_name']); ?></a></h3><p class="book-author"> 
+                            <div class="result-data"><h3><a href="<?= base_url('chapter/view/'.$post['id']) ?> "><?php echo ucwords($post['aut_name']); ?></a></h3><p class="book-author"> 
                             <span class="dod-dob">(<?php echo $post['dob']; ?>)</span></p>
                             <p class="book-meta">Complete | English</p></div></li>
                            

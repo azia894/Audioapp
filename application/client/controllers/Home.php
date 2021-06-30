@@ -75,7 +75,7 @@ class Home extends CI_Controller {
 		//$this->load->view('template/body',$data);	
 	}
 
-	public function view(){
+	/*public function view(){
 		$id=$this->uri->segment('3');
 		$sd=$this->home_model->getDetails($id);
 		if($sd['num']==1){
@@ -87,7 +87,7 @@ class Home extends CI_Controller {
 			$this->session->set_flashdata('invalid','Invalid Request');
 			redirect('home');
 		}	
-	}
+	}*/
 	
 
 	

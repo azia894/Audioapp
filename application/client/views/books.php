@@ -15,7 +15,7 @@
 								foreach ($posts as $post) {
 								?>
 								<?php 
-									$img = ADMIN_URL.'/assets/bookimages/'.$post['bk_img']; 
+									$img = $post['bk_img']; 
 								?>
             
                         <li class="catalog-result">
