@@ -8,7 +8,7 @@
 								foreach ($home as $row) {
 								?>
 								<?php 
-									$img = ADMIN_URL.'/assets/bookimages/'.$row['bk_img']; 
+									$img = $row['bk_img']; 
 								?>
             
                         <li class="catalog-result">
