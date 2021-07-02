@@ -1,70 +1,42 @@
 ###################
-What is CodeIgniter
+DIL KI AWAZ(AUDIO APPLICATION)
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
-
+An Audio application built on Codeigniter
 *******************
-Release Information
+Description
 *******************
-
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Application is audio's play, solution built on codeigniter. Authors as well as Narrator can be added form admin panel.Numbers of books with the chapters audios are added through admin.client can visit the books and hear the audio files of that books.All these files are stored in firebase storage
 
 **************************
-Changelog and New Features
+Features
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Features provided by this application
+
+Books Categorisation
+Admin panel
+CURD functionality in admin panel
+creation of images and audio files 
+Books,authors and narrators Search and filters.
+Books,authors and narrators in details
 
 *******************
 Server Requirements
 *******************
 
-PHP version 5.4 or newer is recommended.
-
-It should work on 5.2.4 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+PHP version: 7.2.34 or newer is recommended.
 
 ************
 Installation
 ************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+1 .Copy the folder to your application server. Open http://localhost/<folder_name> . 
+2. Import audioapp.sql file to your MySQL database 
+3. Configure database. Open application/config/database.php and add your MySQL databse username and password.
 
 *******
-License
+BUILT WITH
 *******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+1.Codeigniter
+2.MySQL
+3.Firebase Storage
