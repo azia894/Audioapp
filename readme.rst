@@ -31,7 +31,7 @@ PHP version: 7.2.34 or newer is recommended.
 Installation
 ************
 1 .Copy the folder to your application server. Open http://localhost/<folder_name> . 
-2. Import audioapp.sql file to your MySQL database 
+2. Import audio_app.sql file to your MySQL database 
 3. Configure database. Open application/config/database.php and add your MySQL databse username and password.
 
 *******
