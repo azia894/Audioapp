@@ -6,7 +6,7 @@ An Audio application built on Codeigniter
 *******************
 Description
 *******************
-Application is audio's play, solution built on codeigniter. Authors as well as Narrator can be added form admin panel.Numbers of books with the chapters audios are added through admin.client can visit the books and hear the audio files of that books.All these files are stored in firebase storage
+Application is audio's play, solution built on codeigniter. Authors as well as Narrator can be added from admin panel.Numbers of books with the chapters audios are added through admin.client can visit the books and hear the audio files of that books.All these files are stored in firebase storage
 
 **************************
 Features
