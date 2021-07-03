@@ -5,7 +5,7 @@
                         <div class="content-wrap clearfix">
                             <div class="book-page-book-cover">
                             <?php 
-									$img = ADMIN_URL.'/assets/bookimages/'.$record['bk_img']; 
+									$img = $record['bk_img']; 
 								?>
                                 <img src="<?=$img?>" width="175" height="175" />
             
