@@ -54,14 +54,14 @@
                                         <tr>
                                             <td><?php echo $i; ?></td>
                                             <td><audio controls>
-            <source src="<?=base_url('admin/assets/chapterimages/'.$row->ch_audio)?>" type="audio/ogg">
-            <source src="<?=base_url('admin/assets/chapterimages/'.$row->ch_audio)?>" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio></td>
-                                            <td><a href="#" class="chapter-name"><?php echo $row->ch_name ?></a></td>
+                                                <source src="<?=$row->ch_audio?>" type="audio/ogg">
+                                                <source src="<?=$row->ch_audio?>" type="audio/mpeg">
+                                                Your browser does not support the audio element.
+                                            </audio></td>
+                                            <td style="vertical-align: middle;"><a href="#" class="chapter-name"><?php echo $row->ch_name ?></a></td>
                                             
                                             
-                                            <td>00:04:23</td>
+                                            <td style="vertical-align: middle;"><?php echo $row->ch_duration ?></td>
             
                                                                         </tr>
             

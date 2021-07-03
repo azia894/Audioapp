@@ -61,7 +61,7 @@
 							<span>
 								<img src="<?php echo base_url().'assets/images/logo.png'; ?>" style="width:40px;" />
 							</span>
-							<span style="color :#7030a0;">
+							<span style="color :#7030a0;vertical-align: super;">
 							DIL KI AWAZ	
 						</span>
 					</a>
