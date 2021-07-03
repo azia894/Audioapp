@@ -11,10 +11,20 @@
 								<li> <td colspan="7">No Data to display</td><li>
 							<?php
 							} else {
-                                $i=1;
-								foreach ($getbk as $rowbk) {
-                                    $img = $rowbk->bk_img; 
-								?>
+                  $i=1;
+                  foreach ($getbk as $rowbk) {
+                    $img = $rowbk->bk_img; 
+                    $genreList = '';
+                    if($rowbk->genre != ""){
+                      $genres = explode(',',$rowbk->genre);
+                      if(count($genres) > 0){
+                        foreach ($genres as $key => $value) {
+                          $genre = explode(':',$value);
+                          $genreList .= "<a href='".base_url('subject/category/'.$genre[0])."'>".$genre[1]."</a> <span> | </span>"; 
+                        }
+                      }
+                    }
+                  ?>
 	
     <li class="catalog-result">	
 <a href="<?= base_url('chapter/view/'.$rowbk->bkid) ?>" class="book-cover"><img src="<?=$img?>" alt="book-cover-65x65" width="65" height="65"></a>
@@ -23,7 +33,7 @@
                 <h3><a href="<?= base_url('chapter/view/'.$rowbk->bkid) ?>"><?=ucwords($rowbk->bk_name)?></a></h3>
     
     <p class="book-author"> <a href="<?= base_url('authors/view/'.$rowbk->id) ?>"><?php echo ucwords($rowbk->aut_name); ?> <span class="dod-dob">(<?php echo $rowbk->dob; ?>)</span></a> </p>
-    <p class="book-meta"> Complete | Solo | English</p>
+    <p class="book-meta"> <?=$genreList?> </p>
 </div>	
     
 </li>

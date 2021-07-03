@@ -43,6 +43,17 @@
                                 $i=1;
 								foreach ($getdata as $row) {
                                     $img = $row->bk_img; 
+									// print_r($row);
+									// $genreList = '';
+									// if($row->genre != ""){
+									// $genres = explode(',',$row->genre);
+									// if(count($genres) > 0){
+									// 	foreach ($genres as $key => $value) {
+									// 	$genre = explode(':',$value);
+									// 	$genreList .= "<a href='".base_url('subject/category/'.$genre[0])."'>".$genre[1]."</a> <span> | </span>"; 
+									// 	}
+									// }
+									// }
 								?>
         <li class="catalog-result">
 
@@ -54,7 +65,7 @@
                 <h3><a href="<?= base_url('chapter/view/'.$row->bkid) ?>"><?=ucwords($row->bk_name)?></a></h3>
     
     
-    <p class="book-meta"> Complete | Solo | English</p>
+    <!-- <p class="book-meta">  <?=$genreList?> </p> -->
 </div>	
     
     

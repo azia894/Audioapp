@@ -8,7 +8,17 @@
 								foreach ($home as $row) {
 								?>
 								<?php 
-									$img = $row['bk_img']; 
+									$img = $row['bk_img'];
+									$genreList = '';
+									if($row['genre'] != ""){
+										$genres = explode(',',$row['genre']);
+										if(count($genres) > 0){
+											foreach ($genres as $key => $value) {
+												$genre = explode(':',$value);
+												$genreList .= "<a href='".base_url('subject/category/'.$genre[0])."'>".$genre[1]."</a> <span> | </span>"; 
+											}
+										}
+									}
 								?>
             
                         <li class="catalog-result">
@@ -16,7 +26,7 @@
                             <img src="<?=$img?>" alt="book-cover-65x65" width="65" height="65" /></a>
                             <div class="result-data"><h3><a href="<?= base_url('chapter/view/'.$row['bkid']) ?> "><?php echo ucwords($row['bk_name']); ?></a></h3><p class="book-author"> 
                             <a href="#"><?php echo ucwords($row['aut_name']); ?><span class="dod-dob">(<?php echo $row['dob']; ?>)</span></a></p>
-                            <p class="book-meta">Complete | English</p></div></li>
+                            <p class="book-meta"> <?=$genreList ?> </p></div></li>
                            
 							<?php
 								}

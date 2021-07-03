@@ -58,7 +58,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="menuzord-brand pull-left flip" href="index.html" style="margin-top: 26px;">
+					<a class="menuzord-brand pull-left flip" href="<?php echo base_url().'home'; ?>" style="margin-top: 26px;">
 					 DIL KI AWAZ
 					
                       
@@ -119,13 +119,13 @@
 						<div class="services-list">
 							<ul class="list list-border angle-double-right" style="width:100%;">
 								<li>
-									<a href="authors" class="active" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Authors</span></a>
+									<a href="#" class="active" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Books</span></a>
 								</li>
 								<li>
-									<a href="books" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Title</span></a>
+									<a href="authors" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Authors</span></a>
 								</li>
 								<li>
-									<a href="subject" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Genre/Subject</span></a>
+									<a href="subject" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Genre</span></a>
 								</li>
 								
 							</ul>

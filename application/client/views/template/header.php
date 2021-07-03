@@ -57,13 +57,26 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="menuzord-brand pull-left flip" href="index.php" style="margin-top: 26px;">
-					 DIL KI AWAZ					                      
+					<a class="navbar-brand menuzord-brand pull-left flip" href="<?php echo base_url().'home'; ?>" style="margin-top: 20px">
+							<span>
+								<img src="<?php echo base_url().'assets/images/logo.png'; ?>" style="width:40px;" />
+							</span>
+							<span style="color :#7030a0;">
+							DIL KI AWAZ	
+						</span>
+					</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav" style="float: right;">                       
 						<li>
-							<a href="home" title="Home" >Home</a>							
+							<a href="home" title="Download Android application" >
+								<img src="<?php echo base_url().'assets/images/android-logo.png'; ?>" alt="android application" style="width:30px;">
+							</a>							
+						</li>
+						<li>
+							<a href="home" title="Download IOS application" >
+								<img src="<?php echo base_url().'assets/images/apple.png'; ?>" alt="ios application" style="width:30px;">
+							</a>							
 						</li>
 					</ul>
 				</div>
@@ -107,13 +120,13 @@
 						<div class="services-list">
 							<ul class="list list-border angle-double-right" style="width:100%;">
 								<li>
-									<a href="authors" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Authors</span></a>
+									<a href="<?php echo base_url().'home'; ?>" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Books</span></a>
 								</li>
 								<li>
-									<a href="title" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Title</span></a>
+									<a href="<?php echo base_url().'authors'; ?>" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Authors</span></a>
 								</li>
 								<li>
-									<a href="subject" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Genre/Subject</span></a>
+									<a href="<?php echo base_url().'subject'; ?>" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Genre</span></a>
 								</li>
 								
 							</ul>

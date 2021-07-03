@@ -1256,7 +1256,7 @@ form .error {
 		padding: 0;
 		min-width: 218px;
 		max-width: 218px;
-		visibility: hidden\0/;
+		visibility: hidden\0;
 		transition: all 0.17s ease-in-out;
 		-moz-transition: all 0.17s ease-in-out;
 		-webkit-transition: all 0.17s ease-in-out;
@@ -1388,7 +1388,7 @@ form .error {
 	.ownavigation .navbar-collapse > ul > li:nth-last-child(2) .dropdown-menu ul ul ul ul ul ul ul ul ul {
 		left: auto;
 	}
-}
+
 
 @media (max-width: 991px) {
 	
@@ -1676,6 +1676,12 @@ form .error {
 	.menu-block .ownavigation .navbar-nav li .dropdown-menu > li > a:hover {
 		color: #ef5252;
 	}
+}
 .bg-black-222 {
     background-color: #333333 !important;
+}
+.footer-new {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
 }

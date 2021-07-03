@@ -26,10 +26,10 @@
                             <p class="book-meta">Complete | English</p>
                             </div>
                             
-                            <div class="download-btn">
-		<a href="#">Download</a>
-		<span>1057MB</span>
-	</div>
+                            <!-- <div class="download-btn">
+								<a href="#">Download</a>
+								<span>1057MB</span>
+							</div> -->
                             </li>
                            
 							<?php
@@ -58,5 +58,3 @@
 
 	</div>
   </div>
-
- 

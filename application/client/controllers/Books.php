@@ -7,7 +7,7 @@ class Books extends CI_Controller {
 			$this->load->model('books_model');
             $this->load->model('home_model');
             $this->load->library('Ajax_pagination');
-            $this->perPage = 2;
+            $this->perPage = 10;
 	}
 
     public function index(){

@@ -8,7 +8,7 @@ class home_model extends CI_Model{
 
 	private function _get_users_data(){ 
 
-        $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob');
+        $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob, (SELECT GROUP_CONCAT(CONCAT(sub.id,":",sub.sub_name)) FROM booksubjects bs JOIN aud_subject sub ON bs.sub_id = sub.id WHERE bs.bkid = bt.bkid) as genre');
         $this->db->join('aud_author as au','bt.author_id=au.id');
         $this->db->from("$this->tbl_name as bt"); 
 
@@ -21,7 +21,6 @@ class home_model extends CI_Model{
         $this->db->limit($limit, $start); 
 
         $query = $this->db->get(); 
-
         return $query->result_array(); 
 
     }
@@ -37,7 +36,7 @@ class home_model extends CI_Model{
     }
 
 	function selectAll(){
-        $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob');
+        $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob, (SELECT GROUP_CONCAT(CONCAT(sub.id,":",sub.sub_name)) FROM booksubjects bs JOIN aud_subject sub ON bs.sub_id = sub.id WHERE bs.bkid = bt.bkid) as genre');
 		
 		$this->db->join('aud_author as au','bt.author_id=au.id');
 		$q = $this->db->get("$this->tbl_name as bt");

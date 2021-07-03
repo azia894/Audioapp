@@ -3,10 +3,12 @@ class books_model extends CI_Model{
 
     private $tbl_name='aud_author';
     private $tbl_name2='aud_booktbl';
+    private $tbl_name3 = 'aud_subject';
+    private $tbl_name4 = 'booksubjects';
 
     function getRows($params = array())
     {
-        $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob,au.created_on,au.aut_img');
+        $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob,au.created_on,au.aut_img, (SELECT GROUP_CONCAT(CONCAT(sub.id,":",sub.sub_name)) FROM booksubjects bs JOIN aud_subject sub ON bs.sub_id = sub.id WHERE bs.bkid = bt.bkid) as genre');
         $this->db->join('aud_author as au','bt.author_id = au.id');
         $this->db->from('aud_booktbl as bt');
        
@@ -19,11 +21,6 @@ class books_model extends CI_Model{
         }
         
         $query = $this->db->get();
-        
         return ($query->num_rows() > 0)?$query->result_array():FALSE;
     }
-
-    
-
-
 }
