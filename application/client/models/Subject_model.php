@@ -25,7 +25,7 @@ class subject_model extends CI_Model{
     {
         $query = "SELECT id,sub_name, concat(IFNULL( u.total,0) + IFNULL( bs.total,''))total FROM aud_subject s LEFT JOIN (
             SELECT sub_id,count(*)total FROM aud_booktbl GROUP BY sub_id)u ON s.id=u.sub_id LEFT JOIN (
-                SELECT sub_id,count(*)total FROM booksubjects GROUP BY sub_id)bs ON s.id=bs.sub_id";
+                SELECT sub_id,count(*)total FROM bookSubjects GROUP BY sub_id)bs ON s.id=bs.sub_id";
         $q = $this->db->query($query); 
         if ($q->num_rows() > 0) {
             foreach ($q->result() as $data) {
@@ -39,7 +39,7 @@ class subject_model extends CI_Model{
     {
         $query = "SELECT bt.bkid,bt.bk_name,bt.sub_id,bt.bk_img,a.id,a.aut_name,a.dob,bs.sub_id,bs.bkid FROM $this->tbl_name2  bt 
         LEFT JOIN aud_author a ON a.id = bt.author_id  
-        LEFT JOIN booksubjects bs ON bs.sub_id = '$id' and bt.bkid = bs.bkid   
+        LEFT JOIN bookSubjects bs ON bs.sub_id = '$id' and bt.bkid = bs.bkid   
         WHERE bt.sub_id='$id' ORDER BY bt.bkid DESC";
           $q = $this->db->query($query);
         if ($q->num_rows() > 0) {
