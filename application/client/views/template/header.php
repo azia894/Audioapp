@@ -57,7 +57,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand menuzord-brand pull-left flip" href="<?php echo base_url().'home'; ?>" style="margin-top: 20px">
+					<a class="navbar-brand menuzord-brand pull-left flip" href="<?php echo base_url().'index.php'; ?>" style="margin-top: 20px">
 							<span>
 								<img src="<?php echo base_url().'assets/images/logo.png'; ?>" style="width:40px;" />
 							</span>
@@ -69,12 +69,12 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav" style="float: right;">                       
 						<li>
-							<a href="home" title="Download Android application" >
+							<a href="<?php echo base_url().'index.php'; ?>" title="Download Android application" >
 								<img src="<?php echo base_url().'assets/images/android-logo.png'; ?>" alt="android application" style="width:30px;">
 							</a>							
 						</li>
 						<li>
-							<a href="home" title="Download IOS application" >
+							<a href="<?php echo base_url().'index.php'; ?>" title="Download IOS application" >
 								<img src="<?php echo base_url().'assets/images/apple.png'; ?>" alt="ios application" style="width:30px;">
 							</a>							
 						</li>
@@ -120,7 +120,7 @@
 						<div class="services-list">
 							<ul class="list list-border angle-double-right" style="width:100%;">
 								<li>
-									<a href="<?php echo base_url().'home'; ?>" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Books</span></a>
+									<a href="<?php echo base_url().'index.php'; ?>" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Books</span></a>
 								</li>
 								<li>
 									<a href="<?php echo base_url().'authors'; ?>" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Authors</span></a>
