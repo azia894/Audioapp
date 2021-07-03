@@ -25,11 +25,6 @@
     <p class="book-author"> <a href="<?= base_url('authors/view/'.$rowbk->id) ?>"><?php echo ucwords($rowbk->aut_name); ?> <span class="dod-dob">(<?php echo $rowbk->dob; ?>)</span></a> </p>
     <p class="book-meta"> Complete | Solo | English</p>
 </div>	
-
-    <div class="download-btn">
-    <a href="http://www.archive.org/download//a_christmas_miscellany_2018_1807_librivox/a_christmas_miscellany_2018_1807_librivox_64kb_mp3.zip">Download</a>
-    <span>173MB</span>
-</div>
     
 </li>
 <?php

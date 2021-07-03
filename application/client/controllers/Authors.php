@@ -6,7 +6,7 @@ class Authors extends CI_Controller {
 			
 			$this->load->model('authors_model');
             $this->load->library('Ajax_pagination');
-            $this->perPage = 1;
+            $this->perPage = 10;
 	}
 
     public function index(){

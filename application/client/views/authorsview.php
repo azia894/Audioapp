@@ -7,7 +7,7 @@
 		<div class="page-header-wrap js-header_section">
 			<div class="content-wrap clearfix">
             <?php 
-									$img = ADMIN_URL.'/assets/authorimages/'.$record['aut_img']; 
+									$img = $record['aut_img']; 
 								?>
             <div class="book-page-book-cover">
 					<img src="<?=$img?>" alt="book-cover-large" width="175" height="175">
@@ -56,11 +56,7 @@
     
     <p class="book-meta"> Complete | Solo | English</p>
 </div>	
-
-    <div class="download-btn">
-    <a href="#">Download</a>
-    <span>75MB</span>
-</div>
+    
     
 </li>	
 <?php

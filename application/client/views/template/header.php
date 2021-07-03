@@ -58,34 +58,23 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="menuzord-brand pull-left flip" href="index.php" style="margin-top: 26px;">
-					 DIL KI AWAZ
-					
-                      
+					 DIL KI AWAZ					                      
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav" style="float: right;">
-                       
+					<ul class="nav navbar-nav" style="float: right;">                       
 						<li>
-							<a href="home" title="Home" >Home</a>
-							
+							<a href="home" title="Home" >Home</a>							
 						</li>
-                    
-						
-						<!-- <li><a href="#" title="New Batches">Help</a></li>
-						<li><a href="#" title="Contact Us">Contact Us</a></li> -->
-                    
 					</ul>
 				</div>
 			</nav>
-			</div>
-	
-	
+		</div>		
   </header>
   
   
     
 	
-    <section class="inner-header divider parallax layer-overlay overlay-dark-5" style="background-image: url(<?=base_url('assets')?>/images/bg/bg6.jpg")  style="height:250px">
+    <!-- <section class="inner-header divider parallax layer-overlay overlay-dark-5" style="background-image: url(<?=base_url('assets')?>/images/bg/bg6.jpg")  style="height:250px">
       <div class="container pt-70 pb-20">
         <div class="section-content">
           <div class="row">
@@ -99,7 +88,7 @@
          
         </div>
       </div>
-    </section>
+    </section> -->
     <section class="divider">
 <div class="container">
   <div class="row">
