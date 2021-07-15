@@ -18,14 +18,6 @@
 					</ol>
 				</div>
 			</div>
-			<div class="row">
-				<div class="progress">
-					<div class="progress-bar progress-bar-striped progress-bar-animate" role="progressbar"
-						id="upload_progress" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0">
-						<p id="progress"></p>
-					</div>
-				</div>
-			</div>
 			<!-- <div id="alert"></div> -->
 			<div class="row">
 				<div class="col-sm-9">
@@ -113,6 +105,14 @@
 										</div>
 										<div class="col-md-6" style="padding-top: 18px; padding-left: 30px">
 										<button type="button" class="btn btn-primary" onClick="new_book()">Upload image</button> 
+										</div>
+									</div>
+									<div class="row">
+										<div class="progress" style="height: 18px; background-color: transparent;">
+											<div class="progress-bar progress-bar-striped progress-bar-animate" role="progressbar"
+												id="upload_progress" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0">
+												<p id="progress" style="font-size: 12px;"></p>
+											</div>
 										</div>
 									</div>
 									<!-- <button type="submit" class="btn btn-primary" onClick="new_book()">Submit</button> -->

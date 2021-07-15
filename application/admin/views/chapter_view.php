@@ -85,8 +85,8 @@
                         <td><?php echo $row->ch_name; ?></td>
                         
                   <td><audio controls>
-            <source src="<?=base_url('assets/chapterimages/'.$row->ch_audio)?>" type="audio/ogg">
-            <source src="<?=base_url('assets/chapterimages/'.$row->ch_audio)?>" type="audio/mpeg">
+            <source src="<?php echo $row->ch_audio?>" type="audio/ogg">
+            <source src="<?php echo $row->ch_audio?>" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio></td>
 		  <td><?php echo $row->count; ?></td>

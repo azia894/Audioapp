@@ -112,8 +112,8 @@ class Chapter extends CI_Controller{
 		foreach ($list as $req) {
 			$edit='&nbsp;&nbsp;<a href="'.base_url('chapter/edit/'.$req->id).'" class="label label-info" md-ink-ripple="">Edit</a>';
 			$img='<audio controls>
-            <source src="'.base_url('assets/chapterimages/'.$req->ch_audio).'" type="audio/ogg">
-            <source src="'.base_url('assets/chapterimages/'.$req->ch_audio).'" type="audio/mpeg">
+            <source src="'.$req->ch_audio.'" type="audio/ogg">
+            <source src="'.$req->ch_audio.'" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio>';
 			$status = ($req->ch_status==1)?'<a href="'.base_url('Chapter/deactive/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('Chapter/active/'.$req->id).'"<span class="label label-pink">In-Active</span>';
@@ -153,7 +153,7 @@ class Chapter extends CI_Controller{
 		$bd = $this->chapter_model->getDetails($id);
 		if($bd['num']==1){
 			$data['get_data'] = $this->narrator_model->selectAll();
-			$data['get_sub'] = $this->books_model->selectAll();			 			
+			$data['get_sub'] = $this->books_model->selectAll();
 			$data['record'] = $bd['data'][0];
 			$data['main_content2'] = 'edit_chapter';		 
 			$this->load->view('template2/body',$data);
@@ -170,46 +170,33 @@ class Chapter extends CI_Controller{
 		 $bid = $this->uri->segment('3');
 		 $id = $this->uri->segment('4');
 		 $bd = $this->chapter_model->getDetails($id);
-		 if($bd['num']==1){			
-		 $res = $this->chapter_model->getDetailsByName($this->input->post('ch_name'));
-		 if($res['num']>0){
-			$msg='<div class="alert alert-warning">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>"'.$this->input->post('ch_name').'" Author already exists</strong>
-		  </div>' ;
+		 if($bd['num']==1){
+		 	$res = $this->chapter_model->getDetailsByName($this->input->post('ch_name'));
+			$temp = $res['data'];
+			// print_r($temp);
+			// echo $temp[0]['id'];
+			if($res['num']>0 && $temp[0]['id'] != $id){
+				$msg='<div class="alert alert-warning">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>"'.$this->input->post('ch_name').'" Chapter name already exists</strong>
+				</div>' ;	 
 
-		 }else if($this->input->post('ch_name')=='' ){
+			}else if($this->input->post('ch_name')==''){
 			   $msg='<div class="alert alert-warning">
 			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			   <strong>Please enter Author Name</strong>
-			 </div>' ;
-			 }else{
-				  $update_data = array();
-				  $update_data = array(
-					 'nar_id'=>addslashes($this->input->post('nar_id')),
-									
-					 );
-				   if($res['num']==0){
-					 $update_data['ch_name'] = addslashes($this->input->post('ch_name')); 
-				  }
-				 if(!empty($_FILES) && $_FILES['up']['name']!=""){		
-						 $fileTypes = array('mp3','mpeg','mp4');
-						 $trgt='assets/chapterimages/';
-						 $size = $_FILES['up']['size'];
-						 $file_name = $_FILES['up']['name'];
-						 $path_parts=pathinfo($_FILES['up']['name']);
-						 if(!in_array($path_parts['extension'],$fileTypes)){
-							 $msg='<div class="alert alert-warning">
-									   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-									   <strong>Only jpg,png Images Are Allowed!!</strong>
-									 </div>' ;
-						  }else{
-							 $file = time().'.'.$path_parts['extension'];
-							 $update_data['ch_audio']=$file;
-							 move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 
-							 
-						  }
-					  }
+				</div>' ;
+				}else{
+					$update_data = array();
+					$update_data = array(
+						'nar_id'=>addslashes($this->input->post('nar_id')),
+					);
+				   	if($res['num']==0){
+						$update_data['ch_name'] = addslashes($this->input->post('ch_name')); 
+				  	}
+					if($this->input->post('ch_name') != ''){
+						$update_data['ch_audio']=addslashes($this->input->post('ch_audio'));
+					}
 				  $q = $this->chapter_model->modify($update_data,$id);
 				  if($q){
 				 $status=1;
