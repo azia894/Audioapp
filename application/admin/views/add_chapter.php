@@ -79,7 +79,7 @@
 									</span>
 									<div class="form-group">
 										<label>Chapter Name</label>
-										<input class="form-control" id="ch_name" name="ch_name">
+										<input class="form-control" id="ch_name" name="ch_name" maxlength="50">
 									</div>
 
 									<div class="form-group row">

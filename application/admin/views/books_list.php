@@ -49,7 +49,7 @@
 				   
 				</p>
 
-					<table class="table table-striped table-bordered dt-responsive nowrap" id="all-Books-tbl">
+					<table class="table table-striped table-bordered dt-responsive" id="all-Books-tbl">
 						<thead>
 							<tr>
 								<th data-class="expand">#</th>
@@ -60,6 +60,7 @@
 								<th data-hide="phone">Created On</th>												
 								<th data-hide="phone,tablet">Actions</th>														
 								<th data-hide="phone,tablet">Status</th>									
+								<th data-hide="phone,tablet">Delete</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -72,4 +73,19 @@
 		</div> <!-- container -->
 	</div> <!-- content -->
 </div>
-           
+<script>
+	$(document).ready(function(){
+		$(".delete").on("click", function(){
+			console.log('delete');
+		})
+	})
+	function confirmDelete(link){
+		console.log('confrim delete',link);
+		if(confirm('confrim delete')) {
+			console.log("yess","<?= base_url('books/delete/') ?>"+link);
+			window.location.replace("<?= base_url('books/delete/') ?>"+link);
+		} else {
+			// window.location.href ='".base_url('books/')."'
+		}
+	}
+</script>

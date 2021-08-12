@@ -55,10 +55,10 @@
 								<th data-class="expand">#</th>
 								<th>Chapters Name<?php echo $this->uri->segment('3'); ?></th>
                                 																
-								<th>Audio</th>															
+								<th>Audio</th>		
 								<th data-hide="phone">Created On</th>												
 								<th data-hide="phone,tablet">Actions</th>														
-								<th data-hide="phone,tablet">Status</th>									
+								<th data-hide="phone,tablet">Status</th>
 							</tr>
 						</thead>
 						<tbody>

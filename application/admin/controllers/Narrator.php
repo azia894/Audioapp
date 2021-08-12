@@ -113,6 +113,7 @@ class Narrator extends CI_Controller{
 			$edit='&nbsp;&nbsp;<a href="'.base_url('narrator/edit/'.$req->id).'" class="label label-info" md-ink-ripple="">Edit</a>';
 			$img='<img src="'.base_url('assets/narratorimages/'.$req->nar_img).'" alt="image" class="img-responsive thumb-md">';
 			$status = ($req->nar_status==1)?'<a href="'.base_url('narrator/deactive/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('narrator/active/'.$req->id).'"<span class="label label-pink">In-Active</span>';
+			$delete ='<button class="delete label label-danger btn" onClick="confirmDelete('.$req->id.')">Delete</button>';
 			$no++;
 			$row = array();
 			$row[] = $req->id;
@@ -122,6 +123,7 @@ class Narrator extends CI_Controller{
 			$row[] = $edit;
 			//$row[] = $edit.'&nbsp;'.'<a href="'.base_url('narrator/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
 			$row[] = $status;
+			$row[] = $delete;
 			$data[] = $row;
 		}
 		$output = array(
@@ -221,8 +223,10 @@ class Narrator extends CI_Controller{
 	 }
 	 
 
-	
 	 function del(){
+		echo "<script type='text/javascript'>if(confirm('Want to delete')){window.location.href ='".base_url('narrator/delete/'.$this->uri->segment('3'))."' }else {window.location.href ='".base_url('narrator/')."'}</script>";
+	}
+	 function delete(){
 		$id = $this->uri->segment('3');
 		$bd = $this->narrator_model->getDetails($id);
 		if($bd['num']==1){	

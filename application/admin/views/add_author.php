@@ -1,73 +1,74 @@
-				<div class="content-page">
-				<!-- Start content -->
-				<div class="content">
-					<div class="container">
+<div class="content-page">
+<!-- Start content -->
+	<div class="content">
+		<div class="container">
 
-						<!-- Page-Title -->
-						<div class="row">
-							<div class="col-sm-12">
-								<h4 class="page-title">Author</h4>
-								<ol class="breadcrumb">	
-								<li>	
-								<a href="<?=base_url('author')?>">Author List</a>	
-								</li>
-								<li class="active">	
-								Add		
-								</li>	
-								</ol>
-							</div>
-						</div>
+			<!-- Page-Title -->
+			<div class="row">
+				<div class="col-sm-12">
+					<h4 class="page-title">Author</h4>
+					<ol class="breadcrumb">
+						<li>
+							<a href="<?= base_url('author') ?>">Author List</a>
+						</li>
+						<li class="active">
+							Add
+						</li>
+					</ol>
+				</div>
+			</div>
 
-                        
-                        <div class="row">
-                        	<div class="col-sm-9">
-							   <div id="add_author_msg"></div> 
-							<form id="add_Author_form" name="add_Author_form" role="form" action="<?=base_url('author/create')?>" method="post" enctype="multipart/form-data">
-                        		<div class="card-box">
-                        			<h4 class="m-t-0 header-title"><b>Add Author</b></h4></br></br>
-                        			
-                        			<div class="row">									
-                        			<div class="col-lg-6">									
-		                                
-										   
+
+			<div class="row">
+				<div class="col-sm-9">
+					<div id="add_author_msg"></div>
+					<form id="add_Author_form" name="add_Author_form" role="form" action="<?= base_url('author/create') ?>" method="post" enctype="multipart/form-data">
+						<div class="card-box">
+							<h4 class="m-t-0 header-title"><b>Add Author</b></h4></br></br>
+
+							<div class="row">
+								<div class="col-lg-6">
+
+
 									<div class="form-group">
 										<label>Author Name</label>
-										<input class="form-control" placeholder="Enter author name" id="aut_name" name= "aut_name">
+										<input class="form-control" placeholder="Enter author name" id="aut_name" name="aut_name" maxlength="50">
 									</div>
-									
+
 									<div class="form-group">
 										<label>Description </label>
-										<textarea class="form-control" placeholder="Enter Description" name="aut_desc" id="aut_desc"></textarea>
+										<textarea class="form-control" placeholder="Enter Description" name="aut_desc" id="aut_desc" maxlength="400"></textarea>
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
-									
+
 									<div class="form-group row">
 										<div class="col-md-6">
 											<label>Image</label>
-											<input  type="hidden" name="aut_img" id="aut_img">   
-											<input  type="file" name="upload_aut_img" id="upload_aut_img" accept="Image/png,image/jpeg">   
+											<input type="hidden" name="aut_img" id="aut_img">
+											<input type="file" name="upload_aut_img" id="upload_aut_img" accept="Image/png,image/jpeg">
 										</div>
 										<div class="col-md-6" style="padding-top: 18px; padding-left: 30px">
-                                   			<button type="button" class="btn btn-primary"  onClick="new_author()" >Upload image</button>									
+											<button type="button" class="btn btn-primary" onClick="new_author()">Upload image</button>
 										</div>
 									</div>
-									
-									
-												
-                                    <!-- <button type="submit" class="btn btn-primary" onClick="new_author()">Submit</button> -->
-                                    <button type="submit" class="btn btn-primary" disabled id="submit">Submit</button>
-                        	</div>	
-                    	</div>
-                      </div>
-				</form>
+									<div class="row">
+										<div class="progress" style="height: 18px; background-color: transparent;">
+											<div class="progress-bar progress-bar-striped progress-bar-animate" role="progressbar"
+												id="upload_progress" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0">
+												<p id="progress" style="font-size: 12px;"></p>
+											</div>
+										</div>
+									</div>
+									<!-- <button type="submit" class="btn btn-primary" onClick="new_author()">Submit</button> -->
+									<button type="submit" class="btn btn-primary" disabled id="submit">Submit</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-		</div>
-
-	</div> <!-- container -->
-			   
-</div> <!-- content -->
-
-
+		</div> <!-- container -->
+	</div> <!-- content -->
 <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
@@ -98,7 +99,7 @@
 
 	function new_author() {
 		document.getElementById(
-	'add_Author_form').addEventListener('submit', add_Author_form);
+			'add_Author_form').addEventListener('submit', add_Author_form);
 		var name = document.getElementById('aut_name').value;
 		var file = document.getElementById('upload_aut_img').files[0];
 		var filename = document.getElementById('upload_aut_img').value;
@@ -117,8 +118,8 @@
 				contentType: 'image/jpeg'
 			};
 			// Upload file and metadata to the object 'images/mountains.jpg'
-			var uploadTask = storageRef.child('/authorImages/'+ authorName).put(file, metadata);
-			
+			var uploadTask = storageRef.child('/authorImages/' + authorName).put(file, metadata);
+
 			// document.getElementById("cancel_btn").addEventListener('click', function() {
 			// 	console.log('cancel pressed');
 			// 	uploadTask.cancel();
@@ -130,8 +131,8 @@
 					// // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
 					var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 					console.log('Upload is ' + Math.round(progress) + '% done');
-					// document.getElementById('progress').innerHTML = Math.round(progress) + '%';
-					// document.getElementById("upload_progress").style.width = Math.round(progress) + '%';
+					document.getElementById('progress').innerHTML = Math.round(progress) + '%';
+					document.getElementById("upload_progress").style.width = Math.round(progress) + '%';
 					switch (snapshot.state) {
 						case firebase.storage.TaskState.PAUSED: // or 'paused'
 							console.log('Upload is paused');
@@ -142,7 +143,7 @@
 					}
 				},
 				(error) => {
-					
+
 					// // A full list of error codes is available at
 					// // https://firebase.google.com/docs/storage/web/handle-errors
 					switch (error.code) {

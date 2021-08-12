@@ -116,7 +116,8 @@ class Chapter extends CI_Controller{
             <source src="'.$req->ch_audio.'" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio>';
-			$status = ($req->ch_status==1)?'<a href="'.base_url('Chapter/deactive/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('Chapter/active/'.$req->id).'"<span class="label label-pink">In-Active</span>';
+			$status = ($req->ch_status==1)?'<a href="'.base_url('Chapter/deactivech/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('Chapter/activech/'.$req->id).'"<span class="label label-pink">In-Active</span>';
+			$delete = '<a href="'.base_url('Chapter/del/'.$req->id).'"<span class="label label-success">Delete</span>';
 			$no++;
 			$row = array();
 			$row[] = $req->id;
@@ -126,6 +127,7 @@ class Chapter extends CI_Controller{
 			$row[] = $edit;
 			//$row[] = $edit.'&nbsp;'.'<a href="'.base_url('Chapter/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
 			$row[] = $status;
+			$row[] = $delete;
 			$data[] = $row;
 		}
 		$output = array(
@@ -184,7 +186,7 @@ class Chapter extends CI_Controller{
 			}else if($this->input->post('ch_name')==''){
 			   $msg='<div class="alert alert-warning">
 			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			   <strong>Please enter Author Name</strong>
+			   <strong>Please enter Chapter Name</strong>
 				</div>' ;
 				}else{
 					$update_data = array();
@@ -203,7 +205,7 @@ class Chapter extends CI_Controller{
 				// $this->session->set_flashdata('success','Page Updated successfully!!!!');
 				$msg='<div class="alert alert-warning">
 				   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-				   <strong>Author Updated Successfully</strong></div>';	 
+				   <strong>Chapter Updated Successfully</strong></div>';	 
 				 
 					 }else{
 							 $msg='<div class="alert alert-warning">
@@ -226,6 +228,10 @@ class Chapter extends CI_Controller{
 
 	
 	 function del(){
+		echo "<script type='text/javascript'>if(confirm('Want to delete')){window.location.href ='".base_url('books/delete/'.$this->uri->segment('3'))."' }else {window.location.href ='".base_url('books/')."'}</script>";
+	}
+	
+	function delete(){
 		$id = $this->uri->segment('3');
 		$bd = $this->chapter_model->getDetails($id);
 		if($bd['num']==1){	
@@ -240,8 +246,6 @@ class Chapter extends CI_Controller{
 			redirect('chapter');
 		}
 	}
-	
-	
 	
 	function active(){
 		$id = $this->uri->segment('3');
@@ -292,7 +296,7 @@ class Chapter extends CI_Controller{
              $update_data['ch_status'] = '0';        
             $this->chapter_model->inactived($update_data,$id);
              $this->session->set_flashdata('success', 'Deactivated Successfully');
-            redirect('Chapter/list/'.$id);
+            redirect('Chapter/list/'.$bid);
     }
 	
 	}

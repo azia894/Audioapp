@@ -13,8 +13,6 @@
 						<li class="active">	
 						Author List	
 						</li>
-						
-						
 					</ol>
 				</div>
 			</div>   
@@ -49,19 +47,20 @@
 				   
 				</p>
 
-					<table class="table table-striped table-bordered dt-responsive nowrap" id="all-Author-tbl">
+					<table class="table table-striped table-bordered dt-responsive" id="all-Author-tbl">
 						<thead>
 							<tr>
 								<th data-class="expand">#</th>
-								<th>Author Name</th>															
-								<th>Image</th>															
-								<th data-hide="phone">Created On</th>												
-								<th data-hide="phone,tablet">Actions</th>														
-								<th data-hide="phone,tablet">Status</th>									
+								<th>Author Name</th>
+								<th>Image</th>
+								<th data-hide="phone">Created On</th>
+								<th data-hide="phone,tablet">Actions</th>
+								<th data-hide="phone,tablet">Status</th>
+								<th data-hide="phone,tablet">Delete</th>
 							</tr>
 						</thead>
 						<tbody>
-						</tbody>									
+						</tbody>
 					</table>
 
 			</div>
@@ -70,4 +69,13 @@
 		</div> <!-- container -->
 	</div> <!-- content -->
 </div>
-           
+<script>
+	function confirmDelete(link){
+		console.log('confrim delete',link);
+		if(confirm('Want to delete author')) {
+			console.log("yess","<?= base_url('author/delete/') ?>"+link);
+			window.location.replace("<?= base_url('author/delete/') ?>"+link);
+		} else {
+		}
+	}
+</script>

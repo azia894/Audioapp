@@ -129,6 +129,7 @@ class Books extends CI_Controller
             $ch='<a href="'.base_url('chapter/list/'.$req->bkid).'"<button type="button" class="btn btn-primary">View Chapters</button>';
             $img='<img src="'.$req->bk_img.'" alt="image" class="img-responsive thumb-md">';
             $status = ($req->bk_status==1)?'<a href="'.base_url('books/deactive/'.$req->bkid).'"<span class="label label-success">Active</span>':'<a href="'.base_url('books/active/'.$req->bkid).'"<span class="label label-pink">In-Active</span>';
+            $delete = '<button class="delete label label-danger btn" onClick="confirmDelete('.$req->bkid.')">Delete Book</button>'; // href="'.base_url('books/del/'.$req->bkid).'"            
             $no++;
             $row = array();
             $row[] = $i;
@@ -140,6 +141,7 @@ class Books extends CI_Controller
             $row[] = $edit;
             //$row[] = $edit.'&nbsp;'.'<a href="'.base_url('books/del/'.$req->bkid).'" class="label label-danger" md-ink-ripple="">Delete</a>';
             $row[] = $status;
+            $row[] = $delete;
             $data[] = $row;
             $i++;
         }
@@ -193,34 +195,17 @@ class Books extends CI_Controller
                 $value = str_replace(" ", ',', $bk_tags);
                 $update_data = array();
                 $update_data = array(
-                     'author_id'=>$this->input->post('author_id'),
-                     'sub_id'=>$this->input->post('sub_id'),
-                     'bk_desc'=>$this->input->post('bk_desc'),
-                     'bk_age'=>$this->input->post('bk_age'),
-                     'bk_year'=>$this->input->post('bk_year'),
-                'bk_blurb'=>$this->input->post('bk_blurb'),
-                'bk_tags'=>$value,
-                                    
-                     );
+                    'author_id'=>$this->input->post('author_id'),
+                    'sub_id'=>$this->input->post('sub_id'),
+                    'bk_desc'=>$this->input->post('bk_desc'),
+                    'bk_age'=>$this->input->post('bk_age'),
+                    'bk_year'=>$this->input->post('bk_year'),
+                    'bk_blurb'=>$this->input->post('bk_blurb'),
+                    'bk_tags'=>$value,
+                    'bk_img'=>addslashes($this->input->post('bk_img')),
+                );
                 if ($res['num']==0) {
                     $update_data['bk_name'] = $this->input->post('bk_name');
-                }
-                if (!empty($_FILES) && $_FILES['up']['name']!="") {
-                    $fileTypes = array('jpeg','jpg','png','gif');
-                    $trgt='assets/bookimages/';
-                    $size = $_FILES['up']['size'];
-                    $file_name = $_FILES['up']['name'];
-                    $path_parts=pathinfo($_FILES['up']['name']);
-                    if (!in_array($path_parts['extension'], $fileTypes)) {
-                        $msg='<div class="alert alert-warning">
-									   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-									   <strong>Only jpg,png Images Are Allowed!!</strong>
-									 </div>' ;
-                    } else {
-                        $file = time().'.'.$path_parts['extension'];
-                        $update_data['bk_img']=$file;
-                        move_uploaded_file($_FILES['up']['tmp_name'], $trgt.$file);
-                    }
                 }
                 $q = $this->books_model->modify($update_data, $id);
                 if ($q) {
@@ -245,14 +230,11 @@ class Books extends CI_Controller
         echo json_encode($res);
         exit;
     }
-     
-
-
-     
-
-    
     public function del()
     {
+        echo "<script type='text/javascript'>if(confirm('Want to delete')){window.location.href ='".base_url('books/delete/'.$this->uri->segment('3'))."' }else {window.location.href ='".base_url('books/')."'}</script>";
+    }
+    public function delete(){
         $id = $this->uri->segment('3');
         $bd = $this->books_model->getDetails($id);
         if ($bd['num']==1) {
@@ -267,9 +249,6 @@ class Books extends CI_Controller
             redirect('books');
         }
     }
-    
-    
-    
     public function active()
     {
         $id = $this->uri->segment('3');

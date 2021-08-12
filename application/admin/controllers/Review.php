@@ -16,7 +16,7 @@ class Review extends CI_Controller{
 	 }
 	 
 	 function getReviewAll(){
-		$column = array('id','uid','bid','review','created_on','status');
+		$column = array('id','bid','user_name','review','created_on','status');
 		$order = array('id' => 'desc');
 		$join = array();
 		$where="id!=''";
@@ -28,17 +28,17 @@ class Review extends CI_Controller{
 		foreach ($list as $req) {
 			
 			$status = ($req->status==1)?'<a href="'.base_url('review/deactive/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('review/active/'.$req->id).'"<span class="label label-pink">In-Active</span>';
+			// $delete = '<a href="'.base_url('review/deactive/'.$req->id).'"<span class="label label-success">Active</span>';
+			$delete = '<button class="delete label label-danger btn" onClick="confirmDelete('.$req->id.')">Delete </button>'; // href="'.base_url('author/del/'.$req->id).'"
 			$no++;
 			$row = array();
 			$row[] = $i;
 			$row[] = $req->bid;
-            $row[] = $req->uid;
+			$row[] = $req->user_name;
 			$row[] = $req->review;
-			
 			$row[] = $req->created_on;
-			//$row[] = $edit.'&nbsp;'.'<a href="'.base_url('subject/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
-			
 			$row[] = $status;
+			$row[] = $delete;
 			$data[] = $row;
 			$i++;
 		}

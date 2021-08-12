@@ -46,7 +46,7 @@
 									</div>
 									<div class="form-group">
 										<label>Chapter Title</label>
-										<input class="form-control" id="ch_name" name="ch_name" value="<?= $record['ch_name'] ?>">
+										<input class="form-control" id="ch_name" name="ch_name" value="<?= $record['ch_name'] ?>" maxlength="50">
 									</div>
 									<div class="form-group row">
 										<div class="col-md-6">

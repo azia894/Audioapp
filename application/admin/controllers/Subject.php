@@ -27,6 +27,7 @@ class Subject extends CI_Controller{
 		foreach ($list as $req) {
 			$edit='&nbsp;&nbsp;<a href="'.base_url('subject/edit/'.$req->id).'" class="label label-info" md-ink-ripple="">Edit</a>';
 			$status = ($req->status==1)?'<a href="'.base_url('subject/deactive/'.$req->id).'"<span class="label label-success">Active</span>':'<a href="'.base_url('subject/active/'.$req->id).'"<span class="label label-pink">In-Active</span>';
+			$delete ='<button class="delete label label-danger btn" onClick="confirmDelete('.$req->id.')">Delete</button>';
 			$no++;
 			$row = array();
 			$row[] = $req->id;
@@ -36,6 +37,7 @@ class Subject extends CI_Controller{
 			//$row[] = $edit.'&nbsp;'.'<a href="'.base_url('subject/del/'.$req->id).'" class="label label-danger" md-ink-ripple="">Delete</a>';
 			$row[] = $edit;
 			$row[] = $status;
+			$row[] = $delete;
 			$data[] = $row;
 		}
 		$output = array(
@@ -125,7 +127,8 @@ class Subject extends CI_Controller{
 		 $bd = $this->subject_model->getDetails($id);
 		 if($bd['num']==1){			
 		 $res = $this->subject_model->getDetailsByName($this->input->post('sub_name'));
-		 if($res['num']>0){
+		 $temp = $res['data'];
+		 if($res['num']>0  && $temp[0]['id'] != $id){
 			$msg='<div class="alert alert-warning">
 			 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			 <strong>"'.$this->input->post('sub_name').'" Genre/Subject name already exists</strong>
@@ -138,10 +141,9 @@ class Subject extends CI_Controller{
 			 }else{
 				  $update_data = array();
 				  
-				   if($res['num']==0){
-					 $update_data['sub_name'] = addslashes($this->input->post('sub_name')); 
+					if($res['num']>0 || $res['num'] == 0){
+						$update_data['sub_name'] = addslashes($this->input->post('sub_name'));
 				  }
-				 
 				  $q = $this->subject_model->modify($update_data,$id);
 				  if($q){
 				 $status=1;
@@ -167,8 +169,11 @@ class Subject extends CI_Controller{
 	 }
 	 
 
+		function del(){
+			echo "<script type='text/javascript'>if(confirm('Want to delete')){window.location.href ='".base_url('subject/delete/'.$this->uri->segment('3'))."' }else {window.location.href ='".base_url('subject/')."'}</script>";
+		}
 	
-	 function del(){
+	 function delete(){
 		$id = $this->uri->segment('3');
 		$cd = $this->subject_model->getDetails($id);
 		if($cd['num']==1){	

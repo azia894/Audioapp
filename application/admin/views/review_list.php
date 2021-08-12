@@ -48,16 +48,16 @@
 				   
 				</p>
 
-					<table class="table table-striped table-bordered dt-responsive nowrap" id="all-Review-tbl">
+					<table class="table table-striped table-bordered dt-responsive" id="all-Review-tbl">
 						<thead>
 							<tr>
 								<th data-class="expand">#</th>
-								<th>Book Name</th>
-								<th>Username</th>															
+								<th>Book ID</th>
+								<th>Username</th>
 								<th>Review</th>															
 								<th data-hide="phone">Created On</th>												
-								<!--<th data-hide="phone,tablet">Actions</th>-->														
 								<th data-hide="phone,tablet">Status</th>									
+								<th data-hide="phone,tablet">delete</th>											
 							</tr>
 						</thead>
 						<tbody>
@@ -70,4 +70,13 @@
 		</div> <!-- container -->
 	</div> <!-- content -->
 </div>
-           
+<script>
+	function confirmDelete(link){
+		console.log('confrim delete',link);
+		if(confirm('Want to Book Review')) {
+			console.log("yess","<?= base_url('review/del/') ?>"+link);
+			window.location.replace("<?= base_url('review/del/') ?>"+link);
+		} else {
+		}
+	}
+</script>

@@ -8,8 +8,7 @@
 					<h4 class="page-title">Genre/Subject Books</h4>
 					<ol class="breadcrumb">
 						<li>
-							<a
-								href="<?=base_url('author')?>">Genre/Subject
+							<a href="<?= base_url('author') ?>">Genre/Subject
 								Books List</a>
 						</li>
 						<li class="active">
@@ -22,55 +21,51 @@
 			<div class="row">
 				<div class="col-sm-9">
 					<div id="add_book_msg"></div>
-					<form id="add_book_form" name="add_book_form" role="form"
-						action="<?=base_url('books/create')?>"
-						method="post" enctype="multipart/form-data">
+					<form id="add_book_form" name="add_book_form" role="form" action="<?= base_url('books/create') ?>" method="post" enctype="multipart/form-data">
 						<div class="card-box">
 							<h4 class="m-t-0 header-title"><b>Add Books</b></h4></br></br>
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="form-group">
 										<label>Title</label>
-										<input class="form-control" id="bk_name" name="bk_name" required>
+										<input class="form-control" id="bk_name" name="bk_name" required maxlength="100">
 									</div>
 									<div class="form-group">
 										<label>Authors</label>
 										<select name="author_id" id="author_id" class="form-control" required>
 											<option value="">Select Author</option>
 											<?php
-                                        if ($get_data['num']>0) {
-                                            foreach ($get_data['data'] as $c) {
-                                                ?>
-											<option
-												value="<?=$c->id?>">
-												<?=$c->aut_name?>
-											</option>
+											if ($get_data['num'] > 0) {
+												foreach ($get_data['data'] as $c) {
+											?>
+													<option value="<?= $c->id ?>">
+														<?= $c->aut_name ?>
+													</option>
 											<?php
-                                            }
-                                        }
-                                               ?>
+												}
+											}
+											?>
 										</select>
 									</div>
 									<div class="form-group">
 										<label>Year Of Publication</label>
-										<input class="form-control" id="bk_year" name="bk_year" required>
+										<input type="number" class="form-control" id="bk_year" name="bk_year" required maxlength="4">
 									</div>
 									<div class="form-group">
 										<label>Genre</label>
 										<select name="sub_id" id="sub_id" class="form-control" multiple>
 											<option value="">Select Genre</option>
 											<?php
-                                        if ($get_sub['num']>0) {
-                                            foreach ($get_sub['data'] as $s) {
-                                                ?>
-											<option
-												value="<?=$s->id?>">
-												<?=$s->sub_name?>
-											</option>
+											if ($get_sub['num'] > 0) {
+												foreach ($get_sub['data'] as $s) {
+											?>
+													<option value="<?= $s->id ?>">
+														<?= $s->sub_name ?>
+													</option>
 											<?php
-                                            }
-                                        }
-                                               ?>
+												}
+											}
+											?>
 										</select>
 									</div>
 									<div class="form-group">
@@ -84,40 +79,37 @@
 									</div>
 									<div class="form-group">
 										<label>Blurb</label>
-										<input class="form-control" id="bk_blurb" name="bk_blurb">
+										<input class="form-control" id="bk_blurb" name="bk_blurb" maxlength="100">
 									</div>
 									<div class="form-group">
 										<label>Tags</label>
-										<input class="form-control" id="bk_tags" name="bk_tags">
+										<input class="form-control" id="bk_tags" name="bk_tags" maxlength="100">
 									</div>
 									<div class="form-group">
 										<label>Description </label>
-										<textarea class="form-control" placeholder="Enter Description" name="bk_desc"
-											id="bk_desc"></textarea>
+										<textarea class="form-control" placeholder="Enter Description" name="bk_desc" maxlength="400" id="bk_desc"></textarea>
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
 									<div class="form-group row">
 										<div class="col-md-6">
-										<label>Image</label>
-										<input type="hidden" name="bk_img" id="bk_img" accept="Image/png,image/jpeg,image/gif">
-										<input type="file" name="upload_book_img" id="upload_book_img"
-											accept="Image/png,image/jpeg,image/gif">
+											<label>Image</label>
+											<input type="hidden" name="bk_img" id="bk_img" accept="Image/png,image/jpeg,image/gif">
+											<input type="file" name="upload_book_img" id="upload_book_img" accept="Image/png,image/jpeg,image/gif">
 										</div>
 										<div class="col-md-6" style="padding-top: 18px; padding-left: 30px">
-										<button type="button" class="btn btn-primary" onClick="new_book()">Upload image</button> 
+											<button type="button" class="btn btn-primary" onClick="new_book()">Upload image</button>
 										</div>
 									</div>
 									<div class="row">
 										<div class="progress" style="height: 18px; background-color: transparent;">
-											<div class="progress-bar progress-bar-striped progress-bar-animate" role="progressbar"
-												id="upload_progress" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0">
+											<div class="progress-bar progress-bar-striped progress-bar-animate" role="progressbar" id="upload_progress" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0">
 												<p id="progress" style="font-size: 12px;"></p>
 											</div>
 										</div>
 									</div>
 									<!-- <button type="submit" class="btn btn-primary" onClick="new_book()">Submit</button> -->
 									<!-- <button type="button" class="btn btn-primary" onClick="new_book()">Upload image</button>  -->
-									<button type="submit" class="btn btn-primary submit-btn" id="submit" disabled >Submit</button>
+									<button type="submit" class="btn btn-primary submit-btn" id="submit" disabled>Submit</button>
 								</div>
 							</div>
 						</div>
@@ -127,104 +119,104 @@
 		</div> <!-- container -->
 	</div> <!-- content -->
 
-<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
 
-<script>
-	// firebase config
-	// start
-	var firebaseConfig = {
-		apiKey: "AIzaSyBIJvdVBLPx7eSBLs3Y_tAu7wvsTTO39Ds",
-		authDomain: "dilkiawaz-6854d.firebaseapp.com",
-		databaseURL: "https://dilkiawaz-6854d-default-rtdb.firebaseio.com",
-		projectId: "dilkiawaz-6854d",
-		storageBucket: "dilkiawaz-6854d.appspot.com",
-		messagingSenderId: "800531980880",
-		appId: "1:800531980880:web:ec42f97c62f95d91baa755",
-		measurementId: "G-MRQJ04PQZM"
-	};
+	<script>
+		// firebase config
+		// start
+		var firebaseConfig = {
+			apiKey: "AIzaSyBIJvdVBLPx7eSBLs3Y_tAu7wvsTTO39Ds",
+			authDomain: "dilkiawaz-6854d.firebaseapp.com",
+			databaseURL: "https://dilkiawaz-6854d-default-rtdb.firebaseio.com",
+			projectId: "dilkiawaz-6854d",
+			storageBucket: "dilkiawaz-6854d.appspot.com",
+			messagingSenderId: "800531980880",
+			appId: "1:800531980880:web:ec42f97c62f95d91baa755",
+			measurementId: "G-MRQJ04PQZM"
+		};
 
 
-	// Initialize Firebase
-	firebase.initializeApp(firebaseConfig);
-	console.log('success');
-	firebase.analytics();
-	//   firebase.storage();
-	var storage = firebase.storage();
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		console.log('success');
+		firebase.analytics();
+		//   firebase.storage();
+		var storage = firebase.storage();
 
-	var storageRef = storage.ref();
+		var storageRef = storage.ref();
 
-	function new_book() {
-	// 	document.getElementById(
-	// 'add_book_form').addEventListener('submit', add_book_form);
-		var name = document.getElementById('bk_name').value;
-		var file = document.getElementById('upload_book_img').files[0];
-		var filename = document.getElementById('upload_book_img').value;
+		function new_book() {
+			// 	document.getElementById(
+			// 'add_book_form').addEventListener('submit', add_book_form);
+			var name = document.getElementById('bk_name').value;
+			var file = document.getElementById('upload_book_img').files[0];
+			var filename = document.getElementById('upload_book_img').value;
 
-		const extension = filename.split('.').pop();
-		var bookName = Math.floor(Math.random() * 100000) + '.' + extension;
+			const extension = filename.split('.').pop();
+			var bookName = Math.floor(Math.random() * 100000) + '.' + extension;
 
-		if(file) {
-			// Create the file metadata
-			var metadata = {
-				contentType: 'image/jpeg'
-			};
-			// Upload file and metadata to the object 'images/mountains.jpg'
-			var uploadTask = storageRef.child('/bookImages/'+ bookName).put(file, metadata);
-			
-			// document.getElementById("cancel_btn").addEventListener('click', function() {
-			// 	console.log('cancel pressed');
-			// 	uploadTask.cancel();
-			// })
+			if (file) {
+				// Create the file metadata
+				var metadata = {
+					contentType: 'image/jpeg'
+				};
+				// Upload file and metadata to the object 'images/mountains.jpg'
+				var uploadTask = storageRef.child('/bookImages/' + bookName).put(file, metadata);
 
-			// // Listen for state changes, errors, and completion of the upload.
-			uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
-				(snapshot) => {
-					// // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-					var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-					console.log('Upload is ' + Math.round(progress) + '% done');
-					document.getElementById('progress').innerHTML = Math.round(progress) + '%';
-					document.getElementById("upload_progress").style.width = Math.round(progress) + '%';
-					switch (snapshot.state) {
-						case firebase.storage.TaskState.PAUSED: // or 'paused'
-							console.log('Upload is paused');
-							break;
-						case firebase.storage.TaskState.RUNNING: // or 'running'
-							console.log('Upload is running');
-							break;
+				// document.getElementById("cancel_btn").addEventListener('click', function() {
+				// 	console.log('cancel pressed');
+				// 	uploadTask.cancel();
+				// })
+
+				// // Listen for state changes, errors, and completion of the upload.
+				uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+					(snapshot) => {
+						// Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+						var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+						console.log('Upload is ' + Math.round(progress) + '% done');
+						document.getElementById('progress').innerHTML = Math.round(progress) + '%';
+						document.getElementById("upload_progress").style.width = Math.round(progress) + '%';
+						switch (snapshot.state) {
+							case firebase.storage.TaskState.PAUSED: // or 'paused'
+								console.log('Upload is paused');
+								break;
+							case firebase.storage.TaskState.RUNNING: // or 'running'
+								console.log('Upload is running');
+								break;
+						}
+					},
+					(error) => {
+
+						// // A full list of error codes is available at
+						// // https://firebase.google.com/docs/storage/web/handle-errors
+						switch (error.code) {
+							case 'storage/unauthorized':
+								// User doesn't have permission to access the object
+								break;
+							case 'storage/canceled':
+								// User canceled the upload
+								break;
+								// ...
+							case 'storage/unknown':
+								// Unknown error occurred, inspect error.serverResponse
+								break;
+						}
+					},
+					() => {
+						// Upload completed successfully, now we can get the download URL
+						uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+							console.log('File available at', downloadURL);
+							document.getElementById("bk_img").value = downloadURL;
+
+							$('#submit').prop('disabled', false);
+
+							// document.getElementById("add_book_form").submit();
+						});
 					}
-				},
-				(error) => {
-					
-					// // A full list of error codes is available at
-					// // https://firebase.google.com/docs/storage/web/handle-errors
-					switch (error.code) {
-						case 'storage/unauthorized':
-							// User doesn't have permission to access the object
-							break;
-						case 'storage/canceled':
-							// User canceled the upload
-							break;
-							// ...
-						case 'storage/unknown':
-							// Unknown error occurred, inspect error.serverResponse
-							break;
-					}
-				},
-				() => {
-					// Upload completed successfully, now we can get the download URL
-					uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-						console.log('File available at', downloadURL);
-						document.getElementById("bk_img").value = downloadURL;
-						
-						$('#submit').prop('disabled', false);
-
-						// document.getElementById("add_book_form").submit();
-					});
-				}
-			);
-			console.log('less');
+				);
+				console.log('less');
+			}
 		}
-	}
-</script>
+	</script>
