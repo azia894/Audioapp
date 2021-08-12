@@ -35,7 +35,7 @@
 									</div>
 									<div class="form-group">
 										<label>Description </label>
-										<textarea class="form-control" placeholder="Enter Description" name="aut_desc" id="aut_desc" maxlength="400"><?= $record['aut_desc'] ?></textarea>
+										<textarea class="form-control" placeholder="Enter Description" name="aut_desc" id="aut_desc" maxlength="2000"><?= $record['aut_desc'] ?></textarea>
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
 									<div class="form-group row">

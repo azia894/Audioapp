@@ -87,7 +87,7 @@
 									</div>
 									<div class="form-group">
 										<label>Description </label>
-										<textarea class="form-control" placeholder="Enter Description" name="bk_desc" maxlength="400" id="bk_desc"></textarea>
+										<textarea class="form-control" placeholder="Enter Description" name="bk_desc" maxlength="3000" id="bk_desc"></textarea>
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
 									<div class="form-group row">
