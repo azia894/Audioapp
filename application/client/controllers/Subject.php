@@ -63,7 +63,6 @@ class Subject extends CI_Controller {
         $data['getbk'] = $this->subject_model->catbklist($id);
         $data['main_content']='categorybooks';
         $this->load->view('template/body', $data);
-		
 	}
 }
 
