@@ -1,35 +1,35 @@
+<div class="row">
+    <div class="tab-content">
 
-				   <div class="row">
-				   <div class="tab-content">
-					
-					<h3>Latest Audiobook Releases</h3>
+        <h3>Latest Audiobook Releases</h3>
 
-                    <div id="ajax_content">
-                <?php $this->load->view('Data', $home); ?>
-            </div>
-            
-                        
-				   </div> 
-					
-					</div>
-					
-				</div>
-            </div>
-			
-           
-	  
-  </div>
-  </div>
+        <div id="ajax_content ok">
+            <?php $this->load->view('Data', $home); ?>
+        </div>
+
+
+    </div>
+
+<!-- </div> -->
+<!-- 
 </div>
-</section> 
+</div>
 
-	</div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
+
+</div>
+</div>
+</div> -->
+</section>
+
+<!-- </div>
+  </div> -->
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
     $(function() {
         paginate();
+
         function paginate() {
             $('#ajax_links a').click(function() {
                 var url = $(this).attr('href');

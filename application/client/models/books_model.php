@@ -9,6 +9,7 @@ class books_model extends CI_Model{
     function getRows($params = array())
     {
         $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob,au.created_on,au.aut_img, (SELECT GROUP_CONCAT(CONCAT(sub.id,":",sub.sub_name)) FROM bookSubjects bs JOIN aud_subject sub ON bs.sub_id = sub.id WHERE bs.bkid = bt.bkid) as genre');
+        $this->db->where('bt.bk_status',1);
         $this->db->join('aud_author as au','bt.author_id = au.id');
         $this->db->from('aud_booktbl as bt');
        

@@ -49,7 +49,7 @@
 									</div>
 									<div class="form-group">
 										<label>Year Of Publication</label>
-										<input type="number" class="form-control" id="bk_year" name="bk_year" required maxlength="4">
+										<input type="number" min="0" class="form-control" id="bk_year" name="bk_year" required maxlength="4">
 									</div>
 									<div class="form-group">
 										<label>Genre</label>

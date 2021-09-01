@@ -9,7 +9,7 @@
                     <img src="<?= $img ?>" width="175" height="175" />
                 </div>
                 <h1 style="color:black"><?= ucwords($record['bk_name']) ?></h1>
-                <p class="book-page-author"><a href="#"><?= ucwords($record['aut_name']) ?> <span class="dod-dob">(<?= $record['dob'] ?>)</span></a></p>
+                <p class="book-page-author"><a href="<?= base_url('authors/view/' . $record['id']) ?>"><?= ucwords($record['aut_name']) ?> <span class="dod-dob">(<?= $record['dob'] ?>)</span></a></p>
                 <p class="description"><br /><?= $record['bk_desc'] ?><br /><br /></p>
                 <!-- <p class="book-page-genre"><span>Genre(s):</span> Action & Adventure</p> -->
                 <!-- <p class="book-page-genre"><span>Language:</span> English</p> -->
@@ -27,9 +27,9 @@
                     <?php
                     if ($getdata == NULL) {
                     ?>
-                        <li>
+                        <tr>
                             <td colspan="7">No Data to display</td>
-                        <li>
+                        <tr>
                             <?php
                         } else {
                             $i = 1;

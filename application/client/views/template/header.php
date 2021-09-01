@@ -120,13 +120,13 @@
 											<div class="services-list">
 												<ul class="list list-border angle-double-right" style="width:100%;">
 													<li class="list-item">
-														<a href="<?php echo base_url() . 'index.php'; ?>" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Books</span></a>
+														<a href="<?php echo base_url() . 'index.php'; ?>" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 0px 106px;"><span>Books</span></a>
 													</li>
 													<li class="list-item">
-														<a href="<?php echo base_url() . 'authors'; ?>" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Authors</span></a>
+														<a href="<?php echo base_url() . 'authors'; ?>" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding:0px 106px;"><span>Authors</span></a>
 													</li>
 													<li class="list-item">
-														<a href="<?php echo base_url() . 'subject'; ?>" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 106px;"><span>Genre</span></a>
+														<a href="<?php echo base_url() . 'subject'; ?>" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding:0px 106px;"><span>Genre</span></a>
 													</li>
 												</ul>
 											</div>
@@ -134,3 +134,9 @@
 									</div>
 								</div>
 								<br>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- </div> -->
+		<!-- </section> -->

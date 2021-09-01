@@ -49,7 +49,7 @@
 									</div>
 									<div class="form-group">
 										<label>Year Of Publication</label>
-										<input type="number" class="form-control" id="bk_year" name="bk_year" value="<?= $record['bk_year'] ?>">
+										<input type="number" min="0" class="form-control" id="bk_year" name="bk_year" value="<?= $record['bk_year'] ?>">
 									</div>
 									<div class="form-group">
 										<label>Genre/Subject</label>

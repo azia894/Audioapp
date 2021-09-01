@@ -12,7 +12,7 @@
 							<a href="<?= base_url('dashboard') ?>">Dashboard</a>
 						</li>
 						<li>
-							<a href="<?= base_url('authors') ?>">Authors
+							<a href="<?= base_url('author') ?>">Authors
 								List</a>
 						</li>
 						<li class="active">

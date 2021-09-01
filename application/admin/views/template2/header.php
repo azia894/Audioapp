@@ -64,9 +64,18 @@
             <!-- Top Bar Start -->
             <div class="topbar">
           
-		          <div class="topbar-left">
+                <div class="topbar-left" style="padding: 0px 50px ; width: auto !important;">
                     <div class="text-center">
-                        <a href="<?=base_url('dashboard')?>" class="logo"> Dil ki Awaz</a>
+                    <!-- <span>
+								<img src="<?php echo base_url('assets') . '/images/logo.png'; ?>" style="width:40px;" />
+							</span>
+							<span style="color :#7030a0;vertical-align: super;">
+								DIL KI AWAZ
+							</span> -->
+                            <a href="<?=base_url('dashboard')?>" class="logo"> 
+                                <img src="<?php echo base_url('assets').'/images/logo.png'; ?>" style="width:40px;" alt=""> 
+                        Dil ki Awaz
+                    </a>
                     </div>
                 </div>
 		
