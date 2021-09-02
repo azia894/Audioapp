@@ -67,7 +67,12 @@ class books_model extends CI_Model{
 		$q = $this->db->insert($this->tbl_name,$data);
 		return $q;
 	}
-
+	function modify($data,$id){
+		$this->db->where('bkid',$id);
+		$q = $this->db->update($this->tbl_name,$data);
+		return $q;
+		
+	}
 	function actived($update_data,$id){
         $this->db->where('bkid',$id);
         $q = $this->db->update($this->tbl_name,$update_data);
