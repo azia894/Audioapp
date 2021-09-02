@@ -8,8 +8,10 @@
 					<h4 class="page-title">Genre/Subject Books</h4>
 					<ol class="breadcrumb">
 						<li>
-							<a href="<?= base_url('author') ?>">Genre/Subject
-								Books List</a>
+							<a href="<?= base_url('dashboard') ?>">Dashboard</a>
+						</li>
+						<li>
+							<a href="<?=base_url('books')?>">Books</a>
 						</li>
 						<li class="active">
 							Add

@@ -29,10 +29,13 @@
 										<input class="form-control" id="nar_name" name="nar_name" maxlength="50">
 									</div>
 									<div class="form-group">
-										<label>Gender</label><br>
-										<input type="radio" name="gender" value="male"> Male<br>
-										<input type="radio" name="gender" value="female"> Female<br>
-										<input type="radio" name="gender" value="other"> Other
+										<label>Gender</label><br />
+										  <input type="radio" id="male" name="gender" value="male">
+										  <label for="male">Male</label><br>
+										  <input type="radio" id="female" name="gender" value="female">
+										  <label for="female">Female</label><br>
+										  <input type="radio" id="other" name="gender" value="other">
+										  <label for="other">Other</label>
 									</div>
 									<div class="form-group">
 										<label>Country</label>
@@ -45,7 +48,7 @@
 									<div class="form-group">
 										<label>Description </label>
 										<textarea class="form-control" placeholder="Enter Description" name="nar_desc" id="nar_desc" maxlength="2000"></textarea>
-										<!--label class="error" generated="true" for="job_desc"></label-->
+										<!-- <label class="error" generated="true" for="job_desc">EROORR</label> -->
 									</div>
 									<!--	<div class="form-group">
 										<label>Image</label>
@@ -60,3 +63,8 @@
 			</div>
 		</div> <!-- container -->
 	</div> <!-- content -->
+	<style>
+		#gender-error{
+			float: right;
+		}
+	</style>

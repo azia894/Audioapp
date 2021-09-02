@@ -64,7 +64,7 @@
 									<?php
 									if ($record['aut_img'] != "") {
 									?>
-										<img src="<?= $record['aut_img'] ?>" class="img-thumbnail" />
+										<img src="<?= $record['aut_img'] ?>" class="img-thumbnail" style="width: 250px; height: auto;" /> 
 									<?php
 									}
 									?>

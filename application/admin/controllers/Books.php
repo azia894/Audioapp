@@ -29,8 +29,8 @@ class Books extends CI_Controller
     
     public function add()
     {
-        $data['get_data'] = $this->author_model->selectAll();
-        $data['get_sub'] = $this->subject_model->selectAll();
+        $data['get_data'] = $this->author_model->selectAllActive();
+        $data['get_sub'] = $this->subject_model->selectAllActive();
         $data['main_content2'] = 'add_books';
         $this->load->view('template2/body', $data);
     }
@@ -160,8 +160,8 @@ class Books extends CI_Controller
         $id = $this->uri->segment('3');
         $bd = $this->books_model->getDetails($id);
         if ($bd['num']==1) {
-            $data['get_data'] = $this->author_model->selectAll();
-            $data['get_sub'] = $this->subject_model->selectAll();
+            $data['get_data'] = $this->author_model->selectAllActive();
+            $data['get_sub'] = $this->subject_model->selectAllActive();
             $data['record'] = $bd['data'][0];
             $data['main_content2'] = 'edit_books';
             $this->load->view('template2/body', $data);

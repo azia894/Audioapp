@@ -11,7 +11,11 @@
 							<a href="<?= base_url('dashboard') ?>">Dashboard</a>
 						</li>
 						<li>
-							<a href="<?= base_url('chapter') ?>">Chapters List</a>
+							<a href="<?= base_url('books') ?>">Books</a>
+						</li>
+						<li>
+							<a href="<?= base_url('chapter/list/'.$record['bid']) ?>">Chapters
+								List</a>
 						</li>
 						<li class="active">
 							Edit

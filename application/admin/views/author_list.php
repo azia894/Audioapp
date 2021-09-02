@@ -18,7 +18,11 @@
 			</div>   
 			<div class="row">
 		<div class="col-sm-12">
-		<a style=" text-decoration: none; color:white" href="<?= base_url('author/add') ?>"><button  type="button" class="btn btn-primary"> Add Author </a></button>
+		<a style=" text-decoration: none; color:white" href="<?= base_url('author/add') ?>">
+			<button  type="button" class="btn btn-primary"> 
+				Add Author 
+			</button>
+		</a>
 				<br></br>
 		
 			<?php

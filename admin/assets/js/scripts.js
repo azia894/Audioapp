@@ -121,8 +121,7 @@ $(document).ready(function(){
 			gender:'Please enter Gender',
 			country:'Please enter Country',
 			city:'Please enter City',
-			gender:'Please enter description',
-			
+			nar_desc:'Please enter Description',
 		},
 		submitHandler:function(form){
 			debugger;	
@@ -145,7 +144,7 @@ $(document).ready(function(){
 					$("#add_narrator_msg").html(j.msg);					
 					if(j.status){	
 					debugger;							
-						$("#add_narrator_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
+						$("#add_narrator_form").find("input[type=text],input[type=email],input[type=file],input[type=radio],select,textarea").val("");
 						$("#add_narrator_msg").html(j.msg);
 							window.location=site_url+'/narrator';							
 						}else {

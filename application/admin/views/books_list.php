@@ -20,8 +20,12 @@
 			</div>   
 			<div class="row">
 		<div class="col-sm-12">
-		<a style=" text-decoration: none; color:white" href="<?= base_url('books/add') ?>"><button  type="button" class="btn btn-primary"> Add Books </a></button>
-				<br></br>
+		<a style=" text-decoration: none; color:white" href="<?= base_url('books/add') ?>">
+			<button  type="button" class="btn btn-primary"> 
+				Add Books
+			</button>
+		</a>
+		<br></br>
 		
 			<?php
 				if($this->session->flashdata('success')){

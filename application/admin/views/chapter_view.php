@@ -12,11 +12,14 @@
 					$m_name = $md['bk_name'];
 					?>
 					<h4 class="page-title">
-						<p class="thicker"><?= ucwords($m_name); ?> Book</p>/Chapters List
+						<p class="thicker"><?= ucwords($m_name); ?> Book</p>Chapters List
 					</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?= base_url('dashboard') ?>">Dashboard</a>
+						</li>
+						<li>
+							<a href="<?=base_url('books')?>">Books</a>
 						</li>
 						<li class="active">
 							Chapters List
@@ -26,7 +29,11 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-					<a style=" text-decoration: none; color:white" href="<?= base_url('chapter/add/' . $this->uri->segment('3')) ?>"><button type="button" class="btn btn-primary"> Add Chapters </a></button>
+					<a style=" text-decoration: none; color:white" href="<?= base_url('chapter/add/' . $this->uri->segment('3')) ?>">
+						<button type="button" class="btn btn-primary"> 
+							Add Chapters
+						</button>
+					</a>
 					<br></br>
 
 					<?php

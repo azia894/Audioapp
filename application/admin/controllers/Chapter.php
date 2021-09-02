@@ -28,7 +28,7 @@ class Chapter extends CI_Controller{
 	
 	
 	 function add(){
-        $data['get_data'] = $this->narrator_model->selectAll();
+        $data['get_data'] = $this->narrator_model->selectAllActive();
         $data['get_sub'] = $this->books_model->selectAll();
 		 $data['main_content2'] = 'add_chapter';
 		 $this->load->view('template2/body',$data);
@@ -154,7 +154,7 @@ class Chapter extends CI_Controller{
 		$id = $this->uri->segment('4');
 		$bd = $this->chapter_model->getDetails($id);
 		if($bd['num']==1){
-			$data['get_data'] = $this->narrator_model->selectAll();
+			$data['get_data'] = $this->narrator_model->selectAllActive();
 			$data['get_sub'] = $this->books_model->selectAll();
 			$data['record'] = $bd['data'][0];
 			$data['main_content2'] = 'edit_chapter';		 

@@ -20,7 +20,11 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-					<a style=" text-decoration: none; color:white" href="<?= base_url('subject/add') ?>"><button type="button" class="btn btn-primary"> Add Genre/Subject </a></button>
+					<a style=" text-decoration: none; color:white" href="<?= base_url('subject/add') ?>">
+						<button type="button" class="btn btn-primary"> 
+							Add Genre/Subject 
+						</button>
+					</a>
 					<br></br>
 					<div id="add_sub_msg"></div>
 					<?php

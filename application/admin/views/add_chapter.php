@@ -5,6 +5,7 @@
 			<!-- Page-Title -->
 			<div class="row">
 				<div class="col-sm-12">
+					<!-- base_url('chapter/list/'.$req->bkid) -->
 					<?php
 					$id = $this->uri->segment('3');
 					$this->load->model('books_model');
@@ -15,7 +16,7 @@
 						Book/Chapters</h4>
 					<ol class="breadcrumb">
 						<li>
-							<a href="<?= base_url('author') ?>">Chapters
+							<a href="<?= base_url('chapter/list/'.$id) ?>">Chapters
 								List</a>
 						</li>
 						<li class="active">
