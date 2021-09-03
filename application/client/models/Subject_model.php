@@ -24,8 +24,8 @@ class subject_model extends CI_Model{
    function sublist()
     {
         $query = "SELECT id,sub_name, concat(IFNULL( u.total,0) + IFNULL( bs.total,''))total FROM aud_subject s LEFT JOIN (
-            SELECT sub_id,count(*)total FROM aud_booktbl GROUP BY sub_id)u ON s.id=u.sub_id LEFT JOIN (
-                SELECT sub_id,count(*)total FROM bookSubjects GROUP BY sub_id)bs ON s.id=bs.sub_id";
+            SELECT sub_id,count(*)total FROM aud_booktbl WHERE aud_booktbl.bk_status = 1 GROUP BY sub_id)u ON s.id=u.sub_id LEFT JOIN (
+            SELECT sub_id,count(*)total FROM bookSubjects GROUP BY sub_id)bs ON s.id=bs.sub_id WHERE s.status = 1";
         $q = $this->db->query($query); 
         if ($q->num_rows() > 0) {
             foreach ($q->result() as $data) {

@@ -5,7 +5,7 @@
 			<!-- Page-Title -->
 			<div class="row">
 				<div class="col-sm-12">
-					<h4 class="page-title">Genre/Subject Books</h4>
+					<h4 class="page-title">Add Book</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?= base_url('dashboard') ?>">Dashboard</a>

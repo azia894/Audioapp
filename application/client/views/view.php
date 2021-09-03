@@ -8,9 +8,16 @@
                     ?>
                     <img src="<?= $img ?>" width="175" height="175" />
                 </div>
-                <h1 style="color:black"><?= ucwords($record['bk_name']) ?></h1>
-                <p class="book-page-author"><a href="<?= base_url('authors/view/' . $record['id']) ?>"><?= ucwords($record['aut_name']) ?> <span class="dod-dob">(<?= $record['dob'] ?>)</span></a></p>
-                <p class="description"><br /><?= $record['bk_desc'] ?><br /><br /></p>
+                <h1 style="color:black"><?= ucwords($record['bk_name']) ?>
+                </h1>
+                <p class="book-page-author">
+                    <a href="<?= base_url('authors/view/' . $record['id']) ?>">
+                        <?= ucwords($record['aut_name']) ?>
+                        <!-- <span class="dod-dob">(<?= $record['dob'] ?>)</span> -->
+                    </a>
+                </p>
+                <p class="description"><br /><?= $record['bk_desc'] ?><br /><br />
+                </p>
                 <!-- <p class="book-page-genre"><span>Genre(s):</span> Action & Adventure</p> -->
                 <!-- <p class="book-page-genre"><span>Language:</span> English</p> -->
             </div> <!-- end .content-wrap -->
@@ -25,7 +32,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    if ($getdata == NULL) {
+                    if ($getdata == null) {
                     ?>
                         <tr>
                             <td colspan="7">No Data to display</td>
@@ -35,21 +42,26 @@
                             $i = 1;
                             foreach ($getdata as $row) {
                             ?>
-                                <tr>
-                                    <td><?php echo $i; ?></td>
-                                    <td><audio controls>
-                                            <source src="<?= $row->ch_audio ?>" type="audio/ogg">
-                                            <source src="<?= $row->ch_audio ?>" type="audio/mpeg">
-                                            Your browser does not support the audio element.
-                                        </audio></td>
-                                    <td style="vertical-align: middle;"><a href="#" class="chapter-name"><?php echo $row->ch_name ?></a></td>
-                                    <td style="vertical-align: middle;"><?php echo $row->ch_duration ?></td>
-                                </tr>
-                        <?php
+                        <tr>
+                            <td><?php echo $i; ?>
+                            </td>
+                            <td><audio controls>
+                                    <source src="<?= $row->ch_audio ?>" type="audio/ogg">
+                                    <source src="<?= $row->ch_audio ?>" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio></td>
+                            <td style="vertical-align: middle;">
+                                <p class="chapter-name"><?php echo $row->ch_name ?>
+                                </p>
+                            </td>
+                            <td style="vertical-align: middle;"><?php echo $row->ch_duration ?>
+                            </td>
+                        </tr>
+                <?php
                                 $i++;
                             }
                         }
-                        ?>
+                ?>
                 </tbody>
             </table>
         </div><!-- end .page -->
