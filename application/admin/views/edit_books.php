@@ -23,7 +23,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div id="edit_books_msg"></div>
-					<form id="edit_books_form" role="form" action="<?= base_url("books/modify/" . $record['bkid']) ?>" method="post" enctype="multipart/form-data">
+					<form id="edit_books_form" name="edit_books_form" role="form" action="<?= base_url("books/modify/" . $record['bkid']) ?>" method="post" enctype="multipart/form-data">
 						<div class="card-box">
 							<h4 class="m-t-0 header-title"><b>Edit Books</b></h4></br></br>
 							<div class="row">
@@ -35,7 +35,7 @@
 									<div class="form-group">
 										<label>Authors</label>
 										<select name="author_id" id="author_id" class="form-control">
-											<option value="0">Select Author</option>
+											<option value="">Select Author</option>
 											<?php
 											if ($get_data['num'] > 0) {
 												foreach ($get_data['data'] as $c) {

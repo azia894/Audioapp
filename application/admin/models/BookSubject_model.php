@@ -24,8 +24,10 @@ class bookSubject_model extends CI_Model
 		if ($num > 0) {
       $data = $q->result();		
 		}
-    foreach ($data as $key) {
-      array_push($temp,$key->sub_id);
+    if($num > 0){
+      foreach ($data as $key) {
+        array_push($temp,$key->sub_id);
+      }
     }
 		return array('num'=>$num,'data'=>$data,'temp'=>$temp);
 	}
