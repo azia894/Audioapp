@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 
         $config['total_rows'] = $this->home_model->count_all_users();        
 
-        $config['per_page'] = 10;        
+        $config['per_page'] = 50;        
 
         $config['uri_segment'] = 3;
 
