@@ -16,6 +16,9 @@ class Authors extends CI_Controller {
         $q = $this->authors_model->getRows();
         if($q){
             $totalRec = count($this->authors_model->getRows());
+        } else{
+            $totalRec = 0;
+        }
             
             //pagination configuration
             $config['target']      = '#postList';
@@ -23,7 +26,6 @@ class Authors extends CI_Controller {
             $config['total_rows']  = $totalRec;
             $config['per_page']    = $this->perPage;
             $this->ajax_pagination->initialize($config);
-        }
         
         //get the posts data
         $data['posts'] = $this->authors_model->getRows(array('limit'=>$this->perPage));

@@ -11,7 +11,7 @@
 			foreach ($posts as $post) {
 			?>
 				<?php
-				$img = ADMIN_URL . '/assets/authorimages/' . $post['aut_img']; ?>
+				$img = $post['aut_img']; ?>
 
 		<li class="catalog-result">
 
