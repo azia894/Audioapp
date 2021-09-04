@@ -65,7 +65,9 @@ class books_model extends CI_Model{
 	
 	function create($data){
 		$q = $this->db->insert($this->tbl_name,$data);
-		return $q;
+		// return $q;
+		$last_id = $this->db->insert_id();
+		return $last_id;
 	}
 	function modify($data,$id){
 		$this->db->where('bkid',$id);

@@ -53,16 +53,17 @@
 									</div>
 									<div class="form-group">
 										<label>Genre/Subject</label>
-										<select name="sub_id" id="sub_id" class="form-control" multiple>
+										<select name="sub_id[]" id="sub_id" class="form-control" multiple>
 											<option value="">Select Subject/Genre</option>
 											<?php
-											if ($get_sub['num'] > 0) {
-												foreach ($get_sub['data'] as $s) {
+												if ($get_sub['num'] > 0) {
+													foreach ($get_sub['data'] as $s) {														
 											?>
-													<option <?= ($record['sub_id'] == $s->id ? 'selected' : '') ?> value="<?= $s->id ?>"><?= $s->sub_name ?></option>
-											<?php
+												<option <?= (in_array($s->id, $get_booksub['temp']) ? 'selected' : '') ?> value="<?= $s->id ?>">
+													<?= $s->sub_name ?>
+												</option>
+												<?php }	
 												}
-											}
 											?>
 										</select>
 									</div>

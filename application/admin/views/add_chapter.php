@@ -76,7 +76,7 @@
 									</div>
 									<span>
 										<input type="hidden" id="bid" name="bid" value="<?= $this->uri->segment('3') ?>">
-										<input type="hidden" name="ch_audio_duration" id="ch_audio_duration" value="0.00">
+										<input type="hidden" name="ch_audio_duration" id="ch_audio_duration">
 									</span>
 									<div class="form-group">
 										<label>Chapter Name</label>
@@ -248,6 +248,7 @@
 						ret += "" + mins + ":" + (secs < 10 ? "0" : "");
 						ret += "" + secs;
 						ch_duration = ret;
+						document.getElementById("ch_audio_duration").value = ret;
 						if (ret) {
 							$('#uploadBtn').prop('disabled', false);
 						}
