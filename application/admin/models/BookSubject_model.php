@@ -4,7 +4,7 @@
 
 class bookSubject_model extends CI_Model
 {
-  private $tbl_name = 'booksubjects';
+  private $tbl_name = 'bookSubjects';
 
   public function create($data) {
     $q = $this->db->insert($this->tbl_name, $data);
