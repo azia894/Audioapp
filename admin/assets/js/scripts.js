@@ -507,6 +507,9 @@ $(document).ready(function(){
 			'author_id':{
 				required:true
 			},
+			'sub_id[]':{
+				required:true
+			},
 			'bk_name':{
 				required:true
 			},

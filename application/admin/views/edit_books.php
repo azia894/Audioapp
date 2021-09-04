@@ -53,7 +53,7 @@
 									</div>
 									<div class="form-group">
 										<label>Genre/Subject</label>
-										<select name="sub_id[]" id="sub_id" class="form-control" multiple>
+										<select name="sub_id[]" id="sub_id[]" class="form-control" multiple>
 											<option value="">Select Subject/Genre</option>
 											<?php
 												if ($get_sub['num'] > 0) {

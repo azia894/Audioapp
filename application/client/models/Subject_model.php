@@ -37,11 +37,13 @@ class subject_model extends CI_Model{
 
     function catbklist($id)
     {
-        $query = "SELECT bt.bkid,bt.bk_name,bt.sub_id,bt.bk_img,a.id,a.aut_name,a.dob,bs.sub_id,(SELECT GROUP_CONCAT(CONCAT(sub.id,':',sub.sub_name)) FROM bookSubjects bs JOIN aud_subject sub ON bs.sub_id = sub.id WHERE bs.bkid = bt.bkid) as genre
-        FROM $this->tbl_name2  bt 
-        LEFT JOIN aud_author a ON a.id = bt.author_id  
-        LEFT JOIN bookSubjects bs ON bs.sub_id = '$id' and bt.bkid = bs.bkid   
-        WHERE bt.sub_id='$id' ORDER BY bt.bkid DESC";
+        $query = "SELECT bt.bkid, bt.bk_name, bt.sub_id, bt.bk_img, a.id, a.aut_name, a.dob, bs.sub_id, asub.sub_name as genre 
+        FROM aud_booktbl bt 
+        LEFT JOIN aud_author a ON a.id = bt.author_id 
+        LEFT JOIN bookSubjects bs ON bs.bkid = bt.bkid 
+        LEFT JOIN aud_subject asub ON asub.id = bs.sub_id 
+        WHERE bs.sub_id = '$id' ORDER BY bt.bkid DESC
+        ";
           $q = $this->db->query($query);
         if ($q->num_rows() > 0) {
             foreach ($q->result() as $data) {
