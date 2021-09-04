@@ -43,7 +43,7 @@
                             foreach ($getdata as $row) {
                             ?>
                         <tr>
-                            <td><?php echo $i; ?>
+                            <td style="vertical-align: middle;"><?php echo $i; ?>
                             </td>
                             <td><audio controls>
                                     <source src="<?= $row->ch_audio ?>" type="audio/ogg">
