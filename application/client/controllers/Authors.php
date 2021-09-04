@@ -13,14 +13,17 @@ class Authors extends CI_Controller {
         $data = array();
         
         //total rows count
-        $totalRec = count($this->authors_model->getRows());
-        
-        //pagination configuration
-        $config['target']      = '#postList';
-        $config['base_url']    = base_url().'authors/ajaxPaginationData';
-        $config['total_rows']  = $totalRec;
-        $config['per_page']    = $this->perPage;
-        $this->ajax_pagination->initialize($config);
+        $q = $this->authors_model->getRows();
+        if($q){
+            $totalRec = count($this->authors_model->getRows());
+            
+            //pagination configuration
+            $config['target']      = '#postList';
+            $config['base_url']    = base_url().'authors/ajaxPaginationData';
+            $config['total_rows']  = $totalRec;
+            $config['per_page']    = $this->perPage;
+            $this->ajax_pagination->initialize($config);
+        }
         
         //get the posts data
         $data['posts'] = $this->authors_model->getRows(array('limit'=>$this->perPage));

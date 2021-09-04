@@ -9,6 +9,7 @@ class authors_model extends CI_Model{
         $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob,au.created_on,au.aut_img,COUNT(bt.bkid) as total');
         $this->db->join('aud_booktbl as bt','au.id = bt.author_id');
         $this->db->from('aud_author as au');
+        $this->db->where('au.aut_status',1);
         $this->db->group_by('au.id');
         $this->db->order_by('created_on','desc');
         
@@ -20,7 +21,7 @@ class authors_model extends CI_Model{
         
         $query = $this->db->get();
         
-        return ($query->num_rows() > 0)?$query->result_array():FALSE;
+        return ($query->num_rows() > 0) ? $query->result_array():FALSE;
     }
 
     function getDetails($id)
