@@ -51,8 +51,9 @@
                                     Your browser does not support the audio element.
                                 </audio></td>
                             <td style="vertical-align: middle;">
-                                <p class="chapter-name"><?php echo $row->ch_name ?>
-                                </p>
+                                <span class="chapter-name">
+                                    <?php echo $row->ch_name ?>
+                                </span>
                             </td>
                             <td style="vertical-align: middle;"><?php echo $row->ch_duration ?>
                             </td>
