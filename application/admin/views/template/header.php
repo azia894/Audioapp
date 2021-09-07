@@ -8,8 +8,9 @@
 
 		<link rel="shortcut icon" href="<?=base_url('assets')?>/assets/images/favicon_1.ico">
 
-		<title>Audio App Admin</title>
-
+        <title>Dil-ki-Awaz Admin Panel</title>
+        
+        <link rel="icon" href="<?php echo base_url('assets') . '/images/logo.png'; ?>" type="image/gif" sizes="16x16">
 		<link href="<?=base_url('assets')?>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="<?=base_url('assets')?>/css/core.css" rel="stylesheet" type="text/css" />
         <link href="<?=base_url('assets')?>/css/components.css" rel="stylesheet" type="text/css" />

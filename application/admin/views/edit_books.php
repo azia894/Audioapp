@@ -78,7 +78,8 @@
 									</div>
 									<div class="form-group">
 										<label>Blurb</label>
-										<input class="form-control" id="bk_blurb" name="bk_blurb" value="<?= $record['bk_blurb'] ?>" maxlength="100">
+										<!-- <input class="form-control" id="bk_blurb" name="bk_blurb" value="<?= $record['bk_blurb'] ?>" maxlength="100"> -->
+										<textarea class="form-control" placeholder="Enter Blurb" name="bk_blurb" id="bk_blurb" maxlength="5000"><?= $record['bk_blurb'] ?></textarea>
 									</div>
 									<div class="form-group">
 										<label>Tags</label>

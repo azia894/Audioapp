@@ -87,6 +87,7 @@
 					"url": "<?php echo site_url('subject/getSubjectAll')?>",
 					"type": "POST"
 				},
+				"pageLength": 25,
 				//Set column definition initialisation properties.
 				"columnDefs": [
 				{ 
@@ -105,6 +106,7 @@
 				},
 				//Set column definition initialisation properties.
 				"order": [[ 3, "desc" ]],
+				"pageLength": 25,
 				"columnDefs": [
 				{ 
 				  "targets": [ -1 ], //last column
@@ -121,6 +123,7 @@
 					"type": "POST"
 				},
 				//Set column definition initialisation properties.
+				"pageLength": 25,
 				"columnDefs": [
 				{ 
 				  "targets": [ -1 ], //last column
@@ -137,6 +140,7 @@
 					"type": "POST"
 				},
 				//Set column definition initialisation properties.
+				"pageLength": 25,
 				"columnDefs": [
 				{ 
 				  "targets": [ -1 ], //last column
@@ -153,6 +157,7 @@
 					"url": "<?php echo site_url('narrator/getNarratorAll')?>",
 					"type": "POST"
 				},
+				"pageLength": 25,
 				//Set column definition initialisation properties.
 				"columnDefs": [
 				{ 
@@ -170,6 +175,7 @@
 					"url": "<?php echo site_url('books/getBooksAll')?>",
 					"type": "POST"
 				},
+				"pageLength": 25,
 				//Set column definition initialisation properties.
 				"columnDefs": [
 				{ 
@@ -187,6 +193,7 @@
 					"url": "<?php echo site_url('chapter/getChapterAll')?>",
 					"type": "POST"
 				},
+				"pageLength": 25,
 				//Set column definition initialisation properties.
 				"columnDefs": [
 				{ 
@@ -203,6 +210,7 @@
 					"url": "<?php echo site_url('banner/getBannerAll')?>",
 					"type": "POST"
 				},
+				"pageLength": 25,
 				//Set column definition initialisation properties.
 				"columnDefs": [
 				{ 

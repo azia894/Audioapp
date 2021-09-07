@@ -6,7 +6,7 @@
 			<!-- Page-Title -->
 			<div class="row">
 				<div class="col-sm-12">
-					<h4 class="page-title">Author</h4>
+					<h4 class="page-title">Add Author</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?= base_url('author') ?>">Author List</a>

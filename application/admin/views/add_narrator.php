@@ -5,7 +5,7 @@
 			<!-- Page-Title -->
 			<div class="row">
 				<div class="col-sm-12">
-					<h4 class="page-title">Narrator</h4>
+					<h4 class="page-title">Add Narrator</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?= base_url('narrator') ?>">Narrator List</a>
@@ -42,7 +42,7 @@
 										<input class="form-control" id="country" name="country" maxlength="50">
 									</div>
 									<div class="form-group">
-										<label>city</label>
+										<label>City</label>
 										<input class="form-control" id="city" name="city" maxlength="50">
 									</div>
 									<div class="form-group">

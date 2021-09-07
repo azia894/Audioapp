@@ -81,7 +81,8 @@
 									</div>
 									<div class="form-group">
 										<label>Blurb</label>
-										<input class="form-control" id="bk_blurb" name="bk_blurb" maxlength="100">
+										<!-- <input class="form-control" id="bk_blurb" name="bk_blurb" maxlength="100"> -->
+										<textarea class="form-control" placeholder="Enter Blurb" name="bk_blurb" maxlength="5000" id="bk_blurb"></textarea>
 									</div>
 									<div class="form-group">
 										<label>Tags</label>
@@ -89,7 +90,7 @@
 									</div>
 									<div class="form-group">
 										<label>Description </label>
-										<textarea class="form-control" placeholder="Enter Description" name="bk_desc" maxlength="3000" id="bk_desc"></textarea>
+										<textarea class="form-control" placeholder="Enter Description" name="bk_desc" maxlength="5000" id="bk_desc"></textarea>
 										<!--label class="error" generated="true" for="job_desc"></label-->
 									</div>
 									<div class="form-group row">

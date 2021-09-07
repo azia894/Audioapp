@@ -3,7 +3,7 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -11,7 +11,7 @@
 
 	<title>Audio App</title>
 
-
+	<link rel="icon" href="<?php echo base_url() . 'assets/images/logo.png'; ?>" type="image/gif" sizes="16x16">
 
 	<link href="<?= base_url('assets') ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="<?= base_url('assets') ?>/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/css/et-line-fonts.css" type="text/css">
 	<link href="<?= base_url('assets') ?>/css/style.css" rel="stylesheet" type="text/css">
 	<link href="<?= base_url('assets') ?>/css/stylewp.css" rel="stylesheet" type="text/css">
+	<link href="<?= base_url('assets') ?>/css/HomeStyleSheet.css" rel="stylesheet" type="text/css">
 	<link href="<?= base_url('assets') ?>/css/stylesheet.css" rel="stylesheet" type="text/css">
 
 	<link href="<?= base_url('assets') ?>/css/responsive.css" rel="stylesheet" type="text/css">
@@ -62,7 +63,7 @@
 								<img src="<?php echo base_url() . 'assets/images/logo.png'; ?>" style="width:40px;" />
 							</span>
 							<span style="color :#7030a0;vertical-align: super;">
-								DIL KI AWAZ
+								Dil ki Awaz
 							</span>
 						</a>
 					</div>
@@ -114,19 +115,25 @@
 
 
 							<div>
-								<div class="row" style="margin-top:30px;">
-									<div class="col-xs-12 " style="margin-top: -50px;">
+								<div class="row">
+									<div class="col-xs-12">
 										<div class="widget">
 											<div class="services-list">
-												<ul class="list list-border angle-double-right" style="width:100%;">
-													<li class="list-item">
-														<a href="<?php echo base_url() . 'index.php'; ?>" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true" style="padding: 0px 106px;"><span>Books</span></a>
+												<ul class="list list-border angle-double-right row" id="header_links">
+													<li class="list-item col-md-4 col-sm-4" id="<?php echo base_url() . 'index.php'; ?>">
+														<a href="<?php echo base_url() . 'index.php'; ?>" name="books" aria-controls="howwecan_10" role="tab" data-toggle="tab" aria-expanded="true">
+															Books
+														</a>
 													</li>
-													<li class="list-item">
-														<a href="<?php echo base_url() . 'authors'; ?>" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true" style="padding:0px 106px;"><span>Authors</span></a>
+													<li class="list-item col-md-4 col-sm-4" id="<?php echo base_url() . 'authors'; ?>">
+														<a href="<?php echo base_url() . 'authors'; ?>" name="authors" aria-controls="howwecan_11" role="tab" data-toggle="tab" aria-expanded="true">
+															Authors
+														</a>
 													</li>
-													<li class="list-item">
-														<a href="<?php echo base_url() . 'subject'; ?>" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true" style="padding:0px 106px;"><span>Genre</span></a>
+													<li class="list-item col-md-4 col-sm-4" id="<?php echo base_url() . 'subject'; ?>">
+														<a href="<?php echo base_url() . 'subject'; ?>" name="subject" aria-controls="howwecan_12" role="tab" data-toggle="tab" aria-expanded="true">
+															Genre
+														</a>
 													</li>
 												</ul>
 											</div>
@@ -138,5 +145,5 @@
 						</div>
 					</div>
 				</div>
-			<!-- </div> -->
-		<!-- </section> -->
+				<!-- </div> -->
+				<!-- </section> -->

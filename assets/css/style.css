@@ -599,8 +599,8 @@ ol ul {
 }
 ul.list {
   list-style: outside none none;
-  margin-top: 13px;
-  padding-left: 0;
+  /* margin-top: 13px; */
+  /* padding-left: 0; */
 }
 ul.list li {
   margin: 5px 0;

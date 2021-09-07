@@ -5,13 +5,13 @@
 			<!-- Page-Title -->
 			<div class="row">
 				<div class="col-sm-12">
-					<h4 class="page-title">Author  List</h4>
+					<h4 class="page-title">Authors  List</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?=base_url('dashboard')?>">Dashboard</a>
 						</li>
 						<li class="active">	
-						Author List	
+						Authors List	
 						</li>
 					</ol>
 				</div>
@@ -45,7 +45,7 @@
 			?>
 			<div class="card-box table-responsive">
 
-				<h4 class="m-t-0 header-title"><b>Author</b></h4>
+				<h4 class="m-t-0 header-title"><b>Authors</b></h4>
 				
 				<p class="text-muted font-13 m-b-30">
 				   

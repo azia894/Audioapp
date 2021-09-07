@@ -7,7 +7,9 @@
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
     <meta name="author" content="Coderthemes">
 
-    <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+    <!-- <link rel="shortcut icon" href="assets/images/favicon_1.ico"> -->
+
+    <link rel="icon" href="<?php echo base_url('assets') . '/images/logo.png'; ?>" type="image/gif" sizes="16x16">
 
     <title>Dil-ki-Awaz Admin Panel</title>
 
@@ -189,7 +191,7 @@
                                 } else {
                                     echo 'noactive';
                                 } ?>"><i
-                                    class="md md-add-to-photos"></i> <span> Genre/Subject</span></span> </a>
+                                    class="md md-add-to-photos"></i> <span> Genre/Subjects</span></span> </a>
 
                         </li>
 
@@ -202,7 +204,7 @@
                                 } else {
                                     echo 'noactive';
                                 } ?>"><i
-                                    class="md md-people"></i> <span>Author</span></span> </a>
+                                    class="md md-people"></i> <span>Authors</span></span> </a>
                         </li>
 
                         <li class="has_sub">
@@ -212,7 +214,7 @@
                                 } else {
                                     echo 'noactive';
                                 } ?>"><i
-                                    class="md md-person"></i> <span>Narrator</span></span> </a>
+                                    class="md md-person"></i> <span>Narrators</span></span> </a>
                         </li>
 
                         <li class="has_sub">

@@ -11,7 +11,7 @@
   
 */
 
-	@import url("https://librivox.org/css/style.css");
+	/* @import url("https://librivox.org/css/style.css"); */
 
 
 
@@ -209,7 +209,7 @@ a img {
 **************************************************************/
 
 #top-menu {
-	background: /*add bg*/;
+	/* background: add bg; */
 	position:relative; 
 	text-align:center;
 }
@@ -220,7 +220,7 @@ a img {
 	position:relative; 
 }
 #top-menu ul li { 
-	background: /*add bg*/;
+	/* background: add bg; */
 	display: inline; /*underscoreIE6 only*/
 	_width: 100%; /*underscore is IE6 only*/
 	

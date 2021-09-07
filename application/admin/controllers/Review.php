@@ -16,11 +16,11 @@ class Review extends CI_Controller{
 	 }
 	 
 	 function getReviewAll(){
-		$column = array('id','bid','user_name','review','created_on','status');
+		$column = array('ar.id','ab.bk_name','ar.user_name','ar.review','ar.created_on','ar.status');
 		$order = array('id' => 'desc');
-		$join = array();
+		$join = [['table_name' => 'aud_booktbl ab', 'on' => 'ab.bkid = ar.bid']];
 		$where="id!=''";
-		$tb_name = 'aud_review';
+		$tb_name = 'aud_review ar';
 		$list = $this->datatbl->get_datatables($column,$order,$tb_name,$join,$where);
 		$data = array();
 		$no = $_POST['start'];
@@ -33,7 +33,7 @@ class Review extends CI_Controller{
 			$no++;
 			$row = array();
 			$row[] = $i;
-			$row[] = $req->bid;
+			$row[] = $req->bk_name;
 			$row[] = $req->user_name;
 			$row[] = $req->review;
 			$row[] = $req->created_on;

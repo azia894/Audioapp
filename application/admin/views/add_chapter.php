@@ -12,8 +12,8 @@
 					$md = $this->books_model->getbName($id);
 					$m_name = $md['bk_name'];
 					?>
-					<h4 class="page-title"><?= ucwords($m_name); ?>
-						Book/Chapters</h4>
+					<h4 class="page-title">Add Chapter - <?= ucwords($m_name); ?>
+						Book</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?= base_url('chapter/list/'.$id) ?>">Chapters
@@ -102,9 +102,11 @@
 										<!-- <button id='cancel_btn' class="btn btn-cancel">Cancel</button> -->
 									</div>
 									<p id="uploadError" style="color:red"></p>
-									<!-- <button type="submit" class="btn btn-primary" onclick="new_chaper()"
-									id='submit_btn'>Submit</button> -->
-									<button type="submit" class="btn btn-primary" disabled id='submit_btn'>Submit</button>
+									<button type="button" class="btn btn-primary" disabled onclick="submitChapter()" id='submit_btn'>
+										Submit 
+									</button>
+									<span id="spinner"></span>									
+									<!-- <button type="submit" class="btn btn-primary" disabled id='submit_btn'>Submit</button> -->
 								</div>
 							</div>
 						</div>
@@ -259,4 +261,37 @@
 				reader.readAsDataURL(file);
 			}
 		}, false);
+
+		function submitChapter(){
+			console.log("submit");
+			document.getElementById("spinner").innerHTML = '<div class="loader"></div>';
+			document.getElementById("add_chapter_form").submit();
+		}
 	</script>
+	<style>
+		#spinner{
+			padding-left: 10px;
+			vertical-align: middle;
+		}
+	.loader {
+		border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid green;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+	}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+	</style>

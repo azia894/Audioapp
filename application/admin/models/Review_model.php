@@ -11,17 +11,20 @@ class review_model extends CI_Model{
 		if ($num > 0) {
 			$data = $q->result();		
 		}
-		return array('num'=>$num,'data'=>$data);
+		return $data;
 	}
 	
 	function selectAllActive(){
-		$this->db->where('aut_status','1');
-		$q = $this->db->get($this->tbl_name);
+		$query = "SELECT ar.id, ab.bk_name, ar.user_name, ar.review, ar.rating, ar.status, ar.created_on FROM aud_review ar JOIN aud_booktbl ab ON ar.bid = ab.bkid";
+		$q = $this->db->query($query);
+		// $this->db->where('aut_status','1');
+		// $q = $this->db->get($this->tbl_name);
 		$num = $num = $q->num_rows();
 		$data="";
 		if ($num > 0) {
 			$data = $q->result();		
 		}
+		// print_r($data); exit;
 		return array('num'=>$num,'data'=>$data);
 	}
 	

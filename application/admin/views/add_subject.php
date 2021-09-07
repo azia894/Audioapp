@@ -5,7 +5,7 @@
 			<!-- Page-Title -->
 			<div class="row">
 				<div class="col-sm-12">
-					<h4 class="page-title">Genre/Subject</h4>
+					<h4 class="page-title">Add Genre/Subject</h4>
 					<ol class="breadcrumb">
 						<li>
 							<a href="<?= base_url('subject') ?>">Genre/Subject List</a>
