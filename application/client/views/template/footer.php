@@ -14,7 +14,7 @@
 		url = url.substr(url.lastIndexOf("/") + 1);
 		// If file name not avilable
 		if (url == '') {
-			url = 'index.html';
+			url = 'index.php';
 		}
 		$('#header_links li').each(function() {
 			// select href
