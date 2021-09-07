@@ -102,11 +102,11 @@
 										<!-- <button id='cancel_btn' class="btn btn-cancel">Cancel</button> -->
 									</div>
 									<p id="uploadError" style="color:red"></p>
-									<button type="button" class="btn btn-primary" disabled onclick="submitChapter()" id='submit_btn'>
+									<!-- <button type="button" class="btn btn-primary" disabled onclick="submitChapter()" id='submit_btn'>
 										Submit 
-									</button>
+									</button> -->
+									<button type="submit" class="btn btn-primary" disabled id='submit_btn'>Submit</button>
 									<span id="spinner"></span>									
-									<!-- <button type="submit" class="btn btn-primary" disabled id='submit_btn'>Submit</button> -->
 								</div>
 							</div>
 						</div>
@@ -262,11 +262,12 @@
 			}
 		}, false);
 
-		function submitChapter(){
+		// function submitChapter(){
+		document.getElementById("submit_btn").addEventListener('click', function() {
 			console.log("submit");
 			document.getElementById("spinner").innerHTML = '<div class="loader"></div>';
-			document.getElementById("add_chapter_form").submit();
-		}
+			// document.getElementById("add_chapter_form").submit();
+		});
 	</script>
 	<style>
 		#spinner{
