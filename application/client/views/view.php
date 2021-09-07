@@ -1,6 +1,6 @@
 <div class="row">
     <div class="tab-content">
-        <div class="page book-page">
+        <div class="book-page">
             <div class="content-wrap clearfix">
                 <div class="book-page-book-cover">
                     <?php

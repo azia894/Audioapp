@@ -10,6 +10,7 @@ class authors_model extends CI_Model{
         $this->db->join('aud_booktbl as bt','au.id = bt.author_id');
         $this->db->from('aud_author as au');
         $this->db->where('au.aut_status',1);
+        $this->db->where('bt.bk_status',1);
         $this->db->group_by('au.id');
         $this->db->order_by('created_on','desc');
         
@@ -41,6 +42,7 @@ class authors_model extends CI_Model{
     {
         $this->db->order_by("bkid", "ASC");
         $this->db->where('author_id',$id);
+        $this->db->where('bk_status',1);
           $q = $this->db->get($this->tbl_name2);
         if ($q->num_rows() > 0) {
             foreach ($q->result() as $data) {

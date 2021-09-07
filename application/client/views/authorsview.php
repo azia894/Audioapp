@@ -1,7 +1,6 @@
 <div class="row">
 	<div class="tab-content">
-
-		<div class="page author-page">
+		<div class="author-page">
 			<div class="page-header-wrap js-header_section">
 				<div class="content-wrap clearfix">
 					<?php
@@ -9,22 +8,14 @@
 					?>
 					<div class="book-page-book-cover">
 						<img src="<?= $img ?>" alt="book-cover-large" width="175" height="175">
-
-
-
 					</div>
 					<h1 style="color: black;"><?= ucwords($record['aut_name']) ?>
 						<!-- <span class="dod-dob">(<?= ucwords($record['dob']) ?>)</span> -->
 					</h1>
-
-					<p class="description"><?= ucwords($record['aut_desc']) ?>
+					<p class="description">
+						<?= ucwords($record['aut_desc']) ?>
 					</p>
-
-
-
 				</div>
-
-
 				<div class="sort-menu" id="sort_menu" style="display:none;">
 					<p>Order by</p>
 					<select class="js-sort-menu">
@@ -33,7 +24,6 @@
 					</select>
 				</div><!-- end .sort-menu -->
 			</div><!-- end . page-header -->
-
 			<ul class="browse-list">
 				<?php
 				if ($getdata == null) {
@@ -59,47 +49,19 @@
 							// }
 						?>
 					<li class="catalog-result">
-
-
-
 						<a href="<?= base_url('chapter/view/' . $row->bkid) ?>" class="book-cover"><img src="<?= $img ?>" alt="book-cover-65x65" width="65" height="65"></a>
-
 						<div class="result-data">
 							<h3><a href="<?= base_url('chapter/view/' . $row->bkid) ?>"><?= ucwords($row->bk_name) ?></a></h3>
-
-
-							<!-- <p class="book-meta">  <?= $genreList ?>
-						</p> -->
+							<!-- <p class="book-meta">  
+								<?= $genreList ?>
+							</p> -->
 						</div>
-
-
 					</li>
-			<?php
-						}
+					<?php	}
 					}
 			?>
-
 			</ul>
-
 			<div class="page-number-nav"></div>
-
 		</div>
 	</div><!-- end .page -->
-
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-
-
-</div>
-</div>
-</div>
-</section>
-
-</div>
 </div>
