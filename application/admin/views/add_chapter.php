@@ -210,6 +210,7 @@
 							document.getElementById("ch_audio").value = downloadURL;
 
 							$('#submit_btn').prop('disabled', false);
+							$("#upload_audio").prop('disabled',true);
 							// document.getElementById("add_chapter_form").submit();
 						});
 					}
@@ -265,8 +266,10 @@
 		// function submitChapter(){
 		document.getElementById("submit_btn").addEventListener('click', function() {
 			console.log("submit");
+			// document.getElementById("upload_audio").value = downloadURL;
+			// $("#upload_audio").prop('disable',true);
 			document.getElementById("spinner").innerHTML = '<div class="loader"></div>';
-			$('#submit_btn').prop('disabled', true);
+			// $('#submit_btn').prop('disabled', true);
 			// document.getElementById("add_chapter_form").submit();
 		});
 	</script>
