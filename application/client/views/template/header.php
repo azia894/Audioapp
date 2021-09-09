@@ -107,7 +107,21 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-lg-12">
-
+						<div class="row">
+							<div class="col-md-6">
+								</div>
+								<div class="col-md-6">
+									<div style="display: flex; flex-direction: row; align-items: baseline;">
+										<span>Search: </span>
+										<form action="/index.php" method="get" style="display: inline-block;">
+											<div class="form-group" style="display: inline-block;">
+												<input type="text" placeholder="Search with Book name" class="form-control" id="search" name="search" maxlength="100">
+											</div>
+											<button type="submit" class="btn btn-primary">search</button>
+									</div>
+								</form>
+							</div>
+						</div>
 
 						<h3>Browse the Catalog</h3>
 

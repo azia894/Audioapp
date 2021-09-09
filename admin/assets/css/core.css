@@ -1110,7 +1110,7 @@ pre {
   font-weight: 700;
   letter-spacing: .05em;
   line-height: 60px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 .logo h1 {
   height: 50px;

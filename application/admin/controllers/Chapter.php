@@ -49,15 +49,15 @@ class Chapter extends CI_Controller{
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			  <strong>"'.$this->input->post('ch_name').'" Chapter already exists</strong>
 			</div>' ;
-			}else if($this->input->post('ch_name')=='' ){
+			}else if($this->input->post('ch_name')== ""){
 			  $msg='<div class="alert alert-warning">
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			  <strong>Please enter Chapter name</strong>
 			</div>' ;
 			}else{	
 			$insert_data = array(
-                'bid'=>$this->input->post('bid'),
-                'nar_id'=>$this->input->post('nar_id'),		
+				'bid'=>$this->input->post('bid'),
+				'nar_id'=>$this->input->post('nar_id'),		
 				'ch_name'=>$this->input->post('ch_name'),
 				'ch_duration'=> $this->input->post('ch_audio_duration'),
 				'ch_audio'=> $this->input->post('ch_audio'),
@@ -82,6 +82,7 @@ class Chapter extends CI_Controller{
 			// 			 }
 			// 		 }
 			$q = $this->chapter_model->create($insert_data);
+			// echo $q; exit;
 			if($q){		
 	            $status=1;			
 				 $msg='<div class="alert alert-success">
@@ -95,6 +96,7 @@ class Chapter extends CI_Controller{
 						</div>' ;
 			}
 		 }
+		 $msg .= '<script>document.getElementById("spinner").innerHTML = "";</script>';
 		 $res = array('status'=>$status,'msg'=>$msg);
 		echo json_encode($res); exit;
 	}
@@ -218,8 +220,8 @@ class Chapter extends CI_Controller{
 			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			   <strong>Warning!</strong>Invalid action</div>';
 		 }
-		 
-		  $res = array('status'=>$status,'msg'=>$msg);
+
+		$res = array('status'=>$status,'msg'=>$msg);
 		 echo json_encode($res); exit;	
 	 }
 	 

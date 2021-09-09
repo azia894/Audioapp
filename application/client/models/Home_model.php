@@ -8,16 +8,24 @@ class home_model extends CI_Model{
 
 	private function _get_users_data(){ 
 
-		$this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob, (SELECT GROUP_CONCAT(CONCAT(sub.id,":",sub.sub_name)) FROM bookSubjects bs JOIN aud_subject sub ON bs.sub_id = sub.id WHERE bs.bkid = bt.bkid) as genre');
+		$this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,bt.bk_year,au.id,au.aut_name,au.dob, (SELECT GROUP_CONCAT(CONCAT(sub.id,":",sub.sub_name)) FROM bookSubjects bs JOIN aud_subject sub ON bs.sub_id = sub.id WHERE bs.bkid = bt.bkid) as genre');
 		$this->db->where('bt.bk_status',1);
 		$this->db->join('aud_author as au','bt.author_id=au.id');
 		$this->db->from("$this->tbl_name as bt"); 
 
     }
 	
-	public function get_users($limit, $start){ 
+	public function get_users($limit, $start, $text){ 
+        // $this->_get_users_data(); 
+				$this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,bt.bk_year,au.id,au.aut_name,au.dob, (SELECT GROUP_CONCAT(CONCAT(sub.id,":",sub.sub_name)) FROM bookSubjects bs JOIN aud_subject sub ON bs.sub_id = sub.id WHERE bs.bkid = bt.bkid) as genre');
+				$this->db->where('bt.bk_status',1);
+				
+				if($text != ""){
+					$this->db->where("bt.bk_name LIKE '%$text%'");
+				}
 
-        $this->_get_users_data(); 
+				$this->db->join('aud_author as au','bt.author_id=au.id');
+				$this->db->from("$this->tbl_name as bt"); 
 
         $this->db->limit($limit, $start); 
 
@@ -51,7 +59,7 @@ class home_model extends CI_Model{
 
 	function getDetails($id){
 		$this->db->where('bt.bkid',$id);	
-		$this->db->select('bt.bkid,bt.author_id,bt.bk_desc,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob');
+		$this->db->select('bt.bkid,bt.author_id,bt.bk_desc,bt.bk_name,bt.bk_img,bt.bk_year,au.id,au.aut_name,au.dob');
 		
 		$this->db->join('aud_author as au','bt.author_id=au.id');
 		$q = $this->db->get("$this->tbl_name as bt");

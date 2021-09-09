@@ -95,22 +95,22 @@ $(document).ready(function(){
 	submitHandler:function(form){
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+                //  debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#contact_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// debugger;							
 						$("#contact_form").find("input[type=text],input[type=email],textarea").val("");
 						$("#contact_msg").html(j.msg);	
                         goTop();						
@@ -140,22 +140,22 @@ $(document).ready(function(){
 	submitHandler:function(form){
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+                //  debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#newsletter_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// debugger;							
 						$("#newsletter_form").find("input[type=text],input[type=email],textarea").val("");
 						$("#newsletter_msg").html(j.msg);	
                         goTop();						

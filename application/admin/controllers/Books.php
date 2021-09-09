@@ -274,6 +274,7 @@ class Books extends CI_Controller
                 unlink('assets/bookimages/'.$bd['data'][0]['bk_img']);
             }
             $this->books_model->del($id);
+            $this->bookSubject_model->del($id);
             $this->session->set_flashdata('success', '"'.$bd['data']['0']['bk_name'].'" books Deleted Successfully');
             redirect('books');
         } else {

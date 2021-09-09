@@ -14,22 +14,22 @@ $(document).ready(function(){
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// // debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// // debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// // debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+					//  // debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#add_sub_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// // debugger;							
 						$("#add_subject_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#add_sub_msg").html(j.msg);
 							window.location=site_url+'/subject';							
@@ -63,26 +63,26 @@ $(document).ready(function(){
 			aut_img:'Please select image',
 		},
 		submitHandler:function(form){
-			debugger;	
+			// // debugger;	
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// // debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// // debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// // debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+					// // debugger;						
 					var j = JSON.parse(xhr.responseText);
 					$("#add_author_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// // debugger;							
 						$("#add_Author_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#add_author_msg").html(j.msg);
 							window.location=site_url+'/author';							
@@ -124,26 +124,26 @@ $(document).ready(function(){
 			nar_desc:'Please enter Description',
 		},
 		submitHandler:function(form){
-			debugger;	
+			// // debugger;	
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// // debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// // debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// // debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+					//  // debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#add_narrator_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// // debugger;							
 						$("#add_narrator_form").find("input[type=text],input[type=email],input[type=file],input[type=radio],select,textarea").val("");
 						$("#add_narrator_msg").html(j.msg);
 							window.location=site_url+'/narrator';							
@@ -195,26 +195,26 @@ $(document).ready(function(){
 			bk_tags:'Please Enter Tags',
 		},
 		submitHandler:function(form){
-			debugger;	
+			// // debugger;	
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// // debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// // debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// // debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+					//  // debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#add_book_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// // debugger;							
 						$("#add_book_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#add_book_msg").html(j.msg);
 							window.location=site_url+'/books';							
@@ -254,26 +254,26 @@ $(document).ready(function(){
 			bk_img:'Please select Image',
 		},
 		submitHandler:function(form){
-			debugger;	
+			// // debugger;	
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// // debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// // debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// // debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+                //  // debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#add_abook_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// // debugger;							
 						$("#add_abook_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#add_abook_msg").html(j.msg);
 							window.location=site_url+'/abooks';							
@@ -311,27 +311,27 @@ $(document).ready(function(){
 			ch_img:'Please select Image',
 		},
 		submitHandler:function(form){
-			debugger;	
+			// // debugger;	
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// // debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// // debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// // debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;
+                //  // debugger;
 				 var bid = document.getElementById("bid").value;					
 					var j = JSON.parse(xhr.responseText);
 					$("#add_chapter_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// // debugger;							
 						$("#add_chapter_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#add_chapter_msg").html(j.msg);
 							window.location=site_url+'/chapter/list/'+bid;							
@@ -359,22 +359,22 @@ $(document).ready(function(){
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// // debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// // debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// // debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+                //  // debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#edit_sub_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// // debugger;							
 						$("#edit_sub_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#edit_sub_msg").html(j.msg);
 							window.location=site_url+'/subject';							
@@ -405,27 +405,27 @@ $(document).ready(function(){
 			aut_img:'Please select image',
 		},
 		submitHandler:function(form){
-			debugger;	
+			// // debugger;	
 			var action = $(form).attr("action");
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// // debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// // debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// // debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+                //  // debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#edit_authors_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// // debugger;							
 						$("#edit_authors_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#edit_authors_msg").html(j.msg);
 							window.location=site_url+'/author';							
@@ -466,27 +466,27 @@ $(document).ready(function(){
 			
 		},
 		submitHandler:function(form){
-			debugger;	
+			// debugger;	
 			var action = $(form).attr("action");
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+                 // debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#edit_narrator_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// debugger;							
 						$("#edit_narrator_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#edit_narrator_msg").html(j.msg);
 							window.location=site_url+'/narrator';							
@@ -540,27 +540,27 @@ $(document).ready(function(){
 			bk_tags:'Please Enter Tags',
 		},
 		submitHandler:function(form){
-			debugger;	
+			// debugger;	
 			var action = $(form).attr("action");
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+                 // debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#edit_books_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// debugger;							
 						$("#edit_books_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#edit_books_msg").html(j.msg);
 							window.location=site_url+'/books';							
@@ -591,27 +591,27 @@ $(document).ready(function(){
 			bk_img:'Please select image',
 		},
 		submitHandler:function(form){
-			debugger;	
+			// debugger;	
 			var action = $(form).attr("action");
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;					
+                 // debugger;					
 					var j = JSON.parse(xhr.responseText);
 					$("#edit_abooks_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// debugger;							
 						$("#edit_abooks_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#edit_abooks_msg").html(j.msg);
 							window.location=site_url+'/abooks';							
@@ -642,28 +642,28 @@ $(document).ready(function(){
 			ch_audio:'Please select image',
 		},
 		submitHandler:function(form){
-			debugger;	
+			// debugger;	
 			var action = $(form).attr("action");
 			
 		$(form).ajaxSubmit({
 				beforeSend: function() {	
-					debugger;
+					// debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
-					debugger;
+					// debugger;
 					
 				},
 				success: function() {
-						debugger;
+						// debugger;
 					
 				},
 				complete: function(xhr) {
-                 debugger;
+                 // debugger;
 				 var bid = document.getElementById("bid").value;					
 					var j = JSON.parse(xhr.responseText);
 					$("#edit_chapters_msg").html(j.msg);					
 					if(j.status){	
-					debugger;							
+					// debugger;							
 						$("#edit_chapters_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
 						$("#edit_chapters_msg").html(j.msg);
 							window.location=site_url+'/chapter/list/'+bid;							

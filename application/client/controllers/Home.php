@@ -60,8 +60,10 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);        
 
         $data['links'] = $this->pagination->create_links();        
-
-        $data['home'] = $this->home_model->get_users($config["per_page"], $page);
+        
+        $text = $this->input->get('search');
+        
+        $data['home'] = $this->home_model->get_users($config["per_page"], $page, $text);
 		//$data['home'] = $this->home_model->selectAll();
 
 		if($this->input->post('ajax')) {

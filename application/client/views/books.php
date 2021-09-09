@@ -28,10 +28,8 @@
 						<div class="result-data">
 							<h3><a href="<?= base_url('books/view/' . $post['bkid']) ?> "><?php echo ucwords($post['bk_name']); ?></a>
 							</h3>
-							<p class="book-author"> <a href="#"><?php echo ucwords($post['aut_name']); ?>
-									<!-- <span class="dod-dob">(<?php echo $post['dob']; ?>)</span></a> -->
-							</p>
-							<!-- <p class="book-meta">Complete | English</p> -->
+							<p class="book-author"> <a href="#"><?php echo ucwords($post['aut_name']); ?></p>
+							<!-- <p class="book-meta"> <?php echo ucwords($post['bk_year']); ?> </p> -->
 						</div>
 
 						<!-- <div class="download-btn">

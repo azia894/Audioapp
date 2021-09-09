@@ -16,6 +16,7 @@
                         <!-- <span class="dod-dob">(<?= $record['dob'] ?>)</span> -->
                     </a>
                 </p>
+                <p class="book-meta">Published In: <?= $record['bk_year'] ?> </p>
                 <p class="description"><br /><?= $record['bk_desc'] ?><br /><br />
                 </p>
                 <!-- <p class="book-page-genre"><span>Genre(s):</span> Action & Adventure</p> -->

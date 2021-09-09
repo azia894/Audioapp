@@ -9,8 +9,8 @@ class Books extends CI_Controller {
             $this->load->library('Ajax_pagination');
             $this->perPage = 10;
 	}
-
     public function index(){
+        
         $data = array();
         
         //total rows count
@@ -24,7 +24,9 @@ class Books extends CI_Controller {
         $this->ajax_pagination->initialize($config);
         
         //get the posts data
-        $data['posts'] = $this->books_model->getRows(array('limit'=>$this->perPage));
+        $text = $this->input->get('search');
+        echo $text; exit;
+        $data['posts'] = $this->books_model->getRows(array('limit'=>$this->perPage),$text);
         
         //load the view
         $data['main_content']='books';
@@ -71,8 +73,13 @@ class Books extends CI_Controller {
 			redirect('books');
 		}	
 	}
-	
-	
+    public function search(){
+        $text = $this->input->get('search');
+        $data = $this->books_model->search($text);
+        // $data['main_content']='home';
+        // $this->load->view('Data', $data);
+    }
+    
 }
 
 	

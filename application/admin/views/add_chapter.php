@@ -266,6 +266,7 @@
 		document.getElementById("submit_btn").addEventListener('click', function() {
 			console.log("submit");
 			document.getElementById("spinner").innerHTML = '<div class="loader"></div>';
+			$('#submit_btn').prop('disabled', true);
 			// document.getElementById("add_chapter_form").submit();
 		});
 	</script>
