@@ -313,8 +313,9 @@ $(document).ready(function(){
 		submitHandler:function(form){
 			// // debugger;	
 			
-		$(form).ajaxSubmit({
+			$(form).ajaxSubmit({
 				beforeSend: function() {	
+					$('#submit_btn').prop('disabled', true);
 					// // debugger;
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
