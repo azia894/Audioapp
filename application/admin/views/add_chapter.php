@@ -88,9 +88,12 @@
 											<label>Upload Audio</label>
 											<input type="file" name="upload_audio" id="upload_audio" accept="audio/*">
 											<input type="hidden" name="ch_audio" id="ch_audio">
+											<br />
+											<small>Audio must be less than 90 Minutes</small>
 										</div>
-										<div class="col-md-6" style="padding-top: 18px; padding-left: 20px">
+										<div class="col-md-6" style="display: flex;margin-top: 15px;">
 											<button type="button" id="uploadBtn" disabled class="btn btn-primary" onClick="new_chaper()">Upload file</button>
+											<span id="upload_spinner"></span>
 										</div>
 									</div>
 									<div class="row">
@@ -106,7 +109,7 @@
 										Submit 
 									</button> -->
 									<button type="submit" class="btn btn-primary" disabled id='submit_btn'>Submit</button>
-									<span id="spinner"></span>									
+									<span id="spinner"></span>
 								</div>
 							</div>
 						</div>
@@ -225,6 +228,7 @@
 
 		// Add a change event listener to the file input
 		document.getElementById("upload_audio").addEventListener('change', function(event) {
+			document.getElementById("upload_spinner").innerHTML = '<div class="loader"></div>';
 			var target = event.currentTarget;
 			var file = target.files[0];
 			var reader = new FileReader();
@@ -257,6 +261,7 @@
 						ch_duration = new_dur;
 						document.getElementById("ch_audio_duration").value = new_dur;
 						if (new_dur) {
+							document.getElementById("upload_spinner").innerHTML = '';
 							$('#uploadBtn').prop('disabled', false);
 						}
 						console.log("The duration of the song is of: " + new_dur + " seconds");
@@ -282,10 +287,13 @@
 			padding-left: 10px;
 			vertical-align: middle;
 		}
+		#upload_spinner{
+			margin-left: 10px;
+		}
 	.loader {
 		border: 6px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 6px solid green;
+    border-top: 6px solid #5d9cec;
     width: 30px;
     height: 30px;
     display: inline-block;
