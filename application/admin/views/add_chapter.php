@@ -155,10 +155,12 @@
 			var bid = document.getElementById('bid').value;
 			var chapterName = Math.floor(Math.random() * 100000) + '.' + extension;
 
-			if (this.ch_duration > '59.59') {
-				document.getElementById('uploadError').innerHTML = "Audio should be less than 60 mins";
+			if (audio.duration > 5400) {
+				console.log("ERROR");
+				document.getElementById('uploadError').innerHTML = "Audio should be less than 90 mins";
 				$('#uploadBtn').prop('disabled', true);
-			} else if (file && this.ch_duration < '59.59') {
+			} else if( file && audio.duration < 5400){
+				console.log("NOOOOO");
 				document.getElementById('uploadError').innerHTML = "";
 				$('#uploadBtn').prop('disabled', true);
 
@@ -235,6 +237,8 @@
 					audio.addEventListener('loadedmetadata', function() {
 						// Obtain the duration in seconds of the audio file (with milliseconds as well, a float value)
 						var duration = audio.duration;
+						var new_dur = new Date(audio.duration * 1000).toISOString().substr(11, 8)
+						console.log("new formula",new_dur);
 						document.getElementById('uploadError').innerHTML = "";
 						// 			var duration = buffer.duration;
 						var hrs = ~~(duration / 3600);
@@ -250,12 +254,12 @@
 
 						ret += "" + mins + ":" + (secs < 10 ? "0" : "");
 						ret += "" + secs;
-						ch_duration = ret;
-						document.getElementById("ch_audio_duration").value = ret;
-						if (ret) {
+						ch_duration = new_dur;
+						document.getElementById("ch_audio_duration").value = new_dur;
+						if (new_dur) {
 							$('#uploadBtn').prop('disabled', false);
 						}
-						console.log("The duration of the song is of: " + ret + " seconds");
+						console.log("The duration of the song is of: " + new_dur + " seconds");
 					}, false);
 				};
 
