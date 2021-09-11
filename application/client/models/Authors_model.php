@@ -6,7 +6,7 @@ class authors_model extends CI_Model{
 
     function getRows($params = array())
     {
-        $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob,au.created_on,au.aut_img,COUNT(bt.bkid) as total');
+        $this->db->select('bt.bkid,bt.author_id,bt.bk_name,bt.bk_img,au.id,au.aut_name,au.dob,au.created_on,au.aut_img,COUNT(au.id) as total');
         $this->db->join('aud_booktbl as bt','au.id = bt.author_id');
         $this->db->from('aud_author as au');
         $this->db->where('au.aut_status',1);
