@@ -1626,6 +1626,11 @@ form .error {
 	}
 	
 }
+@media (max-width: 767px) {  
+  .ownavigation {
+    margin-bottom: 10px;
+	}
+}
 
 /* - max-width: 991 */
 @media (max-width: 991px) {

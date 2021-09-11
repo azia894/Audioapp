@@ -1,3 +1,5 @@
+</div>
+</div>
 	</section>
 	<footer id="footer" class="footer-new bg-black-222">
 		<p class="font-15 text-white m-0">Copyright &copy;2021. UAB Tech</p>

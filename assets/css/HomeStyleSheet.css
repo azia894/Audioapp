@@ -175,7 +175,7 @@ blockquote p {
   margin-top: -1em;
 }
 ul {
-  padding-left: 20px;
+  /* padding-left: 20px; */
 }
 ul,
 ol,
@@ -1231,6 +1231,8 @@ a:hover.donate span {
   }
   .catalog-result {
     margin-bottom: 10px;
+    display: flex;
+    height: 80px;
   }
   .book-cover {
     margin-right: 2%;
