@@ -157,7 +157,7 @@
 										</form>
 									</div> -->
 								</div>
-								<h3>Browse the Catalog</h3>
+								<!-- <h3>Browse the Catalog</h3> -->
 								<div role="tabpanel" class="tab-pane fade active in" id="howwecan_1" style="height: 50px;">
 									<div>
 										<div class="row">
