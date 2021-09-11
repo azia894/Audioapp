@@ -239,6 +239,17 @@
                                     class="ti ti-clipboard"></i><span>Reviews</span></span> </a>
 
                         </li>
+                        <!-- <li class="has_sub">
+
+                            <a href="<?= base_url('notification') ?>"
+                                class="waves-effect <?php if ($this->uri->segment(1) == 'notification') {
+                                    echo 'active';
+                                } else {
+                                    echo 'noactive';
+                                } ?>"><i
+                                    class="md md-notifications"></i><span>Notification</span></span> </a>
+
+                        </li> -->
 
 
 
