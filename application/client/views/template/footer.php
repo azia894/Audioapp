@@ -8,7 +8,7 @@
 				<div class="section-header text-white">
 					Sponsers
 				</div>
-				<a href="https://maahiruk.org/">
+				<a href="https://maahiruk.org/" target="_blank">
 					<div class="sponsers">
 						<img src="<?php echo base_url() . 'assets/images/maahir.png'; ?>"
 							alt="" class="sponser-icon">
