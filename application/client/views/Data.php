@@ -17,7 +17,10 @@
 					if (count($genres) > 0) {
 						foreach ($genres as $key => $value) {
 							$genre = explode(':', $value);
-							$genreList .= "<a href='" . base_url('subject/category/' . $genre[0]) . "'>" . $genre[1] . "</a> <span> | </span>";
+							$genreList .= "<a href='" . base_url('subject/category/' . $genre[0]) . "'>" . $genre[1];
+							if($key != count($genres)-1){
+								$genreList .= "</a> <span> | </span>";
+							}
 						}
 					}
 				} ?>

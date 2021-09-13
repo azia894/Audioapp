@@ -47,6 +47,9 @@
 		href="<?= base_url('assets') ?>/css/boot.css"
 		rel="stylesheet" type="text/css">
 
+	<script src="<?php echo base_url(); ?>assets/js/jquery-2.2.4.min.js">
+	</script>
+
 	<script
 		src="<?= base_url('assets') ?>/js/jquery-ui.min.js">
 	</script>
@@ -54,18 +57,17 @@
 	<script
 		src="<?= base_url('assets') ?>/js/jquery-plugin-collection.js">
 	</script>
-	<script
+	<!-- <script
 		src="<?= base_url('assets') ?>/js/bootstrap.min.js">
-	</script>
+	</script> -->
 </head>
 
 <body class="">
 	<div id="wrapper" class="clearfix" style="font-size: 16px;">
 		<header id="header" class="header">
 			<div class="container">
-				<nav class="navbar ownavigation">
+				<nav class="navbar">
 					<div class="container-fluid">
-
 						<div class="navbar-header">
 							<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 							<span class="icon-bar"></span>
@@ -85,19 +87,27 @@
 							</a>
 						</div>
 						<div id="navbar" class="navbar-collapse collapse" id="myNavbar">
-							<ul class="nav navbar-nav" style="float: right;">
+							<ul class="nav navbar-nav btnsbox" style="float: right;">
 								<li>
-									<a href="<?php echo base_url() . 'index.php'; ?>"
-										title="Download Android application">
-										<img src="<?php echo base_url() . 'assets/images/android-logo.png'; ?>"
-											alt="android application" style="width:30px;">
+									<a href="#" id="download_android" class="white" style="display: flex;">
+										<span class="icon">
+											<img src="<?php echo base_url() . 'assets/images/playstore.png'; ?>"
+												width="20" height="20" class="download for android">
+										</span>
+										<p>Download for
+											<strong>Android User</strong>
+										</p>
 									</a>
 								</li>
 								<li>
-									<a href="<?php echo base_url() . 'index.php'; ?>"
-										title="Download IOS application">
-										<img src="<?php echo base_url() . 'assets/images/apple.png'; ?>"
-											alt="ios application" style="width:30px;">
+									<a href="#" id="download_ios" class="white" style="display: flex;">
+										<span class="icon">
+											<img src="<?php echo base_url() . 'assets/images/appstore-icon-dark.svg'; ?>"
+												width="20" height="20" class="download for ios">
+										</span>
+										<p>Download on the
+											<strong>APP Store</strong>
+										</p>
 									</a>
 								</li>
 							</ul>
@@ -107,6 +117,31 @@
 			</div>
 		</header>
 		<div class="container" style="padding-top: 0;">
+			<div class="download-app text-center">
+				<div class="section-header">
+					Download Our App for more features
+				</div>
+				<div class="btnsbox">
+					<a href="#" id="download_android" class="white" style="display: flex;">
+						<span class="icon">
+							<img src="<?php echo base_url() . 'assets/images/playstore.png'; ?>"
+								width="20" height="20" class="download for android">
+						</span>
+						<p>Download for
+							<strong>Android User</strong>
+						</p>
+					</a>
+					<a href="#" id="download_ios" class="white" style="display: flex;">
+						<span class="icon">
+							<img src="<?php echo base_url() . 'assets/images/appstore-icon-dark.svg'; ?>"
+								width="20" height="20" class="download for ios">
+						</span>
+						<p>Download on the
+							<strong>APP Store</strong>
+						</p>
+					</a>
+				</div>
+			</div>
 			<div role="tabpanel" class="tab-pane fade active in" id="howwecan_1" style="height: 50px;">
 				<div>
 					<!-- <div class="container">	 -->
@@ -143,16 +178,16 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 p-0">
 					<div class="pull-right" style="display: flex; flex-direction: row; align-items: baseline;">
 						<form action="/index.php" method="get" style="display: inline-block;">
 							<div class="form-group" style="display: inline-block;">
 								<input type="text" placeholder="Book name" class="form-control" id="search"
-									name="search" maxlength="100" style="height: 33px;">
+									name="search" maxlength="100" style="height: 32px;">
 							</div>
 							<button type="submit" class="btn btn-primary">Search</button>
 					</div>
 					</form>
 				</div>
 			</div>
-		<!-- </section> -->
+			<!-- </section> -->

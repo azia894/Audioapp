@@ -297,6 +297,11 @@ img {
   margin: 45px auto;
   padding: 0;
 }
+.section-header{
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
 .sidebar {
   float: left;
   margin-right: 3.125%;
@@ -455,8 +460,62 @@ img {
   text-indent: -9999px;
   width: 35px;
 }
+.download-app{
+  display: none;
+  margin-bottom: 10px;
+}
 .advanced-search {
   font-size: 0.6875em; /* 11/16 */
+}
+.download-icon{
+  margin-top: 15px;
+  width: 100px;
+  height: auto;
+}
+/* icons */
+.btnsbox {
+  display: flex;
+  margin: 15px 0 5px;
+}
+.download-app .btnsbox{
+  justify-content: center;  
+}
+.btnsbox a {
+  text-decoration: none;
+  min-width: 165px;
+  border: 1px solid #000 ;
+  border-radius: 8px;
+  padding: 5px 15px !important;
+  display: flex;
+  align-items: center
+}
+.btnsbox a:last-of-type {
+  margin-left: 15px
+}
+.btnsbox a.gray {
+  background: #1f2224
+}
+.btnsbox a span {
+  width: 20px;
+  height: 20px
+}
+.btnsbox a span img {
+  width: 100%;
+  height: auto
+}
+.btnsbox p {
+  color: rgba(0,0,0,.8);
+  font-size: 12px;
+  margin: 0;
+  padding-left: 10px;
+  text-align: left
+}
+.btnsbox p strong {
+  display: block;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1f2224
 }
 /************************************************************** 
 * Icons
@@ -748,6 +807,7 @@ a:hover.book-download-btn {
   font-size: 1.2857em; /* 18/14 */
   font-weight: bold;
   margin-bottom: 10px;
+  line-height: 1.5;
 }
 .content-wrap h1 span {
   font-size: 0.667em; /* 12/18 */
@@ -767,6 +827,7 @@ a:hover.book-download-btn {
 p.description {
   line-height: 1.4;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 /************************************************************** 
@@ -1042,6 +1103,15 @@ a:hover.donate span {
   font-size: 0.875em; /* 14/16 */
   overflow: hidden;
 }
+.sponsers{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.sponser-icon{
+  width: 100px;
+  height: auto;
+}
 
 /************************************************************** 
 * Temp Fix 
@@ -1101,7 +1171,28 @@ a:hover.donate span {
     padding: 20px 10px;
   }
 }
+@media screen and (max-width: 767px) {
+  .download-app{
+    display: block;
+  }
+  .download-app-footer{
+    margin-top: 15px;
+  }  
+  .btnsbox a {
+    min-width: 140px;
+    padding: 5px 12px !important;
+  }
+  .btnsbox p {
+    font-size: 10px;
+  }  
+  .btnsbox p strong {
+    font-size: 12px;   
+  }
+}
 @media screen and (max-width: 660px) {
+  body {
+    line-height: 1.5;
+  }
 	h3{
 		font-size: medium;
 	}
@@ -1191,12 +1282,13 @@ a:hover.donate span {
 	}
 	.book-meta{
 		font-size: 14px;
+    /* width: 120px; */
 	}
   .book-author{
     font-size: 14px;
   }
-  .book-name a{
-    font-size: 16px;
+  .book-name, .book-name a{
+    font-size: 16px !important;
   }
 }
 @media screen and (max-width: 580px) {
@@ -1240,6 +1332,9 @@ a:hover.donate span {
     display: flex;
     height: 94px;
   }
+  .catalog-result .subject-data {
+    width: 100%;
+  }
   .book-cover {
     margin-right: 2%;
     width: 15%;
@@ -1247,7 +1342,7 @@ a:hover.donate span {
   .result-data {
     margin: 10px 10px 10px 10px;
     max-width: inherit;
-    width: 80%;
+    width: 100%;
   }
   .download-btn {
     clear: both;
