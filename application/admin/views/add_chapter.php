@@ -278,7 +278,11 @@
 			console.log("submit");
 			// document.getElementById("upload_audio").value = downloadURL;
 			// $("#upload_audio").prop('disable',true);
-			document.getElementById("spinner").innerHTML = '<div class="loader"></div>';
+			var narrator = document.getElementById('nar_id').value
+			var name = document.getElementById('ch_name').value
+			if(narrator != "" && name != ""){
+				document.getElementById("spinner").innerHTML = '<div class="loader"></div>';
+			}
 			// $('#submit_btn').prop('disabled', true);
 			// document.getElementById("add_chapter_form").submit();
 		});
