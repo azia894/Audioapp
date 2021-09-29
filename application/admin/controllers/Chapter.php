@@ -49,11 +49,13 @@ class Chapter extends CI_Controller{
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			  <strong>"'.$this->input->post('ch_name').'" Chapter already exists</strong>
 			</div>' ;
+			$msg .= '<script>$("#submit_btn").prop("disabled", false);</script>';
 			}else if($this->input->post('ch_name')== ""){
 			  $msg='<div class="alert alert-warning">
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			  <strong>Please enter Chapter name</strong>
 			</div>' ;
+			$msg .= '<script>$("#submit_btn").prop("disabled", false);</script>';
 			}else{	
 			$insert_data = array(
 				'bid'=>$this->input->post('bid'),
