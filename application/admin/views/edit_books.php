@@ -53,7 +53,7 @@
 									</div>
 									<div class="form-group">
 										<label>Genre/Subject</label>
-										<select name="sub_id[]" id="sub_id[]" class="form-control" multiple>
+										<select name="sub_id[]" id="sub_id[]" class="form-control" multiple required>
 											<option value="">Select Subject/Genre</option>
 											<?php
 												if ($get_sub['num'] > 0) {
@@ -67,7 +67,7 @@
 											?>
 										</select>
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>Age</label>
 										<select name="bk_age" id="bk_age" class="form-control required">
 											<option value="">Select Age</option>
@@ -75,7 +75,7 @@
 											<option <?= ($record['bk_age'] == "Adults" ? 'selected' : '') ?> value="Adults">Adult</option>
 											<option <?= ($record['bk_age'] == "children" ? 'selected' : '') ?> value="children">Children</option>
 										</select>
-									</div>
+									</div> -->
 									<div class="form-group">
 										<label>Blurb</label>
 										<!-- <input class="form-control" id="bk_blurb" name="bk_blurb" value="<?= $record['bk_blurb'] ?>" maxlength="100"> -->
@@ -85,11 +85,11 @@
 										<label>Tags</label>
 										<input class="form-control" id="bk_tags" name="bk_tags" value="<?= $record['bk_tags'] ?>" maxlength="100">
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>Description </label>
 										<textarea class="form-control" placeholder="Enter Description" name="bk_desc" id="bk_desc" maxlength="3000" rows="7"><?= $record['bk_desc'] ?></textarea>
-										<!--label class="error" generated="true" for="job_desc"></label-->
-									</div>
+										<label class="error" generated="true" for="job_desc"></label>
+									</div> -->
 									<div class="form-group row">
 										<div class="col-md-6">
 											<label>Image</label>

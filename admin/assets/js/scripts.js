@@ -101,27 +101,27 @@ $(document).ready(function(){
 			'nar_name':{
 				required:true
 			},
-			'gender':{
-				required:true
-			},
-			'country':{
-				required:true
-			},
-			'city':{
-				required:true
-			},
-			'nar_desc':{
-				required:true
-			},
+			// 'gender':{
+			// 	required:true
+			// },
+			// 'country':{
+			// 	required:true
+			// },
+			// 'city':{
+			// 	required:true
+			// },
+			// 'nar_desc':{
+			// 	required:true
+			// },
 			
 			
 		},
 		messages:{
 			nar_name:'Please enter Name',
-			gender:'Please enter Gender',
-			country:'Please enter Country',
-			city:'Please enter City',
-			nar_desc:'Please enter Description',
+			// gender:'Please enter Gender',
+			// country:'Please enter Country',
+			// city:'Please enter City',
+			// nar_desc:'Please enter Description',
 		},
 		submitHandler:function(form){
 			// // debugger;	
@@ -167,32 +167,32 @@ $(document).ready(function(){
 			'bk_name':{
 				required:true
 			},
-			'bk_desc':{
-				required:true
-			},
-			'up':{
-				required:true
-			},
-			'bk_year':{
-				required:true
-			},
-			'bk_blurb':{
-				required:true
-			},
-			'bk_tags':{
-				required:true
-			},
+			// 'bk_desc':{
+			// 	required:true
+			// },
+			// 'up':{
+			// 	required:true
+			// },
+			// 'bk_year':{
+			// 	required:true
+			// },
+			// 'bk_blurb':{
+			// 	required:true
+			// },
+			// 'bk_tags':{
+			// 	required:true
+			// },
 			
 		},
 		messages:{
 			sub_id:'Please select Subject/Genre',
 			author_id:'Please select Author',
 			bk_name:'Please Enter Name',
-			bk_desc:'Please Enter Description',
-			up:'Please Select Image',
-			bk_year:'Please Enter Year of Publication',
-			bk_blurb:'Please Enter Blurb',
-			bk_tags:'Please Enter Tags',
+			// bk_desc:'Please Enter Description',
+			// up:'Please Select Image',
+			// bk_year:'Please Enter Year of Publication',
+			// bk_blurb:'Please Enter Blurb',
+			// bk_tags:'Please Enter Tags',
 		},
 		submitHandler:function(form){
 			// // debugger;	
@@ -444,26 +444,26 @@ $(document).ready(function(){
 			'nar_name':{
 				required:true
 			},
-			'gender':{
-				required:true
-			},
-			'country':{
-				required:true
-			},
-			'city':{
-				required:true
-			},
-			'nar_desc':{
-				required:true
-			},
+			// 'gender':{
+			// 	required:true
+			// },
+			// 'country':{
+			// 	required:true
+			// },
+			// 'city':{
+			// 	required:true
+			// },
+			// 'nar_desc':{
+			// 	required:true
+			// },
 			
 		},
 		messages:{
 			nar_name:'Please enter narrator Name',
-			gender:'Please enter Gender',
-			country:'Please enter Country',
-			city:'Please enter City',
-			nar_desc:'Please enter description',
+			// gender:'Please enter Gender',
+			// country:'Please enter Country',
+			// city:'Please enter City',
+			// nar_desc:'Please enter description',
 			
 		},
 		submitHandler:function(form){
@@ -514,31 +514,31 @@ $(document).ready(function(){
 			'bk_name':{
 				required:true
 			},
-			'bk_desc':{
-				required:true
-			},
-			'up':{
-				required:true
-			},
-			'bk_year':{
-				required:true
-			},
-			'bk_blurb':{
-				required:true
-			},
-			'bk_tags':{
-				required:true
-			},
+			// 'bk_desc':{
+			// 	required:true
+			// },
+			// 'up':{
+			// 	required:true
+			// },
+			// 'bk_year':{
+			// 	required:true
+			// },
+			// 'bk_blurb':{
+			// 	required:true
+			// },
+			// 'bk_tags':{
+			// 	required:true
+			// },
 		},
 		messages:{
 			sub_id:'Please select Subject/Genre',
 			author_id:'Please select Author',
 			bk_name:'Please Enter Name',
-			bk_desc:'Please Enter Description',
-			up:'Please Select Image',
-			bk_year:'Please Enter Year of Publication',
-			bk_blurb:'Please Enter Blurb',
-			bk_tags:'Please Enter Tags',
+			// bk_desc:'Please Enter Description',
+			// up:'Please Select Image',
+			// bk_year:'Please Enter Year of Publication',
+			// bk_blurb:'Please Enter Blurb',
+			// bk_tags:'Please Enter Tags',
 		},
 		submitHandler:function(form){
 			// debugger;	

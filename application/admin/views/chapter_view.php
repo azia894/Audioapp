@@ -12,7 +12,7 @@
 					$m_name = $md['bk_name'];
 					?>
 					<h4 class="page-title">
-						<p class="thicker"><?= ucwords($m_name); ?> Book</p>Chapters List
+						<p class="thicker"><?= ucwords($m_name); ?></p>Chapters List
 					</h4>
 					<ol class="breadcrumb">
 						<li>

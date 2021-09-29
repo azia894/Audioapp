@@ -129,10 +129,11 @@
 			var bid = document.getElementById('bid').value;
 			var chapterName = Math.floor(Math.random() * 100000) + '.' + extension;
 
-			if (this.ch_duration > '59.59') {
-				document.getElementById('uploadError').innerHTML = "Audio should be less than 60 mins";
-				$('#uploadBtn').prop('disabled', true);
-			} else if (file && this.ch_duration < '59.59') {
+			// if (this.ch_duration > '59.59') {
+			// 	document.getElementById('uploadError').innerHTML = "Audio should be less than 60 mins";
+			// 	$('#uploadBtn').prop('disabled', true);
+			// } else 
+			if (file) {
 				document.getElementById('uploadError').innerHTML = "";
 				$('#uploadBtn').prop('disabled', true);
 

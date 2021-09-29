@@ -51,11 +51,11 @@
 									</div>
 									<div class="form-group">
 										<label>Year Of Publication</label>
-										<input type="number" min="0" class="form-control" id="bk_year" name="bk_year" required maxlength="4">
+										<input type="number" min="0" class="form-control" id="bk_year" name="bk_year" maxlength="4">
 									</div>
 									<div class="form-group">
 										<label>Genre</label>
-										<select name="sub_id[]" id="sub_id" class="form-control" multiple>
+										<select name="sub_id[]" id="sub_id" class="form-control" multiple required>
 											<option value="">Select Genre</option>
 											<?php
 											if ($get_sub['num'] > 0) {
@@ -70,7 +70,7 @@
 											?>
 										</select>
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>Age</label>
 										<select name="bk_age" id="bk_age" class="form-control required">
 											<option value="">Select Age</option>
@@ -78,7 +78,7 @@
 											<option value="Adults">Adult</option>
 											<option value="children">Children</option>
 										</select>
-									</div>
+									</div> -->
 									<div class="form-group">
 										<label>Blurb</label>
 										<!-- <input class="form-control" id="bk_blurb" name="bk_blurb" maxlength="100"> -->
@@ -88,11 +88,11 @@
 										<label>Tags</label>
 										<input class="form-control" id="bk_tags" name="bk_tags" maxlength="100">
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>Description </label>
 										<textarea class="form-control" placeholder="Enter Description" name="bk_desc" maxlength="5000" id="bk_desc"  rows="7"></textarea>
-										<!--label class="error" generated="true" for="job_desc"></label-->
-									</div>
+										<label class="error" generated="true" for="job_desc"></label>
+									</div> -->
 									<div class="form-group row">
 										<div class="col-md-6">
 											<label>Image</label>
@@ -100,7 +100,7 @@
 											<input type="file" name="upload_book_img" id="upload_book_img" accept="Image/png,image/jpeg,image/gif">
 										</div>
 										<div class="col-md-6" style="padding-top: 18px; padding-left: 30px">
-											<button type="button" class="btn btn-primary" onClick="new_book()">Upload image</button>
+											<button type="button" id="uploadBtn" class="btn btn-primary" onClick="new_book()">Upload image</button>
 										</div>
 									</div>
 									<div class="row">
@@ -112,7 +112,7 @@
 									</div>
 									<!-- <button type="submit" class="btn btn-primary" onClick="new_book()">Submit</button> -->
 									<!-- <button type="button" class="btn btn-primary" onClick="new_book()">Upload image</button>  -->
-									<button type="submit" class="btn btn-primary submit-btn" id="submit" disabled>Submit</button>
+									<button type="submit" class="btn btn-primary submit-btn" id="submit">Submit</button>
 								</div>
 							</div>
 						</div>
@@ -222,4 +222,16 @@
 				console.log('less');
 			}
 		}
+		document.getElementById("upload_book_img").addEventListener('change', function(event) {
+			var target = event.currentTarget;
+			var file = target.files[0];
+			var reader = new FileReader();
+
+			if (target.files && file) {
+				var reader = new FileReader();
+				$('#uploadBtn').prop('disabled', false);
+				$('#submit').prop('disabled', true);
+				reader.readAsDataURL(file);
+			}
+		}, false);
 	</script>

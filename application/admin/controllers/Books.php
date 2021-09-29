@@ -57,20 +57,22 @@ class Books extends CI_Controller
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			  <strong>Please enter book name</strong>
 			</div>' ;
-        } elseif ($this->input->post('bk_desc')=='') {
-            $msg='<div class="alert alert-warning">
-			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			  <strong>Please enter  description</strong>
-			</div>' ;
-        } else {
+        } 
+        // elseif ($this->input->post('bk_desc')=='') {
+        //     $msg='<div class="alert alert-warning">
+		// 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		// 	  <strong>Please enter  description</strong>
+		// 	</div>' ;
+        // }
+         else {
             $bk_tags = $this->input->post('bk_tags');
             $value = str_replace(" ", ',', $bk_tags);
             $insert_data = array(
-                'bk_age'=>$this->input->post('bk_age'),
+                // 'bk_age'=>$this->input->post('bk_age'),
                 'author_id'=>$this->input->post('author_id'),
                 // 'sub_id'=>$this->input->post('sub_id'),
                 'bk_name'=>$this->input->post('bk_name'),
-                'bk_desc'=>$this->input->post('bk_desc'),
+                // 'bk_desc'=>$this->input->post('bk_desc'),
                 'bk_year'=>$this->input->post('bk_year'),
                 'bk_blurb'=>$this->input->post('bk_blurb'),
                 'bk_img'=>$this->input->post('bk_img'),
@@ -204,20 +206,22 @@ class Books extends CI_Controller
 			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			   <strong>Please enter Book Name</strong>
 			 </div>' ;
-            } elseif ($this->input->post('bk_desc')=='') {
-                $msg='<div class="alert alert-warning">
-			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			   <strong>Please enter description</strong>
-			 </div>' ;
-            } else {
+            } 
+            // elseif ($this->input->post('bk_desc')=='') {
+            //     $msg='<div class="alert alert-warning">
+			//    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			//    <strong>Please enter description</strong>
+			//  </div>' ;
+            // }
+             else {
                 $bk_tags = $this->input->post('bk_tags');
                 $value = str_replace(" ", ',', $bk_tags);
                 $update_data = array();
                 $update_data = array(
                     'author_id'=>$this->input->post('author_id'),
                     // 'sub_id'=>$this->input->post('sub_id'),
-                    'bk_desc'=>$this->input->post('bk_desc'),
-                    'bk_age'=>$this->input->post('bk_age'),
+                    // 'bk_desc'=>$this->input->post('bk_desc'),
+                    // 'bk_age'=>$this->input->post('bk_age'),
                     'bk_year'=>$this->input->post('bk_year'),
                     'bk_blurb'=>$this->input->post('bk_blurb'),
                     'bk_tags'=>$value,

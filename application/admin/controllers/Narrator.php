@@ -49,12 +49,14 @@ class Narrator extends CI_Controller{
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			  <strong>Please enter Narrator Name</strong>
 			</div>' ;
-			}else if($this->input->post('nar_desc')=='' ){
-			  $msg='<div class="alert alert-warning">
-			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			  <strong>Please enter description</strong>
-			</div>' ;
-			}else{	
+			}
+			// else if($this->input->post('nar_desc')=='' ){
+			//   $msg='<div class="alert alert-warning">
+			//   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			//   <strong>Please enter description</strong>
+			// </div>' ;
+			// }
+			else{	
 			$insert_data = array(	
 				'nar_name'=>$this->input->post('nar_name'),
 				'gender'=>$this->input->post('gender'),
@@ -62,26 +64,26 @@ class Narrator extends CI_Controller{
 				'city'=>$this->input->post('city'),
 				'nar_desc'=>$this->input->post('nar_desc'),
 				'nar_status'=>1,	
-                'created_on'=>date('Y-m-d H:i:s'),							
+				'created_on'=>date('Y-m-d H:i:s'),
 			);
-			if(isset($_FILES['up']) && !empty($_FILES) && $_FILES['up']['name']!=""){		
-						$fileTypes = array('jpeg','jpg','png','gif');
-						$trgt='assets/narratorimages/';
-						$size = $_FILES['up']['size'];
-						$file_name = $_FILES['up']['name'];
-						$path_parts=pathinfo($_FILES['up']['name']);
-						if(!in_array($path_parts['extension'],$fileTypes)){
-							$msg='<div class="alert alert-warning">
-									  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-									  <strong>Only jpg,png are allowed</strong>
-									</div>' ;
-						 }else{
-							$file = time().'.'.$path_parts['extension'];
-							$insert_data['nar_img']=$file;
-							move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 
-							
-						 }
-					 }
+			// if(isset($_FILES['up']) && !empty($_FILES) && $_FILES['up']['name']!=""){		
+			// 	$fileTypes = array('jpeg','jpg','png','gif');
+			// 	$trgt='assets/narratorimages/';
+			// 	$size = $_FILES['up']['size'];
+			// 	$file_name = $_FILES['up']['name'];
+			// 	$path_parts=pathinfo($_FILES['up']['name']);
+			// 	if(!in_array($path_parts['extension'],$fileTypes)){
+			// 		$msg='<div class="alert alert-warning">
+			// 					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			// 					<strong>Only jpg,png are allowed</strong>
+			// 				</div>' ;
+			// 		}else{
+			// 		$file = time().'.'.$path_parts['extension'];
+			// 		$insert_data['nar_img']=$file;
+			// 		move_uploaded_file($_FILES['up']['tmp_name'],$trgt.$file); 
+					
+			// 	}
+			// }
 			$q = $this->narrator_model->create($insert_data);
 			if($q){		
 	            $status=1;			
@@ -163,12 +165,14 @@ class Narrator extends CI_Controller{
 			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			   <strong>Please enter Author Name</strong>
 			 </div>' ;
-			 }else if($this->input->post('nar_desc')=='' ){
-			   $msg='<div class="alert alert-warning">
-			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			   <strong>Please enter description</strong>
-			 </div>' ;
-			 }else{
+			 }
+			//  else if($this->input->post('nar_desc')=='' ){
+			//    $msg='<div class="alert alert-warning">
+			//    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			//    <strong>Please enter description</strong>
+			//  </div>' ;
+			//  }
+			 else{
 				  $update_data = array();
 				  $update_data = array(
 					'gender'=>$this->input->post('gender'),

@@ -36,6 +36,7 @@
 										  <label for="female">Female</label><br>
 										  <input type="radio" id="other" name="gender" value="other">
 										  <label for="other">Other</label>
+										  <input type="hidden" id="" name="gender" value="" selected>
 									</div>
 									<div class="form-group">
 										<label>Country</label>

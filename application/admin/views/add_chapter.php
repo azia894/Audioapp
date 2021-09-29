@@ -89,7 +89,7 @@
 											<input type="file" name="upload_audio" id="upload_audio" accept="audio/*">
 											<input type="hidden" name="ch_audio" id="ch_audio">
 											<br />
-											<small>Audio must be less than 90 Minutes</small>
+											<!-- <small>Audio must be less than 90 Minutes</small> -->
 										</div>
 										<div class="col-md-6" style="display: flex;margin-top: 15px;">
 											<button type="button" id="uploadBtn" disabled class="btn btn-primary" onClick="new_chaper()">Upload file</button>
@@ -158,11 +158,12 @@
 			var bid = document.getElementById('bid').value;
 			var chapterName = Math.floor(Math.random() * 100000) + '.' + extension;
 
-			if (audio.duration > 5400) {
-				console.log("ERROR");
-				document.getElementById('uploadError').innerHTML = "Audio should be less than 90 mins";
-				$('#uploadBtn').prop('disabled', true);
-			} else if( file && audio.duration < 5400){
+			// if (audio.duration > 5400) {
+			// 	console.log("ERROR");
+			// 	document.getElementById('uploadError').innerHTML = "Audio should be less than 90 mins";
+			// 	$('#uploadBtn').prop('disabled', true);
+			// } else 
+			if(file){
 				console.log("NOOOOO");
 				document.getElementById('uploadError').innerHTML = "";
 				$('#uploadBtn').prop('disabled', true);
