@@ -167,12 +167,14 @@ class Author extends CI_Controller{
 			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			   <strong>Please enter Author Name</strong>
 			 </div>' ;
-			 }else if($this->input->post('aut_desc')=='' ){
-			   $msg='<div class="alert alert-warning">
-			   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			   <strong>Please enter description</strong>
-			 </div>' ;
-			 }else{
+			 }
+			//  else if($this->input->post('aut_desc')=='' ){
+			//    $msg='<div class="alert alert-warning">
+			//    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			//    <strong>Please enter description</strong>
+			//  </div>' ;
+			//  }
+			 else{
 				  $update_data = array();
 				  $update_data = array(
 					 'aut_desc'=>addslashes($this->input->post('aut_desc')),

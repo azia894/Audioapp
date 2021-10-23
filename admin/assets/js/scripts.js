@@ -40,6 +40,8 @@ $(document).ready(function(){
 			
 			return false;
 		}
+
+		
 	});	
 	
 	
@@ -49,9 +51,9 @@ $(document).ready(function(){
 			'aut_name':{
 				required:true
 			},
-			'aut_desc':{
-				required:true
-			},
+			// 'aut_desc':{
+			// 	required:true
+			// },
 			'aut_img':{
 				required:true
 			},
@@ -59,7 +61,7 @@ $(document).ready(function(){
 		},
 		messages:{
 			aut_name:'Please enter Author Name',
-			aut_desc:'Please enter description',
+			// aut_desc:'Please enter description',
 			aut_img:'Please select image',
 		},
 		submitHandler:function(form){
@@ -95,6 +97,56 @@ $(document).ready(function(){
 		}
 	});
 	
+	$("#edit_admin_form").validate({
+		rules:{
+			'user_name':{
+				required:true
+			},
+			'user_pass':{
+				required:true
+			},
+			'confirm_pass':{
+				required:true
+			},
+			
+		},
+		messages:{
+			user_name:'Please enter Author Name',
+			user_pass:'Please enter password',
+			confirm_pass:'Please re enter password',
+		},
+		submitHandler:function(form){
+			// // debugger;	
+			
+		$(form).ajaxSubmit({
+				beforeSend: function() {	
+					// // debugger;
+				},
+				uploadProgress: function(event, position, total, percentComplete) {
+					// // debugger;
+					
+				},
+				success: function() {
+						// // debugger;
+					
+				},
+				complete: function(xhr) {
+					// // debugger;						
+					var j = JSON.parse(xhr.responseText);
+					$("#edit_admin_msg").html(j.msg);					
+					if(j.status){	
+					// // debugger;							
+						$("#edit_admin_form").find("input[type=text],input[type=email],input[type=file],select,textarea").val("");
+						$("#edit_admin_msg").html(j.msg);
+							window.location=site_url+'/logout';							
+						}else {
+						}
+				}
+			}); 
+			
+			return false;
+		}
+	});
 	
 	$("#add_narrator_form").validate({
 		rules:{
@@ -393,16 +445,16 @@ $(document).ready(function(){
 			'aut_name':{
 				required:true
 			},
-			'aut_desc':{
-				required:true
-			},
+			// 'aut_desc':{
+			// 	required:true
+			// },
 			'aut_img':{
 				required:true
 			},
 		},
 		messages:{
 			aut_name:'Please enter Authors Name',
-			aut_desc:'Please enter description',
+			// aut_desc:'Please enter description',
 			aut_img:'Please select image',
 		},
 		submitHandler:function(form){

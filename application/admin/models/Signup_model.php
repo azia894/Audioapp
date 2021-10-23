@@ -22,6 +22,11 @@ class signup_model extends CI_Model{
 		return array('num'=>$num,'data'=>$data);	
 		
 	}
+	function modify($data,$id){
+		$this->db->where('id',$id);
+		$q = $this->db->update($this->tbl_name,$data);
+		return $q;
+	}
 }
 
 

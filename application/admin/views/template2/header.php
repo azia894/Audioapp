@@ -105,7 +105,7 @@
             <div class="topbar-left" style="padding: 0px 30px 0px 50px; width: auto !important;">
                 <div class="text-center">
                     <!-- <span>
-								<img src="<?php echo base_url('assets') . '/images/logo.png'; ?>"
+								<img src="<?php echo base_url('assets') . '/images/logo.svg'; ?>"
                     style="width:40px;" />
                     </span>
                     <span style="color :#7030a0;vertical-align: super;">
@@ -113,7 +113,7 @@
                     </span> -->
                     <a href="<?= base_url('dashboard') ?>"
                         class="logo">
-                        <img src="<?php echo base_url('assets') . '/images/logo.png'; ?>"
+                        <img src="<?php echo base_url('assets') . '/images/logo.svg'; ?>"
                             style="width:40px;" alt="">
                         Dil ki Awaz
                     </a>
@@ -148,9 +148,18 @@
                                         src="<?= $img ?>?<?= time() ?>"
                                         alt="user-img" class="img-circle"> </a>
                                 <ul class="dropdown-menu">
-                                    <li><a
-                                            href="<?= base_url('logout') ?>"><i
-                                                class="ti-power-off m-r-5"></i> Logout</a></li>
+                                    <li>
+                                        <a href="<?= base_url('EditAdmin') ?>">
+                                            <i class="ti-pencil m-r-5"></i> 
+                                            Edit Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url('logout') ?>">
+                                            <i class="ti-power-off m-r-5"></i> 
+                                            Logout
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

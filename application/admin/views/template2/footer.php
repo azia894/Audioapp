@@ -168,21 +168,21 @@
 			  });
 
 			  table = $('#all-Books-tbl').DataTable({ 
-				"processing": true, //Feature control the processing indicator.
-				"serverSide": true, //Feature control DataTables' server-side processing mode.
-				// Load data for the table's content from an Ajax source
-				"ajax": {
-					"url": "<?php echo site_url('books/getBooksAll')?>",
-					"type": "POST"
-				},
-				"pageLength": 25,
-				//Set column definition initialisation properties.
-				"columnDefs": [
-				{ 
-				  "targets": [ -1 ], //last column
-				  "orderable": false, //set not orderable
-				},
-				],
+					"processing": true, //Feature control the processing indicator.
+					"serverSide": true, //Feature control DataTables' server-side processing mode.
+					// Load data for the table's content from an Ajax source
+					"ajax": {
+						"url": "<?php echo site_url('books/getBooksAll')?>",
+						"type": "POST"
+					},
+					"pageLength": 25,
+					//Set column definition initialisation properties.
+					"columnDefs": [
+					{ 
+						"targets": [ -1 ], //last column
+						"orderable": false, //set not orderable
+					},
+					],
 			  });
 
 			  table = $('#all-Chapters-tbl').DataTable({ 

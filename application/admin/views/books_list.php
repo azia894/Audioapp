@@ -11,13 +11,11 @@
 							<a href="<?=base_url('dashboard')?>">Dashboard</a>
 						</li>
 						<li class="active">	
-					 Books List	
+					 		Books List
 						</li>
-						
-						
 					</ol>
 				</div>
-			</div>   
+			</div>
 			<div class="row">
 		<div class="col-sm-12">
 		<a style=" text-decoration: none; color:white" href="<?= base_url('books/add') ?>">
@@ -58,17 +56,17 @@
 							<tr>
 								<th data-class="expand">#</th>
 								<th>Books Name</th>
-                                <th>Chapters</th>																
-								<th>Image</th>															
+								<th>Chapters</th>
+								<th>Image</th>
 								<th data-hide="phone">Rating</th>
-								<th data-hide="phone">Created On</th>												
-								<th data-hide="phone,tablet">Actions</th>														
-								<th data-hide="phone,tablet">Status</th>									
-								<th data-hide="phone,tablet">Delete</th>
+								<th data-hide="phone">Created On</th>
+								<th data-hide="phone,tablet">Actions</th>
+								<th data-hide="phone,tablet">Status</th>
+								<th data-hide="phone,tablet">Delete</th
 							</tr>
 						</thead>
 						<tbody>
-						</tbody>									
+						</tbody>
 					</table>
 
 			</div>

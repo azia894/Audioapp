@@ -42,16 +42,18 @@ class Login extends CI_Controller {
 			$ud = $this->signup_model->validate($user_name,md5($user_pass));			
 			if($ud['num']==1){		
 					$user = $ud['data']['0'];
-						$user_name = $user['user_name'];			
-						$sess_data = array(					
-							'rcc_admin_user_name'=>$user_name,		
-							'rcc_admin_logged_in'=>true
-						);
-						$this->session->set_userdata($sess_data);
-						$status=1;
-						$msg='<div class="alert alert-success">
-						  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						  <strong>Successfully logged in</strong></div>';
+					$user_name = $user['user_name'];			
+					$user_id = $user['id'];			
+					$sess_data = array(					
+						'rcc_admin_user_id'=>$user_id,		
+						'rcc_admin_user_name'=>$user_name,		
+						'rcc_admin_logged_in'=>true
+					);
+					$this->session->set_userdata($sess_data);
+					$status=1;
+					$msg='<div class="alert alert-success">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Successfully logged in</strong></div>';
 				}else{
 				  $msg='<div class="alert alert-warning">
 				  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -62,5 +64,5 @@ class Login extends CI_Controller {
 		}
 		$res = array('status'=>$status,'msg'=>$msg);
 		echo json_encode($res); exit;
-	 }	
+	 } 
 }

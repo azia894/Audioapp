@@ -78,7 +78,7 @@
 								href="<?php echo base_url() . 'index.php'; ?>"
 								style="margin-top: 20px">
 								<span>
-									<img src="<?php echo base_url() . 'assets/images/logo.png'; ?>"
+									<img src="<?php echo base_url() . 'assets/images/logo.svg'; ?>"
 										style="width:40px;" />
 								</span>
 								<span style="color :#7030a0;vertical-align: super;">
