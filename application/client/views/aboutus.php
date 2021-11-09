@@ -57,32 +57,7 @@
                 <li>Allocate narrators to appropriate Urdu works</li>
               </ul>
             </div>
-          </div>
-          <h1 class="text-center">Our Team</h1>
-          <div class="row">
-            <div class="col-md-4">
-              <h2>Advisory Group</h2>
-              <ul>
-                <li>Shortlist works to be recorded in audio within each of the genres</li>
-                <li>General advice and direction</li>
-                <li>Promote this project</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <h2>Narrators</h2>
-              <ul>
-                <li>Give audition</li>
-                <li>Record part or a section of a book</li>
-                <li>Proof read</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <h2>Auditioners</h2>
-              <ul>
-                <li>Allocate narrators to appropriate Urdu works</li>
-              </ul>
-            </div>
-          </div>
+          </div>          
           <div>
             <div>
               <h2>About Our Sponsors</h2>
