@@ -41,6 +41,9 @@
 					</a>
 				</div>
 			</div>
+			<div class="col-md-2 text-left">
+			<a href="<?php echo base_url() . 'home/aboutUs'; ?>" id="aboutus" class="text-white">About Us</a>
+			</div>
 		</div>
 	</div>
 	<hr>

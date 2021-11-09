@@ -65,7 +65,7 @@ h2,
 .h2 {
   font-family: 'Ubuntu', sans-serif;
   line-height: 1.42857143;
-  color: #fff;
+  /* color: #fff; */
 }
 h1 small,
 h2 small,
