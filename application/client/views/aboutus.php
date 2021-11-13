@@ -18,6 +18,8 @@
             benefit from the ocean of knowledge, wisdom and tradition preserved in Urdu literature. Through this project
             we hope to make Urdu non-fiction and fiction easily accessible in the form of audiobooks for adults and
             children.&nbsp;</p>
+          <section id="supportus">
+            
           <h2 class="text-center">Support us</h2>
           <!-- <p>At https://maahiruk.org/support-us/</p> -->
           <p>
@@ -30,6 +32,8 @@
             sponsoring charitable organisations to help out the deserving. Our second expenditure is for building,
             maintaining and enhancing our mobile App. We look forward to any support we can receive from our
             well-wishers, subscribers and lovers of Urdu.</p>
+            
+          </section>
           <!-- <p>
             <a href="https://maahiruk.org/support-us/" target="_blank">https://maahiruk.org/support-us/</a>
           </p> -->
@@ -48,33 +52,24 @@
               <ul>
                 <li>Give audition</li>
                 <li>Record part or a section of a book</li>
-                <li>Proof read</li>
               </ul>
             </div>
             <div class="col-md-4">
               <h2>Auditioners</h2>
               <ul>
                 <li>Allocate narrators to appropriate Urdu works</li>
+                <li>Proof read</li>
               </ul>
             </div>
           </div>          
           <div>
             <div>
-              <h2>About Our Sponsors</h2>
+              <h2>Sponsors</h2>
             </div>
             <div id="container">
-              <h2><a href="https://maahiruk.org/" target="_blank">MAAHIR</a></h2>
-              <!-- <div class="text-center">
-                <p>
-                  Shikwa e zulmat e shab say to kahin behtar tha <br>
-                  Apnay hisay ki shama jalatay jatay <br>
-                  (Far better than lamenting against the hardships of dark nights <br>
-                  Is lighting candles of your own as you travel through) <br>
-                  <br>
-                  – Ahmad Faraz –
-                </p>
-              </div> -->
-              <div class="description">
+              <h3><a href="https://maahiruk.org/" target="_blank">MAAHIR</a></h3>
+              <h3>Urdu Lovers (YOU!)</h3>
+              <!-- <div class="description">
                 <p>
                   MAAHIR is an organisation of professionals from Hyderabad, Deccan and its surrounding regions (the
                   erstwhile Nizam state) who have settled in the United Kingdom but retain a strong emotional and
@@ -119,7 +114,7 @@
                 <p>
                   <a href="https://maahiruk.org" target="_blank">https://maahiruk.org/</a>
                 </p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
