@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-md-4 text-left">
 				<div class="section-header text-white">
-					Sponsers
+				Sponsors
 				</div>
 				<a href="https://maahiruk.org/" target="_blank">
 					<div class="sponsers">
