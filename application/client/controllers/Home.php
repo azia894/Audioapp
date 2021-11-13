@@ -91,7 +91,7 @@ class Home extends CI_Controller {
 		}	
 	}*/
 	
-    public function aboutUs(){
+    public function aboutus(){
         $data = array();
         $data['main_content']='aboutus';
         $this->load->view('template/body',$data);
