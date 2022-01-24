@@ -4,12 +4,12 @@
     <div class="container">
       <div>
         <div>
-          <h2>Aim </h2>
+          <h2><b>Aim</b> </h2>
           <p>Tap into the wisdom and tradition written in Urdu&nbsp;and preserve the language.</p>
-          <h2>Objective</h2>
+          <h2><b>Objective</b></h2>
           <p>To create a <strong>mobile app</strong> and an <strong>online portal</strong> where people can listen to
             Urdu Audiobooks for free.</p>
-          <h2>Background</h2>
+          <h2><b>Background</b></h2>
           <p>Information can now be accessed instantaneously at the point of need. The ease of recording and retrieving
             high quality audio has made podcasts and audiobooks attractive new methods of learning. Audiobooks in
             English is already a big industry. Long commutes provide a perfect opportunity to listen to audiobooks on
@@ -19,28 +19,30 @@
             we hope to make Urdu non-fiction and fiction easily accessible in the form of audiobooks for adults and
             children.&nbsp;</p>
           <section id="supportus">
-            
-          <h2 class="text-center">Support us</h2>
-          <!-- <p>At https://maahiruk.org/support-us/</p> -->
-          <p>
-            Dil ki Awaz Urdu Audiobooks is a non-profit project sponsored by Urdu loving individuals and charitable
-            organisations. A lot of our team members have joined on a voluntary basis. However we would like to pay the
-            narrators a small token of appreciation for their talent and effort. The amount would depend on the size of
-            narration. For narrating one book we would like to gift a £25 voucher to the volunteer narrators. There is a
-            separate group of narrators who are Urdu teachers – for them we will make additional payments in the form of
-            cash as their salaries at their primary workplaces are low. This is in keeping with the objectives of the
-            sponsoring charitable organisations to help out the deserving. Our second expenditure is for building,
-            maintaining and enhancing our mobile App. We look forward to any support we can receive from our
-            well-wishers, subscribers and lovers of Urdu.</p>
-            
+
+            <h2><b>Support us</b></h2>
+            <!-- <p>At https://maahiruk.org/support-us/</p> -->
+
+            <p> You can support us in the following ways:</p>
+
+            <p> Become a part of the <b>admin / technical team.</b> Basic IT and media skills will come handy.</p>
+
+            <p>Become a <b>narrator</b> if you enjoy reading Urdu books. Send in a 5 minutes sample recording of your reading from a book of your liking to urduabproject@gmail.com. You can use a simple PC or mobile phone voice recording app. Our team of experts will feedback.</p>
+
+            <p>Suggest a <b>book</b>. See under book suggestions guidelines.</p>
+
+            <p><b>Donate</b>. Dil ki Awaz Urdu Audiobooks is a not for profit project sponsored by Urdu loving individuals and charitable organisations. Many of our team members have joined on a voluntary basis. However we would like to pay the narrators a small token of appreciation for their talent and effort. The pay rate would depend on the individual narrators. Since the project is charitably funded we would like to support those narrators with low salaries at their primary workplaces. Our second expenditure is for building, maintaining and enhancing our mobile App. We look forward to any support we can receive from our well-wishers, subscribers and lovers of Urdu.</p>
+
+            <p>https://forms.gle/C5C1qzsmPaKV6oAi6 complete this form for becoming a part of the project</p>
+
           </section>
           <!-- <p>
             <a href="https://maahiruk.org/support-us/" target="_blank">https://maahiruk.org/support-us/</a>
           </p> -->
-          <h1 class="text-center">Our Team</h1>
+          <h2><b>Our Team</b></h2>
           <div class="row">
             <div class="col-md-4">
-              <h2>Advisory Group</h2>
+              <h1>Advisory Group</h1>
               <ul>
                 <li>Shortlist works to be recorded in audio within each of the genres</li>
                 <li>General advice and direction</li>
@@ -48,20 +50,20 @@
               </ul>
             </div>
             <div class="col-md-4">
-              <h2>Narrators</h2>
+              <h1>Narrators</h1>
               <ul>
                 <li>Give audition</li>
                 <li>Record part or a section of a book</li>
               </ul>
             </div>
             <div class="col-md-4">
-              <h2>Auditioners</h2>
+              <h1>Auditioners</h1>
               <ul>
                 <li>Allocate narrators to appropriate Urdu works</li>
                 <li>Proof read</li>
               </ul>
             </div>
-          </div>          
+          </div>
           <div>
             <div>
               <h2>Sponsors</h2>

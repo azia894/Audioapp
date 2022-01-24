@@ -6,12 +6,11 @@
 		<div class="row">
 			<div class="col-md-4 text-left">
 				<div class="section-header text-white">
-				Sponsors
+					Sponsors
 				</div>
 				<a href="https://maahiruk.org/" target="_blank">
 					<div class="sponsers">
-						<img src="<?php echo base_url() . 'assets/images/maahir.png'; ?>"
-							alt="" class="sponser-icon">
+						<img src="<?php echo base_url() . 'assets/images/maahir.png'; ?>" alt="" class="sponser-icon">
 						<span class="text-white"> MAAHIR </span>
 					</div>
 				</a>
@@ -23,8 +22,7 @@
 				<div class="btnsbox">
 					<a href="#" id="download_android" class="white" style="display: flex;">
 						<span class="icon">
-							<img src="<?php echo base_url() . 'assets/images/playstore.png'; ?>"
-								width="20" height="20" class="download for android">
+							<img src="<?php echo base_url() . 'assets/images/playstore.png'; ?>" width="20" height="20" class="download for android">
 						</span>
 						<p>Download for
 							<strong>Android User</strong>
@@ -32,8 +30,7 @@
 					</a>
 					<a href="#" id="download_ios" class="white" style="display: flex;">
 						<span class="icon">
-							<img src="<?php echo base_url() . 'assets/images/appstore-icon-dark.svg'; ?>"
-								width="20" height="20" class="download for ios">
+							<img src="<?php echo base_url() . 'assets/images/appstore-icon-dark.svg'; ?>" width="20" height="20" class="download for ios">
 						</span>
 						<p>Download on the
 							<strong>APP Store</strong>
@@ -42,7 +39,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 text-left">
-			<a href="<?php echo base_url() . 'Home/aboutus'; ?>" id="aboutus" class="text-white">About Us</a>
+				<a href="<?php echo base_url() . 'Aboutus'; ?>" id="aboutus" class="text-white">About Us</a>
 			</div>
 		</div>
 	</div>
