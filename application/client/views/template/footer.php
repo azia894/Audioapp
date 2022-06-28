@@ -41,6 +41,9 @@
 			<div class="col-md-2 text-left">
 				<a href="<?php echo base_url() . 'Aboutus'; ?>" id="aboutus" class="text-white">About Us</a>
 			</div>
+			<div class="col-md-2 text-left" style="margin-top: 10px">
+				<a href="<?php echo base_url() . 'Privacypolicy'; ?>" id="Privacypolicy" class="text-white">Privacy Policy</a>
+			</div>
 		</div>
 	</div>
 	<hr>
