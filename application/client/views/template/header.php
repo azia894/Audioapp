@@ -89,7 +89,7 @@
 						<div id="navbar" class="navbar-collapse collapse" id="myNavbar">
 							<ul class="nav navbar-nav btnsbox" style="float: right;">
 								<li>
-									<a href="#" id="download_android" class="white" style="display: flex;">
+									<a href="https://play.google.com/store/apps/details?id=com.uabtech.dilkiawaz" target="_blank" id="download_android" class="white" style="display: flex;">
 										<span class="icon">
 											<img src="<?php echo base_url() . 'assets/images/playstore.png'; ?>"
 												width="20" height="20" class="download for android">

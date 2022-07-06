@@ -20,7 +20,7 @@
 					Download Our App for more Features
 				</div>
 				<div class="btnsbox">
-					<a href="#" id="download_android" class="white" style="display: flex;">
+					<a href="https://play.google.com/store/apps/details?id=com.uabtech.dilkiawaz" target="_blank" id="download_android" class="white" style="display: flex;">
 						<span class="icon">
 							<img src="<?php echo base_url() . 'assets/images/playstore.png'; ?>" width="20" height="20" class="download for android">
 						</span>
