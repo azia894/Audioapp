@@ -9,7 +9,7 @@
 	<meta name="keywords" content="" />
 	<meta name="author" content="" />
 
-	<title>Audio App</title>
+	<title>Dil ki Awaz</title>
 
 	<link rel="icon"
 		href="<?php echo base_url() . 'assets/images/logo.png'; ?>"
