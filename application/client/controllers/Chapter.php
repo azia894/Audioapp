@@ -15,7 +15,8 @@ class Chapter extends CI_Controller {
 			$data['getdata'] = $this->home_model->chapter($id);
 			$data['record'] = $sd['data'][0];
 			$data['main_content']='view';	
-		$this->load->view('template/body',$data);
+			$data['title']= 'Dil ki Awaz';
+			$this->load->view('template/body',$data);
 		}else{
 			$this->session->set_flashdata('invalid','Invalid Request');
 			redirect('home');

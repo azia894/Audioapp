@@ -29,7 +29,8 @@ class Books extends CI_Controller {
         $data['posts'] = $this->books_model->getRows(array('limit'=>$this->perPage),$text);
         
         //load the view
-        $data['main_content']='books';
+	$data['main_content']='books';
+	$data['title']= 'Books - Dil ki Awaz';
         $this->load->view('template/body', $data);
     }
     
@@ -53,7 +54,7 @@ class Books extends CI_Controller {
         
         //get the posts data
         $data['posts'] = $this->books_model->getRows(array('start'=>$offset,'limit'=>$this->perPage));
-        
+        $data['title']= 'Dil ki Awaz';
         //load the view
         //$data['main_content']='ajax-pagination-data';
         //$this->load->view('template/body', $data, false);
@@ -67,6 +68,7 @@ class Books extends CI_Controller {
 			$data['getdata'] = $this->home_model->chapter($id);
 			$data['record'] = $sd['data'][0];
 			$data['main_content']='view';	
+			$data['title']= 'Dil ki Awaz';
 		$this->load->view('template/body',$data);
 		}else{
 			$this->session->set_flashdata('invalid','Invalid Request');
@@ -82,4 +84,3 @@ class Books extends CI_Controller {
     
 }
 
-	

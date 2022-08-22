@@ -1,3 +1,6 @@
+<?php 
+	$pageTitle = $title || "Dil ki Awaz";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +11,14 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="author" content="" />
-
-	<title>Dil ki Awaz</title>
-
+<!--
+<?php if ($title && $title != ''): ?>
+<title><?php echo $title; ?></title>
+<?php else: ?>
+<title>Dil ki Awaz</title>
+<?php endif; ?>
+-->
+	<title><?php echo $title; ?> </title>
 	<link rel="icon"
 		href="<?php echo base_url() . 'assets/images/logo.png'; ?>"
 		type="image/gif" sizes="16x16">

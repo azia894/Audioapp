@@ -14,6 +14,7 @@ class Aboutus extends CI_Controller
   {
     $data = array();
     $data['main_content'] = 'aboutus';
+     $data['title']= 'About us - Dil ki Awaz';
     $this->load->view('template/body', $data);
   }
 }

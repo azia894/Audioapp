@@ -14,6 +14,7 @@ class Privacypolicy extends CI_Controller
   {
     $data = array();
     $data['main_content'] = 'privacypolicy';
+    $data['title']= 'Privacy Policy - Dil ki Awaz';
     $this->load->view('template/body', $data);
   }
 }

@@ -25,7 +25,8 @@ class Posts extends CI_Controller {
         $this->ajax_pagination->initialize($config);
         
         //get the posts data
-        $data['posts'] = $this->post->getRows(array('limit'=>$this->perPage));
+	$data['title']= 'Dil ki Awaz';
+	$data['posts'] = $this->post->getRows(array('limit'=>$this->perPage));
         
         //load the view
         $this->load->view('posts/index', $data);

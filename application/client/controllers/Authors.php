@@ -31,7 +31,8 @@ class Authors extends CI_Controller {
         $data['posts'] = $this->authors_model->getRows(array('limit'=>$this->perPage));
         
         //load the view
-        $data['main_content']='authors';
+	    $data['main_content']='authors';
+	     $data['title']= 'Dil ki Awaz';
         $this->load->view('template/body', $data);
     }
     
@@ -58,7 +59,8 @@ class Authors extends CI_Controller {
         
         //load the view
         //$data['main_content']='ajax-pagination-data';
-        //$this->load->view('template/body', $data, false);
+	//$this->load->view('template/body', $data, false);
+	$data['title']= 'Dil ki Awaz';
         $this->load->view('posts/ajax-pagination-data', $data, false);
     }
 
@@ -69,6 +71,7 @@ class Authors extends CI_Controller {
 			$data['getdata'] = $this->authors_model->bookslist($id);
 			$data['record'] = $sd['data'][0];
 			$data['main_content']='authorsview';	
+			$data['title']= 'Dil ki Awaz';
 		$this->load->view('template/body',$data);
 		}else{
 			$this->session->set_flashdata('invalid','Invalid Request');

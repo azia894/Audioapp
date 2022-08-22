@@ -28,7 +28,8 @@ class Subject extends CI_Controller {
         //load the view*/
         $data['getdata'] = $this->subject_model->sublist();
         $data['main_content']='subject';
-        $this->load->view('template/body', $data);
+	$data['title']= 'Dil ki Awaz';
+	$this->load->view('template/body', $data);
     }
     
     function ajaxPaginationData(){
@@ -51,7 +52,7 @@ class Subject extends CI_Controller {
         
         //get the posts data
         $data['posts'] = $this->authors_model->getRows(array('start'=>$offset,'limit'=>$this->perPage));
-        
+        $data['title']= 'Dil ki Awaz';
         //load the view
         //$data['main_content']='ajax-pagination-data';
         //$this->load->view('template/body', $data, false);
@@ -61,7 +62,8 @@ class Subject extends CI_Controller {
     public function category(){
 		$id = $this->uri->segment('3');
         $data['getbk'] = $this->subject_model->catbklist($id);
-        $data['main_content']='categorybooks';
+		$data['main_content']='categorybooks';
+		$data['title']= 'Dil ki Awaz';
         $this->load->view('template/body', $data);
 	}
 }

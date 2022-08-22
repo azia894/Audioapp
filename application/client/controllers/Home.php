@@ -70,7 +70,8 @@ class Home extends CI_Controller {
 			
             $this->load->view('Data', $data);
         } else {
-			$data['main_content']='home';
+		$data['main_content']='home';
+		 $data['title']= 'Dil ki Awaz';
             $this->load->view('template/body', $data);
         }
 		//$data['main_content']='home';	
