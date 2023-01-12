@@ -108,7 +108,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="#" id="download_ios" class="white" style="display: flex;">
+									<a href="https://apps.apple.com/in/app/dil-ki-awaz/id1638704803" target="_blank"  id="download_ios" class="white" style="display: flex;">
 										<span class="icon">
 											<img src="<?php echo base_url() . 'assets/images/appstore-icon-dark.svg'; ?>"
 												width="20" height="20" class="download for ios">
